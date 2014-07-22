@@ -1,4 +1,6 @@
- body{font-family: 'Montserrat', sans-serif;
+ body{
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(243, 243, 243);
   a{text-decoration: none;}
   p{text-align: justify;}
   h1.logo{
@@ -16,17 +18,21 @@
   #container{
     max-width: 960px;
     margin: auto;
-    // border-left: 1px solid #024D88;
-    // border-right: 1px solid #024D88;
+    border-left: 1px solid #024D88;
+    border-right: 1px solid #024D88;
+    -webkit-box-shadow: 1px 5px 17px 0px rgba(50, 50, 50, 0.78);
+    -moz-box-shadow:    1px 5px 17px 0px rgba(50, 50, 50, 0.78);
+    box-shadow:         1px 5px 17px 0px rgba(50, 50, 50, 0.78);
+    background: #fff;
   }
 
-  .page-header{
+  .header_title{
+    padding: 15px 15px;
     h1{
       font-weight: bolder;
       color: #024D88;
     }
   }
-  .header_title{padding: 0 15px;}
   ul.lang{list-style: none;}
 
 
@@ -40,6 +46,7 @@
   // footer
   .footer{
     background: #024D88;
+    color: #fff;
     padding: 25px 0;
     ul{list-style: none;}
     a{color: #fff;text-decoration: none;}
