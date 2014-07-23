@@ -10,13 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require jquery-ui
  *= require_self
+ *= require styles
  */
 
  @import "bootstrap";
- @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 .container-fluid{
   background: #024D88;
@@ -39,4 +38,12 @@
 .navbar{border-radius: 0px;}
 .lang{
   .dropdown-menu > li > a{color: #000;}
+}
+.carousel-caption{
+  left: 20%;
+  right: 20%;
+  padding-bottom: 45px;
+  background: #11314E;
+  opacity: 0.8;
+  border-radius: 30px;
 }

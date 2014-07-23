@@ -11,19 +11,21 @@
     <div class="header_title">
       <ul class='lang pull-right'>
         <li class="dropdown">
-          <a id="drop5" role="button" data-toggle="dropdown" href="#">Language <span class="caret"></span></a>
+          <a id="drop5" role="button" data-toggle="dropdown" href="#"><%= current_language.upcase %><span class="caret"></span></a>
           <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">RO</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ENG</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">RUS</a></li>
+            <% LOCALES.keys.each do |k| %>
+              <li class=<%= "active" if @locale == k %> role="presentation">
+                <%= link_to k.upcase, set_locale_path(:lang => k,:back => request.fullpath), role: 'menuitem' %>
+              </li>
+            <% end %>
           </ul>
         </li>
       </ul>
       <div class="hidden-xs">
-        <h1 class="logo">TRANS AGER <br><small>transportation and service</small></h1>
+        <h1 class="logo">TRANS AGER <br><small><%= t('logo') %></small></h1>
         <%= image_tag 'logo.png' %>
       </div>
-      <h1 class="visible-xs">TRANS AGER <br><small>transportation and service</small></h1>
+      <h1 class="visible-xs">TRANS AGER <br><small><%= t('logo') %></small></h1>
     </div>
     <%= render 'layouts/navbar' %>
     <%= yield %>

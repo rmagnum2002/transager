@@ -1,0 +1,273 @@
+ro:
+  logo: 'transport și logistică'
+  menu:
+    home: 'Acasă'
+    contacts: 'Contacte'
+  date:
+    abbr_day_names:
+    - Dum
+    - Lun
+    - Mar
+    - Mie
+    - Joi
+    - Vin
+    - Sâm
+    abbr_month_names:
+    -
+    - Ian
+    - Feb
+    - Mar
+    - Apr
+    - Mai
+    - Iun
+    - Iul
+    - Aug
+    - Sep
+    - Oct
+    - Noi
+    - Dec
+    day_names:
+    - Duminică
+    - Luni
+    - Marți
+    - Miercuri
+    - Joi
+    - Vineri
+    - Sâmbată
+    formats:
+      default: ! '%d-%m-%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    -
+    - Ianuarie
+    - Februarie
+    - Martie
+    - Aprilie
+    - Mai
+    - Iunie
+    - Iulie
+    - August
+    - Septembrie
+    - Octombrie
+    - Noiembrie
+    - Decembrie
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: aproximativ o oră
+        few: aproximativ %{count} ore
+        other: aproximativ %{count} ore
+      about_x_months:
+        one: aproximativ o lună
+        few: aproximativ %{count} luni
+        other: aproximativ %{count} luni
+      about_x_years:
+        one: aproximativ un an
+        few: aproximativ %{count} ani
+        other: aproximativ %{count} ani
+      almost_x_years:
+        one: aproape 1 an
+        few: aproape %{count} ani
+        other: aproape %{count} ani
+      half_a_minute: jumătate de minut
+      less_than_x_minutes:
+        one: mai puțin de un minut
+        few: mai puțin de %{count} minute
+        other: mai puțin de %{count} minute
+      less_than_x_seconds:
+        one: mai puțin de o secundă
+        few: mai puțin de %{count} secunde
+        other: mai puțin de %{count} secunde
+      over_x_years:
+        one: mai mult de un an
+        few: mai mult de %{count} ani
+        other: mai mult de %{count} ani
+      x_days:
+        one: 1 zi
+        few: ! '%{count} zile'
+        other: ! '%{count} zile'
+      x_minutes:
+        one: 1 minut
+        few: ! '%{count} minute'
+        other: ! '%{count} minute'
+      x_months:
+        one: 1 lună
+        few: ! '%{count} luni'
+        other: ! '%{count} luni'
+      x_seconds:
+        one: 1 secundă
+        few: ! '%{count} secunde'
+        other: ! '%{count} secunde'
+    prompts:
+      day: Ziua
+      hour: Ora
+      minute: Minutul
+      month: Luna
+      second: Secunda
+      year: Anul
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: trebuie dat acceptul
+      blank: nu poate fi gol
+      confirmation: nu este confirmat
+      empty: nu poate fi gol
+      equal_to: trebuie să fie egal cu %{count}
+      even: trebuie să fie impar
+      exclusion: este rezervat
+      greater_than: trebuie să fie mai mare decât %{count}
+      greater_than_or_equal_to: trebuie să fie mai mare sau egal cu %{count}
+      inclusion: nu este inclus în listă
+      invalid: este invalid
+      less_than: trebuie să fie mai mic decât %{count}
+      less_than_or_equal_to: trebuie să fie mai mic sau egal cu %{count}
+      not_a_number: nu este un număr
+      not_an_integer: trebuie să fie un mumăr întreg
+      odd: trebuie să fie par
+      record_invalid: Validare nereuşită %{errors}
+      taken: este deja folosit
+      too_long: este prea lung (se pot folosi maximum %{count} caractere)
+      too_short: este prea scurt (minimum de caractere este %{count})
+      wrong_length: nu are lungimea corectă (trebuie să aiba %{count} caractere)
+    template:
+      body: ! 'Încearcă să corectezi urmatoarele câmpuri:'
+      header:
+        one: ! 'Nu am putut salva acest %{model}: o eroare'
+        few: ! 'Nu am putut salva acest %{model}: %{count} erori.'
+        other: ! 'Nu am putut salva acest %{model}: %{count} erori.'
+  helpers:
+    select:
+      prompt: Alegeţi
+    submit:
+      create: Creare %{model}
+      submit: Salvare %{model}
+      update: Modificare %{model}
+  number:
+    currency:
+      format:
+        delimiter: .
+        format: ! '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: RON
+    format:
+      delimiter: .
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Quadrilion
+          thousand: Mie
+          trillion: Trilion
+          unit: ''
+      format:
+        delimiter: ! ','
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            few: Bytes
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ! ','
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' şi '
+      two_words_connector: ! ' şi '
+      words_connector: ! ', '
+  time:
+    am: ''
+    formats:
+      default: ! '%a %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y %H:%M'
+      short: ! '%d %b %H:%M'
+    pm: ''
+
+  active_admin:
+    devise:
+      email:
+        title: 'Email'
+      password:
+        title: 'Parola'
+  devise:
+    confirmations:
+      confirmed: Contul dvs. a fost confirmată cu succes. Sunteţi autentificat.
+      send_instructions: Veţi primi un e-mail cu instrucţiuni despre cum să confirmați contul dvs. în câteva minute.
+      send_paranoid_instructions: Dacă e-mailul dvs. există în baza noastră de date, veţi primi un e-mail cu instrucţiuni despre cum să confirme contul dvs. în câteva minute.
+    failure:
+      already_authenticated: Sunteţi deja autentificat
+      inactive: Contul dvs. nu a fost activat încă.
+      invalid: E-mail sau parolă invalide.
+      last_attempt:
+      locked: Contul dvs. este blocat.
+      not_found_in_database:
+      timeout: Sesiunea dvs. a expirat, vă rugăm să vă autentificaţi din nou pentru a continua.
+      unauthenticated: Trebuie să vă conectaţi sau să se înscrie înainte de a continua.
+      unconfirmed: Trebuie să confirmaţi contul dvs. înainte de a continua.
+    mailer:
+      confirmation_instructions:
+        subject: Instrucţiuni de confirmare
+      reset_password_instructions:
+        subject: Instrucțiuni pentru resetarea parolei
+      unlock_instructions:
+        subject: Instrucțiuni pentru deblocarea contului
+    omniauth_callbacks:
+      failure: Nu te-am putut autoriza de pe contul de %{kind} pentru că "%{reason}".
+      success: Autorizat cu success din contul de %{kind}.
+    passwords:
+      no_token:
+      send_instructions: Veţi primi un e-mail cu instrucţiunile pentru resetarea parolei dvs. în câteva minute.
+      send_paranoid_instructions: Dacă e-mailul dvs. există în baza noastră de date, veţi primi un link de recuperare a parolei pe adresa de e-mail.
+      updated: Parola dvs. a fost schimbată cu succes. Sunteţi autentificat.
+      updated_not_active: Parola dvs. a fost schimbată cu succes.
+    registrations:
+      destroyed: Adio! Contul dvs. a fost anulat cu succes. Sperăm să vă vedem din nou în curând.
+      signed_up: Bine ai venit! V-aţi înscris cu succes.
+      signed_up_but_inactive: V-aţi înscris cu succes. Cu toate acestea, nu am putut să vă autentificăm, deoarece contul dvs. nu este încă activată.
+      signed_up_but_locked: V-aţi înscris cu succes. Cu toate acestea, nu am putut să vă autentificăm, deoarece contul dvs. este blocat.
+      signed_up_but_unconfirmed: Un mesaj cu un link de confirmare a fost trimis la adresa dvs. de e-mail. Vă rugăm sa deschideți link-ul pentru a activa contul.
+      update_needs_confirmation: Aţi actualizat contul dvs. de succes, dar avem nevoie să verificăm adresa dvs. de e-mail. Vă rugăm să verificați adresa de email şi faceţi clic pe link-ul de confirmă pentru a finaliza confirmarea adresei dvs. de e-mail.
+      updated: Aţi actualizat contul dvs. cu succes.
+    sessions:
+      signed_in: Autentificat cu succes.
+      signed_out: Ieșire cu success.
+    unlocks:
+      send_instructions: Veţi primi un e-mail cu instrucţiuni despre cum să deblocați contul dvs. în câteva minute.
+      send_paranoid_instructions: În cazul în care contul dvs. există, veţi primi un e-mail cu instrucţiuni despre cum să-l deblocați în câteva minute.
+      unlocked: Contul dvs. a fost deblocat cu succes. Vă rugăm autentificați pentru a continua.
+  errors:
+    messages:
+      already_confirmed: a fost deja confirmat, vă rugăm să încercaţi să vă autentificați
+      confirmation_period_expired:
+      expired: a expirat, vă rugăm să solicitaţi unul nou
+      not_found: nu există
+      not_locked: nu este blocat
+      not_saved:
+        few: '%{count} erori nu au permis %{resource} să fie salvat:'
+        one: '1 eroare nu a permis %{resource} să fie salvat:'
+        other: '%{count} erori nu au permis %{resource} să fie salvat:'

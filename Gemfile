@@ -31,10 +31,11 @@ gem "less-rails"
 gem 'bootstrap-sass-rails'
 # Autoprefixer adds browser vendor prefixes automatically
 gem 'autoprefixer-rails'
+gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 gem "rspec-rails", :group => [:development, :test]
 group :test do

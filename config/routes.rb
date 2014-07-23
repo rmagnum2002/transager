@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +8,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   get '/contacts' => 'welcome#contacts'
+  get 'set_locale' => 'welcome#set_locale'
+
   root 'welcome#index'
 
   # Example of regular route:
