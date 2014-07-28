@@ -1,8 +1,10 @@
 ro:
-  logo: 'transport și logistică'
+  logo: 'transport și expediție'
   menu:
     home: 'Acasă'
     contacts: 'Contacte'
+    shop: 'Magazin Piese'
+
   date:
     abbr_day_names:
     - Dum

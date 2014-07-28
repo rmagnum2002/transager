@@ -17,6 +17,9 @@ class WelcomeController < ApplicationController
   def index
   end
 
+  def shop
+  end
+
   def contacts
   end
 end

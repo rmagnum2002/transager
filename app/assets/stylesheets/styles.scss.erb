@@ -1,20 +1,27 @@
 body{
-  background: rgb(233, 233, 233);
+  background: #fff;
+  background: url('<%= asset_path 'map.gif' %>') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
   a{text-decoration: none;transition: 0.20s;}
   p{text-align: justify;}
-  h1.logo{
-    position: absolute;
-    margin-left: 100px;
-    margin-top: 10px;
-    small{
-      margin-top: -5px;
-      position: absolute;
-      font-size: 15px;
-      margin-left: 30px;
-      color: #585858;
-    }
-  }
+  // h1.logo{
+  //   position: absolute;
+  //   margin-left: 100px;
+  //   margin-top: 10px;
+  //   small{
+  //     margin-top: -5px;
+  //     position: absolute;
+  //     font-size: 15px;
+  //     margin-left: 30px;
+  //     color: #585858;
+  //   }
+  // }
+
+
   #container{
     max-width: 960px;
     margin: auto;
@@ -26,20 +33,27 @@ body{
     background: #fff;
   }
 
-  // landing page
+  // header
   .header_title{
-    padding: 15px 15px;
-    h1{
-      font-weight: bolder;
-      color: #357ebd;
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 1px;
+    div.logo{
+      font-size: 46px;
+      margin: 0 0 20px 55px;
+      width: 320px;
+      color: #0B5696;
+      .title{font-weight: bolder; font-family: serif; font-style: italic;}
+      span.capital{font-size: 70px;}
+      div.quote{font-size: 20px;margin-top: -20px;text-align: center;}
     }
   }
   ul.lang{list-style: none;}
+  ul.lang a{color: #0B5696;}
   .slider_caption {
     font-size: 30px;
     font-weight: 900;
   }
-
 
   // Contacts page
   #map_canvas {
