@@ -15,20 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('menu.home'), root_path %></li>
-        <li><%= link_to 'Transportation', root_path %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Service <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-        <li><%= link_to t('menu.shop'), shop_path %></li>
+        <li class="<%= 'active' if current_page?(transport_path) %>"><%= link_to t('menu.transportation'), transport_path %></li>
+        <li class="<%= 'active' if current_page?(service_path) %>"><%= link_to t('menu.service'), service_path %></li>
+        <li class="<%= 'active' if current_page?(shop_path) %>"><%= link_to t('menu.shop'), shop_path %></li>
         <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to t('menu.contacts'), contacts_path %></li>
       </ul>
 <!--       <form class="navbar-form navbar-left" role="search">

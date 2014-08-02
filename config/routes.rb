@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  get '/transport' => 'welcome#transport'
   get '/shop' => 'welcome#shop'
+  get '/service' => 'welcome#service'
   get '/contacts' => 'welcome#contacts'
   get 'set_locale' => 'welcome#set_locale'
 

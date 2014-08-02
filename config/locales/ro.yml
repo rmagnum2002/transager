@@ -4,6 +4,8 @@ ro:
     home: 'Acasă'
     contacts: 'Contacte'
     shop: 'Magazin Piese'
+    transportation: 'Servicii Transport'
+    service: 'Servicii Reparație'
 
   date:
     abbr_day_names:

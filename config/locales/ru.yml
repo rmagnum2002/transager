@@ -1,4 +1,13 @@
 ru:
+  logo: 'перевозки и экспедиция'
+  menu:
+    home: 'Главная'
+    contacts: 'Контакты'
+    shop: 'Магазин Запчастей'
+    transportation: 'Транспортные Услуги'
+    service: 'Ремонт'
+
+
   date:
     abbr_day_names:
     - Вс

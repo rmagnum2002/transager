@@ -1,9 +1,8 @@
 <div class="col-md-12">
   <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked">
-      <li class="<%= 'active' if action_name == 'tires' %>"><a href="#">Tires</a></li>
-      <li class="<%= 'active' if action_name == 'batteries' %>"><a href="#">Batteries</a></li>
-      <li><a href="#">Electric parts</a></li>
+      <li class="<%= 'active' if action_name == 'tires' %>"><a href="#">Trucks & Trailers</a></li>
+      <li class="<%= 'active' if action_name == 'batteries' %>"><a href="#">Truck Wash</a></li>
     </ul>
   </div>
   <div class="col-md-6">
@@ -15,7 +14,7 @@
     </p>
   </div>
   <div class="col-md-4">
-    <%= render 'shared/contacts_shop' %>
-    <%= render 'shared/contacts_accountant' %>
+    <%= render 'shared/contacts_repair_department' %>
+    <%= render 'shared/sidebar' %>
   </div>
 </div>
