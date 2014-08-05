@@ -6,6 +6,17 @@ ro:
     shop: 'Magazin Piese'
     transportation: 'Servicii Transport'
     service: 'Servicii Reparație'
+  contact_type:
+    email: 'email'
+    phone: "Telefon"
+    phone_fax: "Telefon/Fax"
+    mobile: "mobil"
+    skype: 'skype'
+  department_id:
+    transport: "departamentul transport"
+    shop: "magazin"
+    service: "departamentul reparații"
+    accountant: "contabilitate"
 
   date:
     abbr_day_names:
@@ -275,3 +286,15 @@ ro:
         few: '%{count} erori nu au permis %{resource} să fie salvat:'
         one: '1 eroare nu a permis %{resource} să fie salvat:'
         other: '%{count} erori nu au permis %{resource} să fie salvat:'
+
+  activerecord:
+    errors:
+      models:
+        contact:
+          attributes:
+            contact_type:
+              blank: 'Câmp obligatoriu'
+            department_id:
+              blank: 'Câmp obligatoriu'
+            details:
+              blank: 'Câmp obligatoriu'

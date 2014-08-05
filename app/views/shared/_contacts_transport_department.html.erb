@@ -3,11 +3,15 @@
     <h3 class="panel-title">Departamentul Transport</h3>
   </div>
   <div class="panel-body phones">
-    <ul>
-      <li>+ 373 22 474 282</li>
-      <li>+ 373 22 472 147</li>
-      <li>+ 373 22 428 387</li>
-      <li>+ 373 22 475 242</li>
-    </ul>
+    <table class="table">
+      <tbody>
+        <% Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
+        <tr>
+          <td><%= t(Contact::CONTACT_TYPE.invert[c.contact_type]) %></td>
+          <td><%= c.details %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
