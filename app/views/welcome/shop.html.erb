@@ -1,18 +1,19 @@
 <div class="col-md-12">
   <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked">
-      <li class="<%= 'active' if action_name == 'tires' %>"><a href="#">Tires</a></li>
-      <li class="<%= 'active' if action_name == 'batteries' %>"><a href="#">Batteries</a></li>
-      <li><a href="#">Electric parts</a></li>
+      <% @pages.each do |p| %>
+      <li class="<%= 'active' if "#{p.id}-#{p.link_name}" == params[:id] %>"><%= link_to p.title, shop_path(p) %></li>
+      <% end %>
     </ul>
   </div>
   <div class="col-md-6">
+    <% if @pages.any? %>
     <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <%= @page.text_1 if @page.present? %>
     </p>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>
+    <% else %>
+      <%= render 'shared/nothing_found' %>
+    <% end %>
   </div>
   <div class="col-md-4">
     <%= render 'shared/contacts_shop' %>

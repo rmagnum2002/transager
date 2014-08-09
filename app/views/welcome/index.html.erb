@@ -1,52 +1,18 @@
-<div class="col-md-10 col-md-offset-1">
-  <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
-      <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag 'container.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-        <div class="carousel-caption">
-          <div class="slider_caption">Shipping and Air Trasnport</div>
-          <div class="hidden-xs"><center>We make sure your cargo is delivered where you need it</center></div>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag 'curtain.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-        <div class="carousel-caption">
-          <div class="slider_caption">Road Transportation</div>
-          <div class="hidden-xs"><center>Refrigerated, Vans and Tarpaulin Trailer Units.</center></div>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag 'shop.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-        <div class="carousel-caption">
-          <div class="slider_caption">Truck Service and Parts Shop</div>
-          <div class="hidden-xs"><center>We have eveything you need for your truck, from parts to specialists.</center></div>
-        </div>
-      </div>
-    </div>
-    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-  </div>
-</div>
-<div class="clearfix"></div>
-<hr>
-
+<%#= render 'slider' %>
 <div class="col-md-12">
   <div class="col-md-8">
     <div class="col-sm-12 col-md-12">
       <div class="thumbnail">
-        <%= image_tag 'transport.jpg' %>
+        <%= render 'slider' %>
         <div class="caption">
-          <h3><center>International transportation</center></h3>
-          <p>Camioanele noastre pot fi văzute pe marile autostrăzi ale Europei de la Atlantic pînă la Ural şi chiar Siberia” definind încrederea clientului şi înalta noastră siguranţă şi responsabilitate...</p>
+          <h3><center>Trans Ager - Partenerul tău de încredere, oriunde şi oricînd în Europa</center></h3>
+          <p>
+            “Trans Ager’’SRL este o întreprindere polivalentă şi viabilă cu capital privat integral care are ca obiecte de activitate transporturi rutiere internaţionale şi interne, service camioane şi magazin piese-auto camioane.
+            Pornind activitatea sa în 1995 ca o întreprindere modestă astăzi dispune de o cuprinzătoare flotă de camioane, semiremorci de mărci europene, un garaj de proporţii şi o zonă de reparaţie proprie, fiind una dintre cele mai mari întreprinderi de transport din Republica Moldova şi prima la capitolul transport propriu, oferind locuri de muncă la mai bine de 100 de angajaţi.<br>
+            Compania noastră se află într-un proces continuu de dezvoltare şi îmbunătăţire a serviciilor oferite clienţilor în condiţii de operativitate, eficienţă, şi siguranţă maximă.Toate aceste standarde occidentale sunt atinse beneficiind de un personal înalt calificat şi bine organizat pe departamente în scopul gestionării cît mai eficiente a activităţii ,precum şi de un parc auto modern.
+            <br>
+            Trans Ager este membru activ şi cofondator al Asociaţiei Internaţionale a Transportatorilor din Moldova /AITA/ şi deţinător al titlului” cel mai bun transportator al anului 2007” din Republica Moldova.
+          </p>
           <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a></p> -->
         </div>
       </div>
@@ -58,17 +24,17 @@
           <h3><center>Truck and Trailer Service</center></h3>
           <p>Pentru acoperirea solicitărilor de service ale clienţilor noştri, Service Trans Ager dispune de toate echipamentele şi forţa de muncă pentru a presta  lucrări la cele mai înalte standarde calitative.
           Putem executa lucrări atît pentru camioane cît şi pentru remorci şi semiremorci, clientul nefiind nevoit să apeleze la mai multe centre service pentru a remedia o defecţiune...</p>
-          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a></p> -->
+          <p><%= link_to t('details'), shops_path %></p>
         </div>
       </div>
     </div>
     <div class="col-sm-6 col-md-6">
       <div class="thumbnail">
-        <%= image_tag 'transport.jpg' %>
+        <%= image_tag 'international.jpg' %>
         <div class="caption">
           <h3><center>International transportation</center></h3>
           <p>Camioanele noastre pot fi văzute pe marile autostrăzi ale Europei de la Atlantic pînă la Ural şi chiar Siberia” definind încrederea clientului şi înalta noastră siguranţă şi responsabilitate...</p>
-          <!-- <p><a href="#" class="btn btn-primary" role="button">Button</a></p> -->
+          <p><%= link_to t('details'), transports_path %></p>
         </div>
       </div>
     </div>

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="Transager,transport maritim,transport autocare,service camioane,reparatii camioane,baterii auto,baterii camioane,transport international,camioane ieftine,Piese Autocamioane,MAN in Moldova,tractare camioan moldova,chisinau" />
+  <meta name="description" content="Transager.md - Partenerul tău de încredere, oriunde şi oricînd în Europa" />
+
   <title>Transager</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -52,11 +57,10 @@
       </div>
       <div class="col-md-3">
         <address>
-          <strong>Transport internaţional şi intern de mărfuri</strong><br>
-          <i class="glyphicon glyphicon-earphone"></i> + 373 22 474 282<br>
-          <i class="glyphicon glyphicon-earphone"></i> + 373 22 472 147<br>
-          <i class="glyphicon glyphicon-earphone"></i> + 373 22 428 387<br>
-          <i class="glyphicon glyphicon-earphone"></i> + 373 22 475 242<br>
+          <strong>Departamentul Transport</strong><br>
+          <% Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
+            <%= c.details %><br>
+          <% end %>
         </address>
       </div>
     </div>

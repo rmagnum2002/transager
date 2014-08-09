@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text 1:</strong>
+  <%= @page.text_1 %>
+</p>
+
+<p>
+  <strong>Text 2:</strong>
+  <%= @page.text_2 %>
+</p>
+
+<p>
+  <strong>Text 3:</strong>
+  <%= @page.text_3 %>
+</p>
+
+<p>
+  <strong>Locale:</strong>
+  <%= @page.locale %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

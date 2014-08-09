@@ -18,12 +18,18 @@ class WelcomeController < ApplicationController
   end
 
   def transport
-  end
-
-  def shop
+    @pages = Page.where(locale: @locale).where(page_type: 2).order('id asc')
+    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
   end
 
   def service
+    @pages = Page.where(locale: @locale).where(page_type: 3).order('id asc')
+    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
+  end
+
+  def shop
+    @pages = Page.where(locale: @locale).where(page_type: 4).order('id asc')
+    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
   end
 
   def contacts

@@ -1,5 +1,6 @@
 ro:
   logo: 'transport și expediție'
+  details: 'detalii'
   menu:
     home: 'Acasă'
     contacts: 'Contacte'
@@ -7,11 +8,11 @@ ro:
     transportation: 'Servicii Transport'
     service: 'Servicii Reparație'
   contact_type:
-    email: 'email'
+    email: 'E-mail'
     phone: "Telefon"
     phone_fax: "Telefon/Fax"
-    mobile: "mobil"
-    skype: 'skype'
+    mobile: "Mobil"
+    skype: 'Skype'
   department_id:
     transport: "departamentul transport"
     shop: "magazin"

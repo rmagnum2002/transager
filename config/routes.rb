@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :pages
+
   resources :contacts
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -9,9 +11,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get '/transport' => 'welcome#transport'
-  get '/shop' => 'welcome#shop'
-  get '/service' => 'welcome#service'
+  get '/transport' => 'welcome#transport', as: :transports
+  get '/transport/:id' => 'welcome#transport', as: :transport
+  get '/service' => 'welcome#service', as: :services
+  get '/service/:id' => 'welcome#service', as: :service
+  get '/shop' => 'welcome#shop', as: :shops
+  get '/shop/:id' => 'welcome#shop', as: :shop
   get '/contacts' => 'welcome#contacts'
   get 'set_locale' => 'welcome#set_locale'
 
