@@ -9,7 +9,7 @@
   <div class="col-md-6">
     <% if @pages.any? %>
     <p>
-      <%= @page.text_1 if @page.present? %>
+      <%= raw(@page.text_1) if @page.present? %>
     </p>
     <% else %>
       <%= render 'shared/nothing_found' %>

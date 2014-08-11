@@ -22,13 +22,28 @@ ActiveAdmin.register Page do
     actions
   end
 
+  show do |page|
+    attributes_table do
+      row :title
+      row :link_name
+      row :locale
+      row :page_type do
+        t(Page::PAGE_TYPE.invert[page.page_type])
+      end
+      row :text_1 do
+        raw(page.text_1)
+      end
+    end
+    active_admin_comments
+  end
+
   form do |f|
     f.inputs 'Contact' do
       f.input :title
       f.input :link_name
       f.input :page_type, as: :select, collection: Page::PAGE_TYPE.map{|value, key| [t(value), key] }
       f.input :locale, as: :select, collection: LOCALES.to_a
-      f.input :text_1
+      f.input :text_1, :as => :ckeditor
     end
     f.actions
   end

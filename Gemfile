@@ -27,12 +27,16 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'jquery-ui-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 gem "less-rails"
 gem 'bootstrap-sass-rails'
 # Autoprefixer adds browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
