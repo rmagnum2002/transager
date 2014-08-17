@@ -6,6 +6,25 @@ en:
     shop: 'Parts Shop'
     transportation: 'Transportation Services'
     service: 'Repair Services'
+  contact_type:
+    email: 'E-mail'
+    phone: "Phone"
+    phone_fax: "Phone/Fax"
+    mobile: "Mobile"
+    skype: 'Skype'
+  department_id:
+    transport: "transportation departament"
+    shop: "shop"
+    service: "service departament"
+    accountant: "accountant"
+  contact_form:
+    send_us_message: "Send us a message"
+    to_department: "To Departament"
+    full_name: "Full Name"
+    phone_number: "Telefon"
+    your_email: "Email"
+    message: "Mesage"
+    send_message: "Send mesage"
 
   date:
     abbr_day_names:

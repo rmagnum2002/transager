@@ -18,6 +18,14 @@ ru:
     shop: "Магазин"
     service: "Ремонтный отдел"
     accountant: "Бухгалтерия"
+  contact_form:
+    send_us_message: "Напишите нам сообщение"
+    to_department: "в отдел"
+    full_name: "Имя и Фамилия"
+    phone_number: "Телефон"
+    your_email: "Email"
+    message: "Сообщение"
+    send_message: "Отправить сообщение"
 
   date:
     abbr_day_names:

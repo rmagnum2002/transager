@@ -18,6 +18,14 @@ ro:
     shop: "magazin"
     service: "departamentul reparații"
     accountant: "contabilitate"
+  contact_form:
+    send_us_message: "Scrieți-ne un mesaj"
+    to_department: "către departamentul"
+    full_name: "Nume, Prenume"
+    phone_number: "Telefon"
+    your_email: "Email"
+    message: "Mesaj"
+    send_message: "Trimite mesaj"
 
   date:
     abbr_day_names:

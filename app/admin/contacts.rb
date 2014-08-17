@@ -14,6 +14,18 @@ ActiveAdmin.register Contact do
   #  permitted
   # end
 
+  index do
+    column :id
+    column :contact_type do |c|
+      t(Contact::CONTACT_TYPE.invert[c.contact_type])
+    end
+    column :details
+    column :created_at
+    column :updated_at
+
+    actions
+  end
+
   form do |f|
     f.inputs 'Contact' do
       f.input :contact_type, as: :select, collection: Contact::CONTACT_TYPE.map{|value, key| [t(value), key] }

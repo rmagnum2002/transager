@@ -24,10 +24,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <hr>
 <div class="col-md-12 contact_form">
   <div class="col-md-12">
-    <h3>Send us a message:</h3>
+    <h3><%= t('contact_form.send_us_message') %>:</h3>
     <form role="form">
       <div class="form-group">
-        <label for="select">Send message to:</label>
+        <label for="select"><%= t('contact_form.to_department') %>:</label>
         <select class="form-control" id="select">
           <option>Transportation department</option>
           <option>Service</option>
@@ -35,24 +35,24 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </select>
       </div>
       <div class="form-group">
-        <label for="full_name">Full Name</label>
+        <label for="full_name"><%= t('contact_form.full_name') %></label>
         <input type="text" class="form-control" id="full_name">
       </div>
       <div class="row">
       <div class="form-group col-md-6 col-sm-6">
-        <label for="phone">Phone number</label>
+        <label for="phone"><%= t('contact_form.phone_number') %></label>
         <input type="text" class="form-control" id="phone">
       </div>
       <div class="form-group col-md-6 col-sm-6">
-        <label for="exampleInputEmail1">Your email</label>
+        <label for="exampleInputEmail1"><%= t('contact_form.email') %></label>
         <input type="email" class="form-control" id="exampleInputEmail1">
       </div>
       </div>
       <div class="form-group">
-        <label for="message">Message</label>
+        <label for="message"><%= t('contact_form.message') %></label>
         <textarea class="form-control" rows="3" id="message"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary pull-right">Send message</button>
+      <button type="submit" class="btn btn-primary pull-right"><%= t('contact_form.send_message') %></button>
     </form>
   </div>
 </div>
