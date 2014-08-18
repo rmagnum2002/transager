@@ -1,4 +1,11 @@
 ro:
+  ro: "română"
+  en: "engleză"
+  ru: "rusa"
+  seo:
+    moto: 'companie de transport'
+  notice:
+    no_page: 'Nu avem informație în categoria <b>%{category}</b> în limba %{language}. Încercați mai târziu.'
   logo: 'transport și expediție'
   details: 'detalii'
   menu:

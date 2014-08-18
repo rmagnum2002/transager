@@ -15,21 +15,37 @@ class WelcomeController < ApplicationController
   end
 
   def index
+    @page_name = t('menu.home')
   end
 
   def transport
     @pages = Page.where(locale: @locale).where(page_type: 2).order('id asc')
-    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
+    @page = params[:id].present? ? @pages.where(link_name: params[:id]).first : @pages.first
+    unless @page.present?
+      redirect_to root_path, alert: t('notice.no_page', category: t('menu.transportation'), language: t(@locale))
+    else
+      @page_name = params[:id].present? ? @page.title : t('menu.transportation')
+    end
   end
 
   def service
     @pages = Page.where(locale: @locale).where(page_type: 3).order('id asc')
-    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
+    @page = params[:id].present? ? @pages.where(link_name: params[:id]).first : @pages.first
+    unless @page.present?
+      redirect_to root_path, alert: t('notice.no_page', category: t('menu.service'), language: t(@locale))
+    else
+      @page_name = params[:id].present? ? @page.title : t('menu.service')
+    end
   end
 
   def shop
     @pages = Page.where(locale: @locale).where(page_type: 4).order('id asc')
-    @page = params[:id].present? ? @pages.where(id: params[:id]).first : @pages.first
+    @page = params[:id].present? ? @pages.where(link_name: params[:id]).first : @pages.first
+    unless @page.present?
+      redirect_to root_path, alert: t('notice.no_page', category: t('menu.shop'), language: t(@locale))
+    else
+      @page_name = params[:id].present? ? @page.title : t('menu.shop')
+    end
   end
 
   def contacts

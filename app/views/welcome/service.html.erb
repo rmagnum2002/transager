@@ -2,7 +2,7 @@
   <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked">
       <% @pages.each do |p| %>
-      <li class="<%= 'active' if "#{p.id}-#{p.link_name}" == params[:id] %>"><%= link_to p.title, service_path(p) %></li>
+      <li class="<%= 'active' if "#{p.link_name}" == params[:id] %>"><%= link_to p.title, service_path(p.link_name) %></li>
       <% end %>
     </ul>
   </div>

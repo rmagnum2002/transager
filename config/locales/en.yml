@@ -1,5 +1,13 @@
 en:
+  ro: "romanian"
+  en: "english"
+  ru: "russian"
+  seo:
+    moto: 'transport company'
+  notice:
+    no_page: 'No information in <b>%{category}</b> category in %{language}. Please come back later.'
   logo: 'transport & forwarding'
+  details: 'details'
   menu:
     home: 'Home'
     contacts: 'Contacts'
