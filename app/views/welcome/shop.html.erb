@@ -2,21 +2,52 @@
   <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked">
       <% @pages.each do |p| %>
-      <li class="<%= 'active' if "#{p.link_name}" == params[:id] %>"><%= link_to p.title, shop_path(p.link_name) %></li>
+      <li class="<%= 'active' if "#{p.link_name}" == @page.link_name %>"><%= link_to p.title, shop_path(p.link_name) %></li>
       <% end %>
     </ul>
   </div>
   <div class="col-md-6">
     <% if @pages.any? %>
-    <p>
-      <%= @page.text_1 if @page.present? %>
-    </p>
+    <div>
+      <%= raw(@page.text_1) if @page.present? %>
+    </div>
     <% else %>
       <%= render 'shared/nothing_found' %>
     <% end %>
+
+    <h3><%= t('shop.partners') %></h3>
+    <hr>
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/1.jpg', class: 'img-responsive'), asset_path('logo/1.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'LEMFORDER' %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/2.jpg', class: 'img-responsive'), asset_path('logo/2.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'AIRTECH AIRSPRINGS' %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/3.jpg', class: 'img-responsive'), asset_path('logo/3.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'MAHLE ORIGINAL' %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/4.jpg', class: 'img-responsive'), asset_path('logo/4.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'BEHR' %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/5.jpg', class: 'img-responsive'), asset_path('logo/5.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'HELLA' %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= link_to image_tag('logo/6.jpg', class: 'img-responsive'), asset_path('logo/6.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'BPW' %>
+      </div>
+    </div>
+
   </div>
   <div class="col-md-4">
     <%= render 'shared/contacts_shop' %>
     <%= render 'shared/contacts_accountant' %>
+    <%= render 'shared/sidebar' %>
   </div>
 </div>

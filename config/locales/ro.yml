@@ -33,6 +33,8 @@ ro:
     your_email: "Email"
     message: "Mesaj"
     send_message: "Trimite mesaj"
+  shop:
+    partners: 'Parteneri'
 
   date:
     abbr_day_names:

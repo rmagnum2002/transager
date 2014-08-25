@@ -33,6 +33,8 @@ ru:
     your_email: "Email"
     message: "Сообщение"
     send_message: "Отправить сообщение"
+  shop:
+    partners: 'Партнеры'
 
   date:
     abbr_day_names:
