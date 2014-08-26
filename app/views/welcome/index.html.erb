@@ -6,7 +6,7 @@
         <%= render 'slider' %>
         <div class="caption">
           <h3><center>Trans Ager - Partenerul tău de încredere, oriunde şi oricînd în Europa</center></h3>
-          <p>
+          <p class="justify">
             “Trans Ager’’SRL este o întreprindere polivalentă şi viabilă cu capital privat integral care are ca obiecte de activitate transporturi rutiere internaţionale şi interne, service camioane şi magazin piese-auto camioane.
             Pornind activitatea sa în 1995 ca o întreprindere modestă astăzi dispune de o cuprinzătoare flotă de camioane, semiremorci de mărci europene, un garaj de proporţii şi o zonă de reparaţie proprie, fiind una dintre cele mai mari întreprinderi de transport din Republica Moldova şi prima la capitolul transport propriu, oferind locuri de muncă la mai bine de 100 de angajaţi.<br>
             Compania noastră se află într-un proces continuu de dezvoltare şi îmbunătăţire a serviciilor oferite clienţilor în condiţii de operativitate, eficienţă, şi siguranţă maximă.Toate aceste standarde occidentale sunt atinse beneficiind de un personal înalt calificat şi bine organizat pe departamente în scopul gestionării cît mai eficiente a activităţii ,precum şi de un parc auto modern.
@@ -22,7 +22,7 @@
         <%= image_tag 'parts.jpg' %>
         <div class="caption">
           <h3><center>Truck and Trailer Service</center></h3>
-          <p>Pentru acoperirea solicitărilor de service ale clienţilor noştri, Service Trans Ager dispune de toate echipamentele şi forţa de muncă pentru a presta  lucrări la cele mai înalte standarde calitative.
+          <p class="justify">Pentru acoperirea solicitărilor de service ale clienţilor noştri, Service Trans Ager dispune de toate echipamentele şi forţa de muncă pentru a presta  lucrări la cele mai înalte standarde calitative.
           Putem executa lucrări atît pentru camioane cît şi pentru remorci şi semiremorci, clientul nefiind nevoit să apeleze la mai multe centre service pentru a remedia o defecţiune...</p>
           <p><%= link_to t('details'), shops_path %></p>
         </div>
@@ -33,7 +33,7 @@
         <%= image_tag 'international.jpg' %>
         <div class="caption">
           <h3><center>International transportation</center></h3>
-          <p>Camioanele noastre pot fi văzute pe marile autostrăzi ale Europei de la Atlantic pînă la Ural şi chiar Siberia” definind încrederea clientului şi înalta noastră siguranţă şi responsabilitate...</p>
+          <p class="justify">Camioanele noastre pot fi văzute pe marile autostrăzi ale Europei de la Atlantic pînă la Ural şi chiar Siberia” definind încrederea clientului şi înalta noastră siguranţă şi responsabilitate...</p>
           <p><%= link_to t('details'), transports_path %></p>
         </div>
       </div>
@@ -41,6 +41,34 @@
   </div>
   <div class="col-sm-6 col-md-4">
     <%= render 'shared/sidebar' %>
+    <h3><%= t('index.clients') %></h3>
+    <hr>
+    <div class="row">
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/1.jpg', class: 'img-responsive'), asset_path('logo/1.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'LEMFORDER' %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/2.jpg', class: 'img-responsive'), asset_path('logo/2.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'AIRTECH AIRSPRINGS' %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/3.jpg', class: 'img-responsive'), asset_path('logo/3.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'MAHLE ORIGINAL' %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/4.jpg', class: 'img-responsive'), asset_path('logo/4.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'BEHR' %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/5.jpg', class: 'img-responsive'), asset_path('logo/5.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'HELLA' %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-md-offset-2">
+        <%= link_to image_tag('logo/6.jpg', class: 'img-responsive'), asset_path('logo/6.jpg'),
+                   class: 'thumbnail fancybox', rel: 'gallery1', title: 'BPW' %>
+      </div>
+    </div>
   </div>
 </div>
 <div class="clearfix"></div>

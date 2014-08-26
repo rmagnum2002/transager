@@ -40,7 +40,7 @@
 
     <%= yield %>
     <div class="col-md-12 footer">
-      <div class="col-md-3">
+      <div class="col-md-3 hidden-xs hidden-sm">
         <ul>
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Transportation', root_path %></li>
@@ -48,7 +48,7 @@
           <li><%= link_to 'Contacts', contacts_path %></li>
         </ul>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 hidden-xs hidden-sm">
 <!--         <ul>
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Transportation', root_path %></li>
@@ -56,7 +56,7 @@
           <li><%= link_to 'Contacts', contacts_path %></li>
         </ul> -->
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 hidden-xs hidden-sm">
 <!--         <ul>
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Transportation', root_path %></li>
@@ -64,14 +64,15 @@
           <li><%= link_to 'Contacts', contacts_path %></li>
         </ul> -->
       </div>
-      <div class="col-md-3">
-        <address>
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <ul>
           <strong>Departamentul Transport</strong><br>
           <% Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
-            <%= c.details %><br>
+            <li><%= c.details %></li>
           <% end %>
-        </address>
+        </ul>
       </div>
+      <div class="clearfix"></div>
     </div>
     <div class="clearfix"></div>
   </div>

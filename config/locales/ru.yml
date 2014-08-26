@@ -35,6 +35,8 @@ ru:
     send_message: "Отправить сообщение"
   shop:
     partners: 'Партнеры'
+  index:
+    clients: 'Наши клиенты:'
 
   date:
     abbr_day_names:

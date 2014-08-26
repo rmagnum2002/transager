@@ -5,7 +5,7 @@ en:
   seo:
     moto: 'transport company'
   notice:
-    no_page: 'No information in <b>%{category}</b> category in %{language}. Please come back later.'
+    no_page: 'No information in <b>%{category}</b> category in %{language}. Please visit us later.'
   logo: 'transport & forwarding'
   details: 'details'
   menu:
@@ -35,6 +35,8 @@ en:
     send_message: "Send mesage"
   shop:
     partners: 'Partners'
+  index:
+    clients: 'We deliver for:'
 
   date:
     abbr_day_names:

@@ -35,6 +35,8 @@ ro:
     send_message: "Trimite mesaj"
   shop:
     partners: 'Parteneri'
+  index:
+    clients: 'Transportăm pentru:'
 
   date:
     abbr_day_names:
