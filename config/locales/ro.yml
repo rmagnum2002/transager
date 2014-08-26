@@ -37,6 +37,8 @@ ro:
     partners: 'Parteneri'
   index:
     clients: 'Transportăm pentru:'
+  contact:
+    address: 'Adresă'
 
   date:
     abbr_day_names:

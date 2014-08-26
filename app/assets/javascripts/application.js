@@ -19,4 +19,5 @@
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();
+  $('.tip').tooltip()
 });

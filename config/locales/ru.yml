@@ -37,6 +37,8 @@ ru:
     partners: 'Партнеры'
   index:
     clients: 'Наши клиенты:'
+  contact:
+    address: 'Aдрес'
 
   date:
     abbr_day_names:

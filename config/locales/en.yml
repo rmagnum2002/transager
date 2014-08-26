@@ -37,6 +37,8 @@ en:
     partners: 'Partners'
   index:
     clients: 'We deliver for:'
+  contact:
+    address: 'Address'
 
   date:
     abbr_day_names:
