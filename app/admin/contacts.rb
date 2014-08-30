@@ -26,6 +26,20 @@ ActiveAdmin.register Contact do
     actions
   end
 
+  show do
+    attributes_table do
+      row :id
+      row :contact_type do
+        t(Contact::CONTACT_TYPE.invert[contact.contact_type])
+      end
+      row :department_id do
+        t(Contact::DEPARTMENT_ID.invert[contact.department_id])
+      end
+      row :details
+    end
+    active_admin_comments
+  end
+
   form do |f|
     f.inputs 'Contact' do
       f.input :contact_type, as: :select, collection: Contact::CONTACT_TYPE.map{|value, key| [t(value), key] }

@@ -9,6 +9,9 @@
         <tr>
           <td><%= t(Contact::CONTACT_TYPE.invert[c.contact_type]) %></td>
           <td><%= c.details %></td>
+          <% if current_admin_user %>
+          <td><%= link_to 'edit', admin_contact_path(c), target: :blank %></td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
