@@ -35,7 +35,7 @@ ActiveAdmin.register Page do
       end
     end
     panel 'Gallery' do
-      render 'admin/galleries/images', gallery: page.gallery
+      render 'admin/galleries/images', gallery: page.gallery if page.gallery.present?
     end
     active_admin_comments
   end
