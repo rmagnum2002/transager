@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+  belongs_to :gallery
+
   PAGE_TYPE = {
     :"page_type.root" => 1,
     :"page_type.transport" => 2,

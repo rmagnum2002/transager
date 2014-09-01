@@ -95,6 +95,10 @@ GEM
     ckeditor (4.1.0)
       mime-types
       orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -169,6 +173,11 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     polyamorous (1.0.0)
       activerecord (>= 3.0)
@@ -332,6 +341,7 @@ DEPENDENCIES
   jquery-ui-rails
   less-rails
   mini_magick
+  paperclip (~> 4.2)
   pg
   quiet_assets
   rails (= 4.1.4)

@@ -4,7 +4,7 @@ ActiveAdmin.register Page do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :link_name, :title, :text_1, :page_type, :locale, :on, :contact
+  permit_params :link_name, :title, :text_1, :page_type, :locale, :on, :contact, :gallery_id
   #
   # or
   #
@@ -34,6 +34,9 @@ ActiveAdmin.register Page do
         raw(page.text_1)
       end
     end
+    panel 'Gallery' do
+      render 'admin/galleries/images', gallery: page.gallery
+    end
     active_admin_comments
   end
 
@@ -44,6 +47,7 @@ ActiveAdmin.register Page do
       f.input :page_type, as: :select, collection: Page::PAGE_TYPE.map{|value, key| [t(value), key] }
       f.input :locale, as: :select, collection: LOCALES.to_a
       f.input :text_1, :as => :ckeditor
+      f.input :gallery_id, as: :select, collection: Gallery.all.map{|g| [g.name, g.id]}
     end
     f.actions
   end

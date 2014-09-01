@@ -19,6 +19,12 @@
     <% else %>
       <%= render 'shared/nothing_found' %>
     <% end %>
+    <% if @page.gallery.present? %>
+      <div class="page-header">
+        <h3><%= t('gallery').capitalize %> <small><%= @page.gallery.name %></small></h3>
+      </div>
+      <%= render 'shared/gallery', gallery: @page.gallery.name %>
+    <% end %>
 
     <h3><%= t('shop.partners') %></h3>
     <hr>

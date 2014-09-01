@@ -1,0 +1,4 @@
+<% gallery.gallery_items.each do |item| %>
+  <%= link_to image_tag(item.image.url(:thumb), class: 'img-responsive'), item.image.url,
+                   class: 'thumbnail fancybox', rel: "gallery_#{gallery.id}", title: "Gallery - #{gallery.name}" %>
+<% end %>
