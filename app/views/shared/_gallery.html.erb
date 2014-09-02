@@ -1,7 +1,9 @@
+<div class="row">
 <% gallery.gallery_items.each do |item| %>
-  <div class="col-md-4 col-xs-3">
-  <%= link_to image_tag(item.image.url(:thumb)), item.image.url,
+  <div class="col-md-4 col-xs-6">
+  <%= link_to image_tag(item.image.url(:thumb), class: 'img-responsive'), item.image.url,
                    class: 'thumbnail fancybox', rel: "gallery_#{gallery.id}", title: "Gallery - #{gallery.name}" %>
   </div>
 <% end %>
+</div>
 <div class="clearfix"></div>
