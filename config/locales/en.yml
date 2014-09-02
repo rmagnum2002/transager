@@ -3,6 +3,8 @@ en:
   en: "english"
   ru: "russian"
   gallery: 'gallery'
+  int_transport: 'International transportation'
+  t_and_t_service: 'Truck and Trailer Service'
   seo:
     moto: 'transport company'
   notice:

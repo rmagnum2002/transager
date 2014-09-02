@@ -16,6 +16,7 @@ class WelcomeController < ApplicationController
 
   def index
     @page_name = t('menu.home')
+    @page = Page.where(locale: @locale).where(page_type: 1).first
   end
 
   def transport
