@@ -14,11 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('menu.home'), root_path %></li>
-        <li class="<%= 'active' if action_name == 'transport' %>"><%= link_to t('menu.transportation'), transports_path %></li>
-        <li class="<%= 'active' if action_name == 'service' %>"><%= link_to t('menu.service'), services_path %></li>
-        <li class="<%= 'active' if action_name == 'shop' %>"><%= link_to t('menu.shop'), shops_path %></li>
-        <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to t('menu.contacts'), contacts_path %></li>
+        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to t('menu.home'), root_path, title: t('menu.home') %></li>
+        <li class="<%= 'active' if action_name == 'transport' %>"><%= link_to t('menu.transportation'), transports_path, title: t('menu.transportation') %></li>
+        <li class="<%= 'active' if action_name == 'service' %>"><%= link_to t('menu.service'), services_path, title: t('menu.service') %></li>
+        <li class="<%= 'active' if action_name == 'shop' %>"><%= link_to t('menu.shop'), shops_path, title: t('menu.shop') %></li>
+        <li class="<%= 'active' if current_page?(contacts_path) %>"><%= link_to t('menu.contacts'), contacts_path, title: t('menu.contacts') %></li>
       </ul>
 <!--       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
