@@ -24,7 +24,16 @@
   <hr>
   <div class="col-md-8 col-md-offset-2 contact_form">
   <h3><%= t('contact_form.send_us_message') %>:</h3>
-  <form role="form">
+  <%= form_for @feedback, html: {role: 'form'} do |f| %>
+    <% if @feedback.errors.any? %>
+      <div id="error_explanation">
+        <ul>
+        <% @feedback.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="form-group">
       <label for="select"><%= t('contact_form.to_department') %>:</label>
       <select class="form-control" id="select">
@@ -51,8 +60,8 @@
       <label for="message"><%= t('contact_form.message') %></label>
       <textarea class="form-control" rows="3" id="message"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary pull-right"><%= t('contact_form.send_message') %></button>
-  </form>
+    <%= f.submit t('contact_form.send_message'), class: 'btn btn-primary pull-right' %>
+  <% end %>
 </div>
 
 </div>
