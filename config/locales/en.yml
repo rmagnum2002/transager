@@ -42,6 +42,8 @@ en:
     clients: 'We deliver for:'
   contact:
     address: 'Address'
+  notices:
+    feedback_sent: 'Your message was successfully sent.'
 
   date:
     abbr_day_names:

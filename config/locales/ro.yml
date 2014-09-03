@@ -42,6 +42,8 @@ ro:
     clients: 'Transportăm pentru:'
   contact:
     address: 'Adresă'
+  notices:
+    feedback_sent: 'Mesajul Dvs a fost trimis cu succes.'
 
   date:
     abbr_day_names:
@@ -323,3 +325,14 @@ ro:
               blank: 'Câmp obligatoriu'
             details:
               blank: 'Câmp obligatoriu'
+        feedback:
+          attributes:
+            name:
+              blank: 'Câmp obligatoriu'
+            email:
+              blank: 'Câmp obligatoriu'
+              invalid: 'Nu este în formatul corect. Exemplu: name@mail.md'
+            message:
+              blank: 'Mesaj obligatoriu'
+            department_id:
+              blank: 'Vă rugăm să selectați destinatarul.'

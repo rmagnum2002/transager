@@ -1,2 +1,2 @@
-class PagesController < InheritedResources::Base
+class PagesController < ApplicationController
 end
