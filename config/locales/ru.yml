@@ -42,6 +42,8 @@ ru:
     clients: 'Наши клиенты:'
   contact:
     address: 'Aдрес'
+  notices:
+    feedback_sent: 'Ваше сообщение было успешно отправлено.'
 
   date:
     abbr_day_names:
@@ -373,3 +375,14 @@ ru:
               blank: 'Обязательное поле'
             details:
               blank: 'Обязательное поле'
+        feedback:
+          attributes:
+            name:
+              blank: 'Обязательное поле'
+            email:
+              blank: 'Обязательное поле'
+              invalid: 'не в правильном формате. Пример: name@mail.md'
+            message:
+              blank: 'Обязательное поле'
+            department_id:
+              blank: 'Выберите адресата.'
