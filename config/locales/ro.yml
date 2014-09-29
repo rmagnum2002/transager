@@ -2,6 +2,8 @@ ro:
   ro: "română"
   en: "engleză"
   ru: "rusa"
+  about_us: 'despre noi'
+  about: 'Companie specializată în transport de mărfuri, reparația vehiculelor de mare tonaj și vânzarea pieselor'
   gallery: 'gallerie'
   int_transport: 'Transport Internațional'
   t_and_t_service: 'Reparții Camioane și Remorci'
@@ -31,7 +33,7 @@ ro:
   contact_form:
     send_us_message: "Scrieți-ne un mesaj"
     to_department: "către departamentul"
-    full_name: "Nume, Prenume"
+    full_name: "Numele și Prenume Dvs."
     phone_number: "Telefon"
     your_email: "Email"
     message: "Mesaj"

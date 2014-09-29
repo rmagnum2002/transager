@@ -1,73 +1,121 @@
-<div class="col-md-12">
-<div class="col-md-8">
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&language=<%= current_language %>"></script>
-  <script type="text/javascript">
-  function initialize() {
-    var myLatlng = new google.maps.LatLng(46.9939143, 28.9090122);
-    var mapOptions = {
-      zoom: 15,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+<div class="full_page_photo"><div id="map"></div></div>
+<div class="container">
 
+  <section class="hgroup">
+    <h1><%= t('contact_form.send_us_message') %></h1>
+    <!-- <h2>This is a subtitle used optionally for explaining more...</h2> -->
+<!--     <ul class="breadcrumb pull-right">
+      <li><a href="index.html">Home</a> </li>
+      <li class="active">Contact</li>
+    </ul> -->
+  </section>
+  <section>
+    <div class="row">
+      <div class="office_address col-sm-4 col-md-4">
+        <div class="team_member" style='background-color: #222222;'>
+          <%#= image_tag 'transager_logo.png', width: '90', height: '90', alt: 'logo' %>
+          <h5>Trans Ager</h5>
+          <small><%= t('logo') %></small><br><br>
+          <div class="team_social">
+            <%= link_to '<i class="fa fa-facebook"></i>'.html_safe, 'https://www.facebook.com/transager', target: :blank %>
+            <!-- <a href="https://twitter.com/leonartgr"><i class="fa fa-twitter"></i></a> -->
+            <!-- <a href="#pinterest"><i class="fa fa-linkedin"></i></a> -->
+            <!-- <a href="https://github.com/PlethoraThemes"><i class="fa fa-github-alt"></i></a> -->
+          </div>
+          <address>
+            <strong></strong><br>
+            Uzinelor 171 A<br>
+            Chișinău, MD2000<br>
+            <abbr title="Phone">P:</abbr> (123) 456-7890
+          </address>
+          <address>
+            <a href="mailto:#">transager@company.md</a>
+          </address>
+          <br><br><br><br><br>
+        </div>
+      </div>
+      <div class="contact_form col-sm-8 col-md-8">
+        <%= simple_form_for(@feedback, defaults: { input_html: { class: 'form-control'}, label_html: {class: 'form_label' }}, html: { id: 'contact_form', novalidate: true }) do |f| %>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <%= f.input :department_id, collection: Contact::DEPARTMENT_ID.map{|c| [t("#{c[0]}").capitalize, c[1]]}, input_html: {autofocus: true}, label: t('contact_form.to_department').capitalize %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <%= f.input :name, label: t('contact_form.full_name') %>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <%= f.input :email, as: 'email' %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <%= f.input :phone, label: t('contact_form.phone_number') %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-12">
+              <%= f.input :message, as: 'text', input_html: {id: 'message', rows: '8'}, label: t('contact_form.message') %>
+            </div>
+            <div class="col-sm-12 col-md-12"><br/>
+              <%= f.submit t('contact_form.send_message'), class: 'btn btn-primary', id: 'submit_btn' %>
+              <span id="notice" class="alert alert-warning alert-dismissable hidden" style="margin-left:20px;"></span>
+            </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <hr>
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <%= render 'shared/contacts_transport' %>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <%= render 'shared/contacts_service' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-6">
+      <%= render 'shared/contacts_shop' %>
+    </div>
+    <div class="col-md-6 col-sm-6">
+      <%= render 'shared/contacts_accountant' %>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=<%= @locale %>"></script>
+<script type="text/javascript">
+  // When the window has finished loading create our google map below
+  google.maps.event.addDomListener(window, 'load', init);
+
+  function init() {
+    // The latitude and longitude to center the map (always required)
+    // You can find it easily at http://universimmedia.pagesperso-orange.fr/geo/loc.htm
+    var myLatlng = new google.maps.LatLng(46.9939143, 28.9090122); // London
+    // Basic options for a simple Google Map
+    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    var mapOptions = {
+    // How zoomed in you want the map to start at (always required)
+    zoom: 16,
+    // Disable scrollwheel zooming on the map
+    scrollwheel: true,
+    center: myLatlng,
+    // How you would like to style the map.
+    // This is where you would paste any style. For example paste a style found on Snazzy Maps.
+    styles: [{'featureType':'water','stylers':[{'visibility':'on'},{'color':'#428BCA'}]},{'featureType':'landscape','stylers':[{'color':'#f2e5d4'}]},{'featureType':'road.highway','elementType':'geometry','stylers':[{'color':'#c5c6c6'}]},{'featureType':'road.arterial','elementType':'geometry','stylers':[{'color':'#e4d7c6'}]},{'featureType':'road.local','elementType':'geometry','stylers':[{'color':'#fbfaf7'}]},{'featureType':'poi.park','elementType':'geometry','stylers':[{'color':'#c5dac6'}]},{'featureType':'administrative','stylers':[{'visibility':'on'},{'lightness':33}]},{'featureType':'road'},{'featureType':'poi.park','elementType':'labels','stylers':[{'visibility':'on'},{'lightness':20}]},{},{'featureType':'road','stylers':[{'lightness':20}]}]
+    };
+    // Get the HTML DOM element that will contain your map
+    // We are using a div with id="map" seen up in the <body>
+    var mapElement = document.getElementById('map');
+    // Create the Google Map using out element and options defined above
+    var map = new google.maps.Map(mapElement, mapOptions);
+    // Put a marker at the center of the map
     var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
       title: 'Uzinelor 171A, Chișinău, Moldova, Republic of'
     });
   }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
-
-  <div id="map_canvas"></div>
-  <hr>
-  <div class="col-md-8 col-md-offset-2 contact_form">
-  <h3><%= t('contact_form.send_us_message') %>:</h3>
-  <%= simple_form_for(@feedback, defaults: { input_html: { class: 'form-control'}, label_html: {class: 'form_label' }}, html: { novalidate: true }) do |f| %>
-    <div class="form-group">
-      <%= f.input :department_id, collection: Contact::DEPARTMENT_ID.map{|c| [t("#{c[0]}").capitalize, c[1]]}, input_html: {autofocus: true} %>
-    </div>
-    <div class="form-group">
-      <%= f.input :name %>
-    </div>
-    <div class="row">
-      <div class="form-group col-md-6 col-sm-6">
-        <%= f.input :phone %>
-      </div>
-      <div class="form-group col-md-6 col-sm-6">
-        <%= f.input :email, as: 'email' %>
-      </div>
-    </div>
-    <div class="form-group">
-      <%= f.input :message, as: 'text' %>
-    </div>
-    <%= f.submit t('contact_form.send_message'), class: 'btn btn-primary pull-right' %>
-  <% end %>
-</div>
-
-</div>
-
-<div class="col-md-4">
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title"><%= t('contact.address') %></h3>
-    </div>
-    <div class="panel-body phones">
-      <address>
-        <strong>Trans Ager srl</strong><br>
-        Uzinelor 171A, Chișinău<br>
-        Moldova, Republic of<br>
-        MD2000<br>
-      </address>
-    </div>
-  </div>
-
-  <%= render 'shared/contacts_transport_department' %>
-  <%= render 'shared/contacts_repair_department' %>
-  <%= render 'shared/contacts_shop' %>
-  <%= render 'shared/contacts_accountant' %>
-  <div class="clearfix"></div>
-  <%= render 'shared/sidebar' %>
-</div>
-</div>
+</script>

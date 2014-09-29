@@ -1,15 +1,12 @@
-<div class="panel panel-primary">
-  <%= image_tag 'tow.gif',class: 'img-responsive' %>
-  <div class="col-md-12 caption">
-    <h4><center>Truck and Trailer Rescue Service</center></h4>
-      <P class="justify">Trans Ager S.R.L.dispune de 2 camioane de tractare care funcţionează 24/24 atît pe teritoriul cît şi în afara Republicii Moldova.
-      Prin autospecialele sale Trans Ager oferă servicii de recuperare şi tractare/remorcare pentru vehiculele grele.</P>
-      <p><%#= link_to t('details'), services_path %></p>
-      <center>
-        <strong> +(373) 224 75 379 </strong><br>
-        <strong> +(373) 794 00 416 </strong>
-      </center>
-  </div>
-  <div class="clearfix"></div>
-  <br>
-</div>
+<% if @page.present? && @page.gallery.present? %>
+<aside class="widget ads clearfix">
+  <h4>Gallery</h4>
+  <%= render 'shared/gallery', gallery: @page.gallery %>
+</aside>
+<% end %>
+
+<%# if @pages.present? %>
+  <%# @pages.each do |p| %>
+  <!-- <li class="<%#= 'active' if "#{p.link_name}" == @page.link_name %>"><%#= link_to p.title, transport_path(p.link_name), title: p.title %></li> -->
+  <%# end %>
+<%# end %>

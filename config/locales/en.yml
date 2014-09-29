@@ -2,6 +2,8 @@ en:
   ro: "romanian"
   en: "english"
   ru: "russian"
+  about_us: 'about us'
+  about: 'Company specialized in international goods transportation, truck and trailer services and truck parts selling'
   gallery: 'gallery'
   int_transport: 'International transportation'
   t_and_t_service: 'Truck and Trailer Service'
@@ -31,7 +33,7 @@ en:
   contact_form:
     send_us_message: "Send us a message"
     to_department: "To Departament"
-    full_name: "Full Name"
+    full_name: "Your Full Name"
     phone_number: "Telefon"
     your_email: "Email"
     message: "Mesage"

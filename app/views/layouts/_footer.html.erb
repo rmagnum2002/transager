@@ -1,0 +1,69 @@
+<footer>
+<!--   <section class="twitter_feed_wrapper">
+    <div class="container">
+      <div class="row wow animated fadeInUp">
+        <div class="twitter_feed_icon col-sm-1 col-md-1"><a href="#twitter"><i class="fa fa-twitter"></i></a></div>
+        <div class="col-sm-11 col-md-11">
+          <blockquote>
+            <p>This Clean, Flexible, Multipurpose Bootstrap 3.1.1 HTML5 Template will soon become a Wordpress theme with great support!  <a href="#">http://unhub.com/LIot</a></p>
+            — LeonArt (@leonartgr) <a href="https://twitter.com/plethorathemes/">April 4, 2014</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section id="footer_teasers_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="footer_teaser col-sm-4 col-md-4">
+          <h3><%= t('about_us') %></h3>
+          <p><%= t('about') %></p>
+          <p><i class="fa fa-map-marker"></i> Uzinelor 171A, Chișinău, Moldova</p>
+          <p><i class="fa fa-phone"></i> (+30) 265-9987</p>
+          <p><i class="fa fa-print"></i> (+30) 9854-7855</p>
+          <p><i class="fa fa-envelope"></i> transager@company.md</p>
+        </div>
+        <div class="footer_teaser col-sm-4 col-md-4">
+          <h3>Anunțuri</h3>
+          <ul class="media-list">
+            <li class="media">
+              <a href="#" class="media-date">19<span>FEB</span></a>
+              <h5 class="media-heading"><a href="#">Media heading, this is a title of a news...</a></h5>
+              <p>Fugiat dapibus, tellus ac cursus commodo, ut fermentum...</p>
+            </li>
+            <li class="media">
+              <a href="#" class="media-date">18<span>FEB</span></a>
+              <h5 class="media-heading"><a href="#">Media heading, of a news item.</a></h5>
+              <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_teaser col-sm-4 col-md-4">
+          <h3><%= t('menu.contacts') %></h3>
+          <ul class="footer_ul">
+            <% Contact.order('contact_type asc').where(department_id: [1, 2]).group_by(&:department_id).each do |id, contacts| %>
+              <li>
+                <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
+                <ul class="footer_ul">
+                  <% contacts.each do |c| %>
+                    <li>
+                      <%= footer_li(c) %>
+                      &nbsp;&nbsp;
+                      <%= c.details %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+              <br>
+            <% end %>
+          </ul>
+          <!-- <p>All photos © by <a href="http://www.dimitragiannouka.com" target="_blank">Dimitra Giannouka</a>.</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+
+<%# Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
+  <!-- <li><%#= c.details %></li> -->
+<%# end %>

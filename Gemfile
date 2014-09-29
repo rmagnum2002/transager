@@ -30,6 +30,7 @@ gem 'jquery-ui-rails'
 gem 'fancybox2-rails', '~> 0.2.8'
 gem "less-rails"
 gem 'bootstrap-sass-rails'
+gem "font-awesome-rails"
 # Autoprefixer adds browser vendor prefixes automatically
 gem 'autoprefixer-rails'
 gem 'devise'
