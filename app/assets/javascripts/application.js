@@ -15,7 +15,13 @@
 //= require bootstrap
 //= require jquery_ujs
 //= require fancybox
-//= require_tree .
+//= require jquery.flexslider.js
+//= require jquery.prettyPhoto.js
+//= require easing.js
+//= require wow.min.js
+//= require jquery.ui.totop.js
+//= require app.js
+
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();

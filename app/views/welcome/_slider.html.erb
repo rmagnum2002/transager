@@ -1,48 +1,38 @@
-<div class="col-md-12">
-  <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-captions" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-captions" data-slide-to="1" class=""></li>
-      <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
-      <li data-target="#carousel-example-captions" data-slide-to="3" class=""></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag 'slider_office.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-<!--         <div class="carousel-caption">
-          <div class="slider_caption">Shipping and Air Trasnport</div>
-          <div class="hidden-xs"><center>We make sure your cargo is delivered where you need it</center></div>
-        </div> -->
-      </div>
-      <div class="item">
-        <%= image_tag 'container.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-<!--         <div class="carousel-caption">
-          <div class="slider_caption">Shipping and Air Trasnport</div>
-          <div class="hidden-xs"><center>We make sure your cargo is delivered where you need it</center></div>
-        </div> -->
-      </div>
-      <div class="item">
-        <%= image_tag 'curtain.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-<!--         <div class="carousel-caption">
-          <div class="slider_caption">Road Transportation</div>
-          <div class="hidden-xs"><center>Refrigerated, Vans and Tarpaulin Trailer Units.</center></div>
-        </div> -->
-      </div>
-      <div class="item">
-        <%= image_tag 'shop.jpg', alt: 'trnasager-container-transport', class: 'img-responsive' %>
-<!--         <div class="carousel-caption">
-          <div class="slider_caption">Truck Service and Parts Shop</div>
-          <div class="hidden-xs"><center>We have eveything you need for your truck, from parts to specialists.</center></div>
-        </div> -->
-      </div>
-    </div>
-    <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+<section id="slider_wrapper" class="slider_wrapper full_page_photo">
+  <div id="main_flexslider" class="flexslider">
+    <ul class="slides">
+      <li class="item" style="background-image: url('<%= asset_url('1.jpg') %>')">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Partenerul tău de încredere, oriunde şi oricînd în Europa</h1>
+            <p class="lead skincolored">
+              <strong>Trans Ager</strong> este una din primele companii de transport din Republica Moldova,
+              având experiență de peste <strong>12 ani</strong> în <strong>transport local</strong> și <strong>internațional</strong> de mărfuri.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="item" style="background-image:url('<%= asset_url('2.jpg') %>')">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Magazin piese și accesorii...</h1>
+            <p class="lead skincolored">
+              Piese și accesorii pentru camioane de diferite branduri de la diferiți producători.
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="item" style="background-image:url('<%= asset_url('3.jpg') %>')">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Servicii reparații a autovehiculelor de mare tonaj</h1>
+            <p class="lead skincolored">
+              Reparația unităților frigorifice, motoarelor, caroseriei, diagnosticare și multe alte servicii la o înaltă calitate.
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
-</div>
-<div class="clearfix"></div>
-<hr>
+</section>
+

@@ -1,34 +1,46 @@
-<div class="col-md-12">
-  <div class="col-md-2">
-    <ul class="nav nav-pills nav-stacked">
-      <% @pages.each do |p| %>
-      <li class="<%= 'active' if "#{p.link_name}" == @page.link_name %>"><%= link_to p.title, transport_path(p.link_name), title: p.title %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="col-md-6">
+<div class="container">
+  <section class="hgroup">
     <% if @pages.any? %>
-      <% if current_admin_user %>
-        <div class="alert alert-warning fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-          <%= link_to "Vezin în admin", admin_page_path(@page), target: :blank %> |
-          <%= link_to "Editează pagina".html_safe, edit_admin_page_path(@page), target: :blank %>
+    <h1><%= @page.title %></h1>
+    <% end %>
+  </section>
+  <section>
+    <div class="row">
+      <div id="leftcol" class="col-sm-8 col-md-8">
+        <article class="post">
+          <div class="post_content">
+            <!-- <figure><%#= image_tag 'portfolio/p4.jpg' %></figure> -->
+            <% if @pages.any? %>
+              <% if current_admin_user %>
+              <div class="alert alert-warning fade in" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <%= link_to "Vezin în admin", admin_page_path(@page), target: :blank %> |
+                <%= link_to "Editează pagina".html_safe, edit_admin_page_path(@page), target: :blank %>
+              </div>
+              <% end %>
+            <%= raw(@page.text_1) if @page.present? %>
+            <% else %>
+              <%= render 'shared/nothing_found' %>
+            <% end %>
+          </div>
+        </article>
+        <% if @page.present? && @page.gallery.present? %>
+        <div class="widget ads clearfix">
+          <h4>Gallery</h4>
+          <%= render 'shared/gallery', gallery: @page.gallery %>
         </div>
-      <% end %>
-      <%= raw(@page.text_1) if @page.present? %>
-    <% else %>
-      <%= render 'shared/nothing_found' %>
-    <% end %>
-
-    <% if @page.gallery.present? %>
-      <div class="page-header">
-        <h3><%= t('gallery').capitalize %> <small><%= @page.gallery.name %></small></h3>
+        <% end %>
       </div>
-      <%= render 'shared/gallery', gallery: @page.gallery %>
-    <% end %>
-  </div>
-  <div class="col-md-4">
-    <%= render 'shared/contacts_transport_department' %>
-    <%= render 'shared/sidebar' %>
-  </div>
+      <div id="sidebar" class="col-sm-4 col-md-4">
+        <aside class="widget">
+          <h4><center><%= t('menu.contacts') %></center></h4>
+          <div class="col-md-12 col-sm-12">
+            <%= render 'shared/contacts_transport' %>
+            <%= render 'shared/contacts_accountant' %>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
 </div>

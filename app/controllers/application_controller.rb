@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :set_locale_filter
+  before_filter :prepare_menu
 
   def set_locale_filter
     if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])
@@ -18,6 +19,12 @@ class ApplicationController < ActionController::Base
 
     I18n.locale = LOCALES[@locale]
     true
+  end
+
+  def prepare_menu
+    @transport_pages_links = Page.where(page_type: 2).where(locale: current_language).order('id asc')
+    @service_pages_links = Page.where(page_type: 3).where(locale: current_language).order('id asc')
+    @shop_pages_links = Page.where(page_type: 4).where(locale: current_language).order('id asc')
   end
 
   helper_method :current_language

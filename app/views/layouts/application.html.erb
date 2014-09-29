@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic" rel="stylesheet" type="text/css">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="robots" content="index, follow" />
   <meta name="keywords" content="Transager,transport maritim,transport autocare,service camioane,reparatii camioane,baterii auto,baterii camioane,transport international,camioane ieftine,Piese Autocamioane,MAN in Moldova,tractare camioane moldova,chisinau" />
@@ -12,69 +13,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="container">
-    <div class="header_title">
-      <ul class='lang pull-right'>
-        <li class="dropdown">
-          <a id="drop5" role="button" data-toggle="dropdown" href="#"><%= current_language.upcase %><span class="caret"></span></a>
-          <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
-            <% LOCALES.keys.each do |k| %>
-              <li class=<%= "active" if @locale == k %> role="presentation">
-                <%= link_to k.upcase, set_locale_path(:lang => k,:back => request.fullpath), role: 'menuitem' %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-      <%= render 'layouts/logo' %>
+  <header>
+    <div class="container">
+      <%= render 'layouts/navbar' %>
     </div>
-    <%= render 'layouts/navbar' %>
-    <% [:notice, :error, :alert].each do |level| %>
-      <% unless flash[level].blank? %>
-        <div class="alert alert-<%= flash_class(level) %> alert-dismissible" role="alert">
-          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-          <%= content_tag :p, sanitize(flash[level]) %>
-        </div>
-      <% end %>
+  </header><!-- /header -->
+  <% [:notice, :error, :alert].each do |level| %>
+    <% unless flash[level].blank? %>
+      <div class="alert alert-<%= flash_class(level) %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <%= content_tag :p, sanitize(flash[level]) %>
+      </div>
     <% end %>
-
+  <% end %>
+  <div class="main">
     <%= yield %>
-    <div class="col-md-12 footer">
-      <div class="col-md-3 hidden-xs hidden-sm">
-        <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Transportation', root_path %></li>
-          <li><%= link_to 'Service', root_path %></li>
-          <li><%= link_to 'Contacts', contacts_path %></li>
-        </ul>
-      </div>
-      <div class="col-md-3 hidden-xs hidden-sm">
-<!--         <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Transportation', root_path %></li>
-          <li><%= link_to 'Service', root_path %></li>
-          <li><%= link_to 'Contacts', contacts_path %></li>
-        </ul> -->
-      </div>
-      <div class="col-md-3 hidden-xs hidden-sm">
-<!--         <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Transportation', root_path %></li>
-          <li><%= link_to 'Service', root_path %></li>
-          <li><%= link_to 'Contacts', contacts_path %></li>
-        </ul> -->
-      </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <ul>
-          <strong>Departamentul Transport</strong><br>
-          <% Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
-            <li><%= c.details %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="clearfix"></div>
-    </div>
-    <div class="clearfix"></div>
+    <%= render 'layouts/footer' %>
   </div>
+  <%= render 'layouts/zopim' %>
 </body>
 </html>

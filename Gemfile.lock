@@ -129,6 +129,8 @@ GEM
     fancybox2-rails (0.2.8)
       railties (>= 3.1.0, < 5.0)
     fastercsv (1.5.5)
+    font-awesome-rails (4.2.0.0)
+      railties (>= 3.2, < 5.0)
     formtastic (2.3.0.rc3)
       actionpack (>= 3.0)
     haml (4.0.5)
@@ -339,6 +341,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fancybox2-rails (~> 0.2.8)
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   jquery-ui-rails
