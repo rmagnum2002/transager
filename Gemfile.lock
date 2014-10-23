@@ -184,6 +184,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    pg_search (0.7.8)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -241,6 +245,7 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.3)
     ruby-ole (1.2.11.7)
+    ruby-progressbar (1.6.0)
     ruby2ruby (2.0.8)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -360,10 +365,12 @@ DEPENDENCIES
   mini_magick
   paperclip (~> 4.2)
   pg
+  pg_search
   quiet_assets
   rails (= 4.1.4)
   roo
   rspec-rails
+  ruby-progressbar
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   shoulda-matchers

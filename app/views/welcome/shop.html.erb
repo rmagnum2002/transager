@@ -1,8 +1,24 @@
 <div class="container">
   <section class="hgroup">
-    <% if @pages.any? %>
-    <h1><%= @page.title %></h1>
-    <% end %>
+
+    <div class="col-md-6">
+      <% if @pages.any? %>
+      <h1><%= @page.title %></h1>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <%= form_tag parts_path, class: 'form', role: 'form', method: :get do %>
+        <div class="row">
+          <div class="col-md-8">
+            <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t(:search_placeholder) %>
+          </div>
+          <div class="col-md-4">
+            <%= submit_tag t(:search), name: nil, class: 'btn btn-default' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="clearfix"></div>
   </section>
   <section>
     <div class="row">

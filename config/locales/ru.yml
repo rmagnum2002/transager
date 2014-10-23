@@ -7,6 +7,8 @@ ru:
   gallery: 'Галерея'
   int_transport: 'Международные перевозки'
   t_and_t_service: 'Ремонт Грузовиков и Прицепов '
+  search: 'Поиск'
+  search_placeholder: 'Поиск по коду или названию'
   seo:
     moto: 'транспортная компания'
   notice:

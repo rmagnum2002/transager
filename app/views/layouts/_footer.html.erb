@@ -23,7 +23,7 @@
           <p><i class="fa fa-print"></i> (+30) 9854-7855</p>
           <p><i class="fa fa-envelope"></i> transager@company.md</p>
         </div>
-        <div class="footer_teaser col-sm-4 col-md-4">
+<!--         <div class="footer_teaser col-sm-4 col-md-4">
           <h3>Anunțuri</h3>
           <ul class="media-list">
             <li class="media">
@@ -37,11 +37,32 @@
               <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
             </li>
           </ul>
-        </div>
+        </div> -->
         <div class="footer_teaser col-sm-4 col-md-4">
           <h3><%= t('menu.contacts') %></h3>
           <ul class="footer_ul">
-            <% Contact.order('contact_type asc').where(department_id: [1, 2]).group_by(&:department_id).each do |id, contacts| %>
+            <% Contact.order('contact_type asc').where(department_id: [1, 4]).group_by(&:department_id).each do |id, contacts| %>
+              <li>
+                <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
+                <ul class="footer_ul">
+                  <% contacts.each do |c| %>
+                    <li>
+                      <%= footer_li(c) %>
+                      &nbsp;&nbsp;
+                      <%= c.details %>
+                    </li>
+                  <% end %>
+                </ul>
+              </li>
+              <br>
+            <% end %>
+          </ul>
+          <!-- <p>All photos © by <a href="http://www.dimitragiannouka.com" target="_blank">Dimitra Giannouka</a>.</p> -->
+        </div>
+        <div class="footer_teaser col-sm-4 col-md-4">
+          <h3><%#= t('menu.contacts') %></h3>
+          <ul class="footer_ul">
+            <% Contact.order('contact_type asc').where(department_id: [2, 3]).group_by(&:department_id).each do |id, contacts| %>
               <li>
                 <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
                 <ul class="footer_ul">

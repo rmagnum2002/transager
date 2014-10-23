@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :parts, only: :index
+
   resources :feedbacks
 
   mount Ckeditor::Engine => '/ckeditor'
