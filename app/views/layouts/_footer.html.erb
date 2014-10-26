@@ -88,3 +88,14 @@
 <%# Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
   <!-- <li><%#= c.details %></li> -->
 <%# end %>
+<script type="text/javascript">
+  if ($('footer').length > 0) {
+    docHeight = $(window).height();
+    footerHeight = $('footer').height();
+    footerTop = $('footer').position().top + footerHeight;
+
+    if (footerTop < docHeight) {
+      $('footer').css('margin-top', (docHeight - footerTop) + 'px');
+    }
+  };
+</script>

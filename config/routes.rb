@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/shop/:id' => 'welcome#shop', as: :shop
   get '/contacts' => 'welcome#contacts'
   get 'set_locale' => 'welcome#set_locale'
+  get '/search_parts' => 'parts#autocomplete'
 
   root 'welcome#index'
 

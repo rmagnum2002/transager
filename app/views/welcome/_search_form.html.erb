@@ -1,0 +1,13 @@
+<div class="col-md-6">
+  <%= form_tag parts_path, class: 'form search_form', role: 'form', method: :get do %>
+    <div class="row">
+      <div class="col-md-8">
+        <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t(:search_placeholder), data: {autocomplete_source: search_parts_path}, autofocus: true %>
+      </div>
+      <div class="col-md-4">
+        <%= submit_tag t(:search), name: nil, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="clearfix"></div>

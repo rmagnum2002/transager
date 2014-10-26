@@ -9,6 +9,8 @@ ru:
   t_and_t_service: 'Ремонт Грузовиков и Прицепов '
   search: 'Поиск'
   search_placeholder: 'Поиск по коду или названию'
+  parts: 'Каталог запчастей'
+  found_parts: "Найдено %{size} запчастей с термином <b>%{query}</b>"
   seo:
     moto: 'транспортная компания'
   notice:
@@ -48,6 +50,11 @@ ru:
     address: 'Aдрес'
   notices:
     feedback_sent: 'Ваше сообщение было успешно отправлено.'
+
+  will_paginate:
+    page_gap: '...'
+    previous_label: 'Предыдущая'
+    next_label: 'Следующая'
 
   date:
     abbr_day_names:

@@ -9,6 +9,8 @@ ro:
   t_and_t_service: 'Reparții Camioane și Remorci'
   search: 'Caută'
   search_placeholder: 'Căutare după cod sau nume'
+  parts: 'Catalog piese'
+  found_parts: "Am găsit %{size} piese cu termenul <b>%{query}</b>"
   seo:
     moto: 'companie de transport'
   notice:
@@ -48,6 +50,11 @@ ro:
     address: 'Adresă'
   notices:
     feedback_sent: 'Mesajul Dvs a fost trimis cu succes.'
+
+  will_paginate:
+    page_gap: '...'
+    previous_label: 'Precedenta'
+    next_label: 'Următoarea'
 
   date:
     abbr_day_names:

@@ -9,6 +9,8 @@ en:
   t_and_t_service: 'Truck and Trailer Service'
   search: 'Search'
   search_placeholder: 'Search by code or name'
+  parts: 'Parts'
+  found_parts: "Found %{size} parts with term <b>%{query}</b>"
   seo:
     moto: 'transport company'
   notice:
@@ -48,6 +50,11 @@ en:
     address: 'Address'
   notices:
     feedback_sent: 'Your message was successfully sent.'
+
+  will_paginate:
+    page_gap: '...'
+    previous_label: 'Previous'
+    next_label: 'Next'
 
   date:
     abbr_day_names:
