@@ -14,9 +14,13 @@ class Part < ActiveRecord::Base
 
   # categories: 1 - tires, 2 - batteries, 3 - truck filter, 4 - car filter
   CATEGORY = {
-    1 => "Tires",
-    2 => "Batteries",
-    3 => 'Truck Filters',
-    4 => 'Car Filters'
+    1 => :"parts.tires",
+    2 => :"parts.batteries",
+    3 => :"parts.truck_filters",
+    4 => :"parts.car_filters"
   }
+
+  def category_name
+    Part::CATEGORY[self.category_id]
+  end
 end

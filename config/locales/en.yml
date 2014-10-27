@@ -9,7 +9,6 @@ en:
   t_and_t_service: 'Truck and Trailer Service'
   search: 'Search'
   search_placeholder: 'Search by code or name'
-  parts: 'Parts'
   found_parts: "Found %{size} parts with term <b>%{query}</b>"
   seo:
     moto: 'transport company'
@@ -17,6 +16,12 @@ en:
     no_page: 'No information in <b>%{category}</b> category in %{language}. Please visit us later.'
   logo: 'transport & forwarding'
   details: 'details'
+  parts:
+    title: 'Parts'
+    tires: 'Tires'
+    batteries: 'Batteries'
+    truck_filters: 'Truck Filters'
+    car_filters: 'Car Filters'
   menu:
     home: 'Home'
     contacts: 'Contacts'

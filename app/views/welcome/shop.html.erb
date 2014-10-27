@@ -28,12 +28,6 @@
             <% end %>
           </div>
         </article>
-        <% if @page.present? && @page.gallery.present? %>
-        <div class="widget ads clearfix">
-          <h4>Gallery</h4>
-          <%= render 'shared/gallery', gallery: @page.gallery %>
-        </div>
-        <% end %>
       </div>
       <div id="sidebar" class="col-sm-4 col-md-4">
         <aside class="widget">
@@ -42,8 +36,13 @@
             <%= render 'shared/contacts_shop' %>
             <%= render 'shared/contacts_accountant' %>
           </div>
+          <% if @page.present? && @page.gallery.present? %>
+          <div class="widget ads clearfix">
+            <h4>Gallery</h4>
+            <%= render 'shared/gallery', gallery: @page.gallery %>
+          </div>
+          <% end %>
         </aside>
-
       </div>
     </div>
   </section>

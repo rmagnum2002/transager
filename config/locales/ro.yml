@@ -9,7 +9,6 @@ ro:
   t_and_t_service: 'Reparții Camioane și Remorci'
   search: 'Caută'
   search_placeholder: 'Căutare după cod sau nume'
-  parts: 'Catalog piese'
   found_parts: "Am găsit %{size} piese cu termenul <b>%{query}</b>"
   seo:
     moto: 'companie de transport'
@@ -17,6 +16,12 @@ ro:
     no_page: 'Nu avem informație în categoria <b>%{category}</b> în limba %{language}. Încercați mai târziu.'
   logo: 'transport și expediție'
   details: 'detalii'
+  parts:
+    title: 'Catalog piese'
+    tires: 'Anvelope'
+    batteries: 'Baterii'
+    truck_filters: 'Filtre Camioane'
+    car_filters: 'Filtre Autoturisme'
   menu:
     home: 'Acasă'
     contacts: 'Contacte'

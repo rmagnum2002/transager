@@ -24,26 +24,41 @@
       <li class="<%= 'active' if action_name == 'index' %>">
         <%= link_to t('menu.home'), root_path, title: t('menu.home') %>
       </li>
-      <li class="dropdown">
-        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.transportation') %>
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <% @transport_pages_links.each do |page| %>
-            <li><%= link_to page.title, transport_path(page.link_name), title: page.title %></li>
-          <% end %>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.service') %>
-          <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <% @service_pages_links.each do |page| %>
-            <li><%= link_to page.title, service_path(page.link_name), title: page.title %></li>
-          <% end %>
-        </ul>
-      </li>
+
+      <% if @transport_pages_links.size > 1 %>
+        <li class="dropdown">
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.transportation') %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% @transport_pages_links.each do |page| %>
+              <li><%= link_to page.title, transport_path(page.link_name), title: page.title %></li>
+            <% end %>
+          </ul>
+        </li>
+      <% else %>
+        <% page = @transport_pages_links.first %>
+        <li><%= link_to t('menu.transportation'), transport_path(page.link_name), title: t('menu.transportation') %></li>
+      <% end %>
+
+      <% if @service_pages_links.any? %>
+        <% if @service_pages_links.size > 1 %>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.service') %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <% @service_pages_links.each do |page| %>
+                <li><%= link_to page.title, service_path(page.link_name), title: page.title %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% else %>
+          <% page = @service_pages_links.first %>
+          <li><%= link_to t('menu.service'), service_path(page.link_name), title: t('menu.service') %></li>
+        <% end %>
+      <% end %>
+
       <li class="dropdown">
         <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.shop') %>
           <span class="caret"></span>
@@ -52,6 +67,7 @@
           <% @shop_pages_links.each do |page| %>
             <li><%= link_to page.title, shop_path(page.link_name), title: page.title %></li>
           <% end %>
+          <li><%= link_to t('parts.title'), parts_path %></li>
         </ul>
       </li>
       <li><%= link_to t('menu.contacts'), contacts_path, title: t('menu.contacts') %></li>
