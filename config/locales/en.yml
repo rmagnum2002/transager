@@ -10,6 +10,10 @@ en:
   search: 'Search'
   search_placeholder: 'Search by code or name'
   found_parts: "Found %{size} parts with term <b>%{query}</b>"
+  category: 'Category'
+  brand: 'Brand'
+  price: 'Price'
+  name: 'Name'
   seo:
     moto: 'transport company'
   notice:

@@ -10,6 +10,10 @@ ru:
   search: 'Поиск'
   search_placeholder: 'Поиск по коду или названию'
   found_parts: "Найдено %{size} запчастей с термином <b>%{query}</b>"
+  category: 'Категория'
+  brand: 'Марка'
+  price: 'Цена'
+  name: 'Имя'
   seo:
     moto: 'транспортная компания'
   notice:

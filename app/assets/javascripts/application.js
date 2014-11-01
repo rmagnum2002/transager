@@ -53,7 +53,7 @@ $(document).ready(function() {
 jQuery(function() {
   return $('#query').catcomplete({
     delay: 0,
-    minLength: 3,
+    minLength: 2,
     source: $('#query').data('autocomplete-source'),
     close: function( event, ui ) {
       // $('.search_form').submit();

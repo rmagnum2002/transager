@@ -10,6 +10,10 @@ ro:
   search: 'Caută'
   search_placeholder: 'Căutare după cod sau nume'
   found_parts: "Am găsit %{size} piese cu termenul <b>%{query}</b>"
+  category: 'Categorie'
+  brand: 'Brand'
+  price: 'Preț'
+  name: 'Denumire'
   seo:
     moto: 'companie de transport'
   notice:

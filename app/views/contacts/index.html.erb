@@ -1,5 +1,10 @@
+<% if @settings.map_option == false %>
 <div class="full_page_photo"><div id="map"></div></div>
+<% end %>
 <div class="container">
+  <% if @settings.map_option == true %>
+  <div class="full_page_photo"><div id="map"></div></div>
+  <% end %>
 
   <section class="hgroup">
     <h1><%= t('contact_form.send_us_message') %></h1>
@@ -69,18 +74,17 @@
     </section>
   <hr>
   <div class="row">
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-3 col-sm-6">
       <%= render 'shared/contacts_transport' %>
     </div>
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-3 col-sm-6">
       <%= render 'shared/contacts_service' %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-sm-6">
+
+    <div class="col-md-3 col-sm-6">
       <%= render 'shared/contacts_shop' %>
     </div>
-    <div class="col-md-6 col-sm-6">
+    <div class="col-md-3 col-sm-6">
       <%= render 'shared/contacts_accountant' %>
     </div>
   </div>

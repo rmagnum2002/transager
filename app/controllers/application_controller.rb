@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :set_locale_filter
+  before_filter :load_settings
   before_filter :prepare_menu
+
+  def load_settings
+    @settings = AppSetting.first
+  end
 
   def set_locale_filter
     if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])

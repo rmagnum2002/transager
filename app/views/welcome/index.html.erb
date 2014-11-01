@@ -1,5 +1,6 @@
-<%= render 'slider' %>
+<%= render 'slider' if @settings.slider_option == false %>
 <div class="container">
+  <%= render 'slider' if @settings.slider_option == true %>
   <section class="call_to_action">
 <!--     <h3>focus on what’s important</h3>
     <h4>we go the distance to satisfy our customers</h4> -->

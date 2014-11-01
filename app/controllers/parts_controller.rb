@@ -3,7 +3,7 @@ class PartsController < ApplicationController
     @query = params[:query]
     @exact_part = Part.where(name: @query).first || Part.where(manufacturer_id: @query).first
     parts = Part.quick_search(@query)
-    @parts = parts.page(params[:page]).per_page(15)
+    @parts = parts.page(params[:page]).per_page(25)
     @message = I18n.t('found_parts', size: parts.size, query: @query)
   end
 

@@ -28,6 +28,12 @@
             <% end %>
           </div>
         </article>
+        <% if @page.present? && @page.gallery.present? %>
+        <div class="widget ads clearfix">
+          <h4>Gallery</h4>
+          <%= render 'shared/gallery', gallery: @page.gallery %>
+        </div>
+        <% end %>
       </div>
       <div id="sidebar" class="col-sm-4 col-md-4">
         <aside class="widget">
@@ -36,12 +42,10 @@
             <%= render 'shared/contacts_shop' %>
             <%= render 'shared/contacts_accountant' %>
           </div>
-          <% if @page.present? && @page.gallery.present? %>
-          <div class="widget ads clearfix">
-            <h4>Gallery</h4>
-            <%= render 'shared/gallery', gallery: @page.gallery %>
-          </div>
-          <% end %>
+          <center>
+            <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '60%'), 'http://www.anvelopeauto.md/', target: :blank %>
+            <%= image_tag 'livrare-300x300.png', class: 'img', width: '60%' %>
+          </center>
         </aside>
       </div>
     </div>
