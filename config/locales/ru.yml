@@ -20,12 +20,33 @@ ru:
     no_page: 'Нет информации по категории <b>%{category}</b> на %{language} языке. Пожалуйста зайдите позже.'
   logo: 'перевозки и экспедиция'
   details: 'подробнее'
+  sliders:
+    title_one: "Partenerul tău de încredere, oriunde şi oricînd în Europa"
+    title_two: "Magazin piese și accesorii..."
+    title_three: "Servicii reparații al autovehiculelor de mare tonaj"
+  features:
+    feature_title_one: 'Партнерство, основанное на доверии.'
+    feature_title_two: 'Безопасность, качество, профессионализм.'
+    feature_title_three: 'Рядом с вашим бизнесом.'
+    feature_one: '<strong>Trans Ager</strong> e compania în care puteți avea încredere în domeniul <strong>transporului internațional</strong> sau <strong>servicii de reparații</strong> ale vehiculelor de mare tonaj.'
+    feature_two: '<strong>Trans Ager</strong> dispune de toate echipamentele şi forţa de muncă pentru a presta lucrări la cele mai înalte standarde calitative.'
+    feature_three: '<strong>Trans Ager</strong> dispune de o rețea de magazine pe teritoriul Republicii Moldova de unde clienții noștri pot mai ușor cumpăra piesele necesare cât și <strong>distribuire gratuită</strong> pe teritoriul țării.'
   parts:
     title: 'Каталог запчастей'
+    other: 'Другие'
     tires: 'Шины'
     batteries: 'Аккумуляторы'
     truck_filters: 'Фильтры для Грузовиков'
     car_filters: 'Фильтры для Легковых'
+    repair_kits: 'Ремкомплекты'
+    tie_rod: 'Наконечники, Тяги'
+    brake_discs: 'Тормозные Диски'
+    oil_seals: 'Сальники'
+    compressors: 'Компрессоры'
+    filter_drier: 'Фильтра влагоотделителя'
+    brake_drums: 'Тормозные Барабаны'
+    hubs: 'Ступицы'
+    brake_pads: 'Тормозные Колодки'
   menu:
     home: 'Главная'
     contacts: 'Контакты'

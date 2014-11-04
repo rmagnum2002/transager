@@ -13,6 +13,18 @@ ActiveAdmin.register Part do
   #  permitted
   # end
 
+  form do |f|
+    f.inputs 'Part' do
+      f.input :manufacturer_id
+      f.input :seller_id
+      f.input :category_id, as: :select, collection: Part::CATEGORY.invert.map{|value, key| [t(value), key] }
+      f.input :brand
+      f.input :truck
+      f.input :price
+    end
+    f.actions
+  end
+
   filter :category_id, as: :select, collection: Part::CATEGORY.invert.to_a
   filter :name
   filter :manufacturer_id

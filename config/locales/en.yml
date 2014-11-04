@@ -20,12 +20,33 @@ en:
     no_page: 'No information in <b>%{category}</b> category in %{language}. Please visit us later.'
   logo: 'transport & forwarding'
   details: 'details'
+  sliders:
+    title_one: "Your partner to trust, anywhere in Europe"
+    title_two: "Spare parts and accessories shop..."
+    title_three: "Truck repair services."
+  features:
+    feature_title_one: 'A partnership based on trust.'
+    feature_title_two: 'Safety, quality, professionalism.'
+    feature_title_three: 'Close to your business.'
+    feature_one: '<strong>Trans Ager</strong> is the company you can trust when it comes to <strong>international transportation</strong> or <strong>truck repair services</strong>.'
+    feature_two: '<strong>Trans Ager</strong> has all the tools and qualified people to deliver the highest quality services a customer can expect.'
+    feature_three: '<strong>Trans Ager</strong> has a network of shops in Republic of Moldova where our clients can buy can buy easier to buy parts they fleet needs as well as we have a <strong>free delivery service</strong> inside Moldova.'
   parts:
     title: 'Parts'
+    other: 'Other'
     tires: 'Tires'
     batteries: 'Batteries'
     truck_filters: 'Truck Filters'
     car_filters: 'Car Filters'
+    repair_kits: 'Repair Kits'
+    tie_rod: 'Tie Rods, Inner Tie Rods'
+    brake_discs: 'Brake Discs'
+    oil_seals: 'Oil Seals'
+    compressors: 'Compressors'
+    filter_drier: 'Filter Drier'
+    brake_drums: 'Brake Drums'
+    hubs: 'Hubs'
+    brake_pads: 'Brake Pads'
   menu:
     home: 'Home'
     contacts: 'Contacts'

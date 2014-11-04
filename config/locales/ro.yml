@@ -20,12 +20,33 @@ ro:
     no_page: 'Nu avem informație în categoria <b>%{category}</b> în limba %{language}. Încercați mai târziu.'
   logo: 'transport și expediție'
   details: 'detalii'
+  sliders:
+    title_one: "Partenerul tău de încredere, oriunde şi oricînd în Europa"
+    title_two: "Magazin piese și accesorii..."
+    title_three: "Servicii reparații al autovehiculelor de mare tonaj"
+  features:
+    feature_title_one: 'Un parteneriat bazat pe încredere.'
+    feature_title_two: 'Siguranță, Calitate, Profesionalism.'
+    feature_title_three: 'Aproape de afacerea ta.'
+    feature_one: '<strong>Trans Ager</strong> e compania în care puteți avea încredere în domeniul <strong>transporului internațional</strong> sau <strong>servicii de reparații</strong> ale vehiculelor de mare tonaj.'
+    feature_two: '<strong>Trans Ager</strong> dispune de toate echipamentele şi forţa de muncă pentru a presta lucrări la cele mai înalte standarde calitative.'
+    feature_three: '<strong>Trans Ager</strong> dispune de o rețea de magazine pe teritoriul Republicii Moldova de unde clienții noștri pot mai ușor cumpăra piesele necesare cât și <strong>distribuire gratuită</strong> pe teritoriul țării.'
   parts:
     title: 'Catalog piese'
+    other: 'Altele'
     tires: 'Anvelope'
     batteries: 'Baterii'
     truck_filters: 'Filtre Camioane'
     car_filters: 'Filtre Autoturisme'
+    repair_kits: 'Set pentru reparații'
+    tie_rod: 'Braț suspensie, Bucșe'
+    brake_discs: 'Discuri Frână'
+    oil_seals: 'Sigilii de Ulei'
+    compressors: 'Compresoare'
+    filter_drier: 'Filtru Uscător'
+    brake_drums: 'Tobe de Frână'
+    hubs: 'Butuci'
+    brake_pads: 'Plăci Frână'
   menu:
     home: 'Acasă'
     contacts: 'Contacte'
