@@ -9,7 +9,7 @@ ru:
   t_and_t_service: 'Ремонт Грузовиков и Прицепов '
   search: 'Поиск'
   search_placeholder: 'Поиск по коду или названию'
-  found_parts: "Найдено %{size} запчастей с термином <b>%{query}</b>"
+  found_parts: "Найдено %{size} запчасти/запчастей с термином <b>%{query}</b>"
   category: 'Категория'
   brand: 'Марка'
   price: 'Цена'
@@ -47,6 +47,12 @@ ru:
     brake_drums: 'Тормозные Барабаны'
     hubs: 'Ступицы'
     brake_pads: 'Тормозные Колодки'
+    bushings: 'Сайленблоки, втулки'
+    level_valve: 'Кран уровня пола'
+    lights: 'Фонари'
+    reflectors: 'Светоотражатели и габариты'
+    pneumatics: "Пневматика"
+    electric_parts: "Электрика"
   menu:
     home: 'Главная'
     contacts: 'Контакты'

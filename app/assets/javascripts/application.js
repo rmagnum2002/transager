@@ -51,7 +51,7 @@ $(document).ready(function() {
 });
 
 jQuery(function() {
-  return $('#query').catcomplete({
+  return $('#query').autocomplete({
     delay: 0,
     minLength: 3,
     source: $('#query').data('autocomplete-source'),

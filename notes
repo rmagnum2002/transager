@@ -1,0 +1,2 @@
+Part.where("name ILIKE ?", "%Сайленблок%").update_all(category_id: 14)
+Part.where("name ILIKE ?", "%Колодка тормозная%").update_all(category_id: 13)

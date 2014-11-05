@@ -21,7 +21,7 @@ en:
   logo: 'transport & forwarding'
   details: 'details'
   sliders:
-    title_one: "Your partner to trust, anywhere in Europe"
+    title_one: "Your partner to trust, anywhere and anytime in Europe"
     title_two: "Spare parts and accessories shop..."
     title_three: "Truck repair services."
   features:
@@ -47,6 +47,12 @@ en:
     brake_drums: 'Brake Drums'
     hubs: 'Hubs'
     brake_pads: 'Brake Pads'
+    bushings: 'Bushings'
+    level_valve: 'Leveling Valve'
+    lights: 'Front/Rear Lights'
+    reflectors: 'Reflectors and sidelights'
+    pneumatics: "Pneumatics"
+    electric_parts: "Electric Parts"
   menu:
     home: 'Home'
     contacts: 'Contacts'

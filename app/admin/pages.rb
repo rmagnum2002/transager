@@ -4,7 +4,7 @@ ActiveAdmin.register Page do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :link_name, :title, :text_1, :text_2, :text_3, :page_type, :locale, :on, :contact, :gallery_id
+  permit_params :link_name, :title, :text_1, :text_2, :text_3, :page_type, :locale, :gallery_id, on: :page
   #
   # or
   #

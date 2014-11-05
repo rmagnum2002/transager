@@ -21,6 +21,12 @@ class Part < ActiveRecord::Base
   scope :brake_drums, -> {where category_id: 11}
   scope :hubs, -> {where category_id: 12}
   scope :brake_pads, -> {where category_id: 13}
+  scope :bushings, -> {where category_id: 14}
+  scope :level_valve, -> {where category_id: 15}
+  scope :lights, -> {where category_id: 16}
+  scope :reflectors, -> {where category_id: 17}
+  scope :pneumatics, -> {where category_id: 18}
+  scope :electric_parts, -> {where category_id: 19}
 
   CATEGORY = {
     0 => :"parts.other",
@@ -36,7 +42,13 @@ class Part < ActiveRecord::Base
     10 => :"parts.filter_drier",
     11 => :'parts.brake_drums',
     12 => :"parts.hubs",
-    13 => :"parts.brake_pads"
+    13 => :"parts.brake_pads",
+    14 => :"parts.bushings",
+    15 => :"parts.level_valve",
+    16 => :"parts.lights",
+    17 => :"parts.reflectors",
+    18 => :"parts.pneumatics",
+    19 => :"parts.electric_parts"
   }
 
   def category_name

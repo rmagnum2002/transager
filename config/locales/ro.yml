@@ -39,7 +39,7 @@ ro:
     truck_filters: 'Filtre Camioane'
     car_filters: 'Filtre Autoturisme'
     repair_kits: 'Set pentru reparații'
-    tie_rod: 'Braț suspensie, Bucșe'
+    tie_rod: 'Braț suspensie'
     brake_discs: 'Discuri Frână'
     oil_seals: 'Sigilii de Ulei'
     compressors: 'Compresoare'
@@ -47,6 +47,12 @@ ro:
     brake_drums: 'Tobe de Frână'
     hubs: 'Butuci'
     brake_pads: 'Plăci Frână'
+    bushings: 'Bucșe'
+    level_valve: 'Valvă reglare înălţime'
+    lights: 'Lumini față / spate'
+    reflectors: 'Reflctoare și lămpi gabarit'
+    pneumatics: "Pneumatică"
+    electric_parts: "Electricitate"
   menu:
     home: 'Acasă'
     contacts: 'Contacte'

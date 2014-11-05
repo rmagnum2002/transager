@@ -3,7 +3,7 @@ ActiveAdmin.register Part do
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # permit_params :name, :images
-  permit_params :name, :price, :manufacturer_id, :seller_id, :winter, :truck, :brand, :category_id
+  permit_params :name, :price, :manufacturer_id, :seller_id, :winter, :truck, :brand, :category_id, :name, on: :part
   #
   # or
   #
@@ -15,6 +15,7 @@ ActiveAdmin.register Part do
 
   form do |f|
     f.inputs 'Part' do
+      f.input :name
       f.input :manufacturer_id
       f.input :seller_id
       f.input :category_id, as: :select, collection: Part::CATEGORY.invert.map{|value, key| [t(value), key] }

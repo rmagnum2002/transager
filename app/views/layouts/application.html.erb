@@ -30,6 +30,6 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>
-  <%= render 'layouts/zopim' %>
+  <%= render 'layouts/zopim' if @settings.chat_enabled? %>
 </body>
 </html>
