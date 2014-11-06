@@ -17,9 +17,12 @@
     <div class="row">
       <div id="leftcol" class="col-sm-10 col-md-10">
         <% if @parts.size > 0 %>
-          <div class="panel"><%= @message.html_safe %></div>
+          <div class="panel">
+            <%= @message.html_safe unless params[:category_id].present? %>
+            <b><%= t(Part::CATEGORY[params[:category_id].to_i]) if params[:category_id].present? %></b>
+          </div>
           <div class="small alert alert-warning">
-            Pentru disponibilitatea pieselor în stoc vă rugăm să ne contactați la telefoanele:  <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3, 5]).pluck(:details).join(', ') %></b>
+            <%= t('parts_available') %>  <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3, 5]).pluck(:details).join(', ') %></b>
           </div>
           <div class="table-responsive">
             <table class='table table-bordered table-striped table-hover table-condensed'>
@@ -86,6 +89,7 @@
             <% end %>
           </div>
         <% end %>
+        <%= render 'suppliers' if @settings.include_suppliers %>
       </div>
       <div id="sidebar" class="col-sm-2 col-md-2">
         <aside class="widget">

@@ -4,7 +4,7 @@ ActiveAdmin.register AppSetting do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :slider_option, :map_option, :enable_chat, :on, :app_setting
+  permit_params :slider_option, :map_option, :enable_chat, :include_suppliers, :on, :app_setting
   #
   # or
   #

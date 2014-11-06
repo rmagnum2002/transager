@@ -53,6 +53,11 @@ en:
     reflectors: 'Reflectors and sidelights'
     pneumatics: "Pneumatics"
     electric_parts: "Electric Parts"
+  search_parts: 'Search in Catalog'
+  parts_available: 'In order to find out if we have the parts you need in stock, please contact us at:'
+  few_parts: 'A few parts you can find in our store'
+  will_find_for_you: "... or call us and we'll find the part you need"
+  our_suppliers: 'our suppliers'
   menu:
     home: 'Home'
     contacts: 'Contacts'

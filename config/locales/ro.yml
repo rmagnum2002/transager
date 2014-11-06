@@ -44,7 +44,7 @@ ro:
     oil_seals: 'Sigilii de Ulei'
     compressors: 'Compresoare'
     filter_drier: 'Filtru Uscător'
-    brake_drums: 'Tobe de Frână'
+    brake_drums: 'Tobe Frână'
     hubs: 'Butuci'
     brake_pads: 'Plăci Frână'
     bushings: 'Bucșe'
@@ -53,6 +53,11 @@ ro:
     reflectors: 'Reflctoare și lămpi gabarit'
     pneumatics: "Pneumatică"
     electric_parts: "Electricitate"
+  search_parts: 'Caută în Catalog'
+  parts_available: 'Pentru disponibilitatea pieselor în stoc vă rugăm să ne contactați la telefoanele:'
+  few_parts: 'O parte din piesele care le puteți găsi în magazinul nostru'
+  will_find_for_you: "... sau contactați-ne pe noi și o să găsim piesa necesară pentru Dvs."
+  our_suppliers: 'furnizorii nostri'
   menu:
     home: 'Acasă'
     contacts: 'Contacte'
