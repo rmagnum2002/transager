@@ -10,6 +10,14 @@ class PartsController < ApplicationController
     end
     @parts = parts.page(params[:page]).per_page(30)
     @message = I18n.t('found_parts', size: parts.size, query: @query)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "price list",
+               :layout => 'application.pdf.erb'
+      end
+    end
   end
 
   def autocomplete
