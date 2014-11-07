@@ -2,11 +2,11 @@ class PartsController < ApplicationController
   def index
     if params[:category_id]
       @query = params[:category_id]
-      parts = Part.where(category_id: params[:category_id])
+      parts = Part.where(category_id: params[:category_id]).order(:name)
     else
       @query = params[:query]
       @exact_part = Part.where(name: @query).first || Part.where(manufacturer_id: @query).first
-      parts = Part.quick_search(@query)
+      parts = Part.order(:name).quick_search(@query)
     end
     @parts = parts.page(params[:page]).per_page(30)
     @message = I18n.t('found_parts', size: parts.size, query: @query)

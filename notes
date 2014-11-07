@@ -1,2 +1,7 @@
 Part.where("name ILIKE ?", "%Сайленблок%").update_all(category_id: 14)
 Part.where("name ILIKE ?", "%Колодка тормозная%").update_all(category_id: 13)
+
+
+Part.where("name ILIKE ?", "%Насос подьема кабины%").update_all(category_id: 23)
+Part.where("name ILIKE ?", "%Насос подьема кабины%").where("name ILIKE ?", "%Volvo%").update_all(truck_id: 3)
+Part.where("name ILIKE ?", "%Фара%").update_all(category_id: 16)

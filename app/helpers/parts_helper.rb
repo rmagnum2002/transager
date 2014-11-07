@@ -20,6 +20,10 @@ module PartsHelper
   #   17 => :"parts.reflectors",
   #   18 => :"parts.pneumatics",
   #   19 => :"parts.electric_parts"
+  #   20 => :"parts.cardan_joint",
+  #   21 => :"parts.radiator",
+  #   22 => :"parts.cab",
+  #   23 => :"parts.cab_pump"
   # }
 
   def category_image(p)
@@ -43,5 +47,12 @@ module PartsHelper
     return (image_tag 'reflectors.jpg', height: '100') if p.category_id == 17
     return (image_tag 'pneumatics.jpg', height: '100') if p.category_id == 18
     return (image_tag 'electric_parts.jpg', height: '100') if p.category_id == 19
+    return (image_tag 'cardan_joint.jpg', height: '100') if p.category_id == 20
+    return (image_tag 'radiator.jpg', height: '100') if p.category_id == 21
+    if p.category_id == 22
+      name = Part::TRUCK[p.truck_id].downcase
+      return image_tag "#{name}_cab.jpg", height: '100'
+    end
+    return (image_tag 'cab_pump.jpg', height: '100') if p.category_id == 23
   end
 end

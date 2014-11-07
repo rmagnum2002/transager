@@ -53,6 +53,10 @@ ro:
     reflectors: 'Reflctoare și lămpi gabarit'
     pneumatics: "Pneumatică"
     electric_parts: "Electricitate"
+    cardan_joint: 'Articulaţie Cardanică'
+    radiator: 'Radiatoare'
+    cab: 'Piese Cabină'
+    cab_pump: 'Pompă Cabină'
   search_parts: 'Caută în Catalog'
   parts_available: 'Pentru disponibilitatea pieselor în stoc vă rugăm să ne contactați la telefoanele:'
   few_parts: 'O parte din piesele care le puteți găsi în magazinul nostru'

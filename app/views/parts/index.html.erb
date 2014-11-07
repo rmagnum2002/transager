@@ -30,7 +30,7 @@
                 <tr>
                   <th>ID</th>
                   <th><%= t(:name) %></th>
-                  <!-- <th>Brand</th> -->
+                  <th>Brand</th>
                   <!-- <th>Category</th> -->
                   <th><%= t(:price) %> (lei)</th>
                   <% if current_admin_user %>
@@ -53,7 +53,7 @@
                             </tr>
                             <tr>
                               <td>#{t(:brand)}</td>
-                              <td>#{p.brand}</td>
+                              <td><b>#{p.brand}</b></td>
                             </tr>
                             <tr>
                               <td>#{t(:price)}</td>
@@ -63,7 +63,7 @@
                       </div>
                       "}, title: "<b>#{p.name}</b>".html_safe %>
                   </td>
-                  <!-- <td><%#= p.brand %></td> -->
+                  <td><%= p.brand %></td>
                   <!-- <td><%#= t(p.category_name) %></td> -->
                   <td class="price"><%= p.price %></td>
                   <% if current_admin_user %>

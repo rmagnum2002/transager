@@ -27,6 +27,10 @@ class Part < ActiveRecord::Base
   scope :reflectors, -> {where category_id: 17}
   scope :pneumatics, -> {where category_id: 18}
   scope :electric_parts, -> {where category_id: 19}
+  scope :cardan_joint, -> {where category_id: 20}
+  scope :radiator, -> {where category_id: 21}
+  scope :cab, -> {where category_id: 22}
+  scope :cab_pump, -> {where category_id: 23}
 
   CATEGORY = {
     0 => :"parts.other",
@@ -48,8 +52,30 @@ class Part < ActiveRecord::Base
     16 => :"parts.lights",
     17 => :"parts.reflectors",
     18 => :"parts.pneumatics",
-    19 => :"parts.electric_parts"
+    19 => :"parts.electric_parts",
+    20 => :"parts.cardan_joint",
+    21 => :"parts.radiator",
+    22 => :"parts.cab",
+    23 => :"parts.cab_pump"
   }
+
+  TRUCK = {
+    0 => :"parts.other",
+    1 => 'Mercedes',
+    2 => 'MAN',
+    3 => 'Volvo',
+    4 => 'Scania',
+    5 => 'DAF',
+    6 => 'IVECO',
+    7 => 'BPW',
+    8 => 'SAF',
+    9 => 'ROR',
+    10 => 'Renault'
+  }
+
+  def truck_name
+    Part::TRUCK[self.truck_id]
+  end
 
   def category_name
     Part::CATEGORY[self.category_id]

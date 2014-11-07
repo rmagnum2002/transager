@@ -53,6 +53,10 @@ en:
     reflectors: 'Reflectors and sidelights'
     pneumatics: "Pneumatics"
     electric_parts: "Electric Parts"
+    cardan_joint: 'Cardan Joint'
+    radiator: 'Radiators'
+    cab: 'Cab parts'
+    cab_pump: 'Cab Pump'
   search_parts: 'Search in Catalog'
   parts_available: 'In order to find out if we have the parts you need in stock, please contact us at:'
   few_parts: 'A few parts you can find in our store'
