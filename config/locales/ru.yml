@@ -14,6 +14,8 @@ ru:
   brand: 'Марка'
   price: 'Цена'
   name: 'Имя'
+  download_pdf: 'Скачать в PDF'
+  price_list: 'Прайс-лист'
   seo:
     moto: 'транспортная компания'
   notice:

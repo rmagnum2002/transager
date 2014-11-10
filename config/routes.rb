@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/contacts' => 'welcome#contacts'
   get 'set_locale' => 'welcome#set_locale'
   get '/search_parts' => 'parts#autocomplete'
+  get '/parts/pdf' => 'parts#parts_list', as: :parts_list
 
   root 'welcome#index'
 

@@ -14,6 +14,8 @@ ro:
   brand: 'Brand'
   price: 'Preț'
   name: 'Denumire'
+  download_pdf: 'Descarcă PDF'
+  price_list: 'Price list'
   seo:
     moto: 'companie de transport'
   notice:

@@ -41,4 +41,19 @@ class PartsController < ApplicationController
 
     render json: parts
   end
+
+  def parts_list
+    @query = params[:query]
+    @parts = Part.order(:name).quick_search(@query)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "price list",
+              layout: 'application.pdf.erb',
+              page_size: 'A4',
+              header: { right: '[page] of [topage]'}
+      end
+    end
+  end
 end

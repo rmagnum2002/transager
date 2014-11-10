@@ -14,6 +14,8 @@ en:
   brand: 'Brand'
   price: 'Price'
   name: 'Name'
+  download_pdf: 'Download PDF'
+  price_list: 'Price list'
   seo:
     moto: 'transport company'
   notice:
