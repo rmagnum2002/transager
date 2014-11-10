@@ -10,6 +10,14 @@ class PartsController < ApplicationController
     end
     @parts = parts.page(params[:page]).per_page(30)
     @message = I18n.t('found_parts', size: parts.size, query: @query)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "price list",
+               :layout => 'application.pdf.erb'
+      end
+    end
   end
 
   def autocomplete
@@ -32,5 +40,20 @@ class PartsController < ApplicationController
     # json = tires + batteries + truck_filters + car_filters + repair_kits + brake_discs + tie_rod + oil_seals + compressors + filter_drier + brake_drums + hubs + brake_pads + other
 
     render json: parts
+  end
+
+  def parts_list
+    @query = params[:query]
+    @parts = Part.order(:name).quick_search(@query)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "price list",
+              layout: 'application.pdf.erb',
+              page_size: 'A4',
+              header: { right: '[page] of [topage]'}
+      end
+    end
   end
 end

@@ -4,7 +4,6 @@
     color: #fff;
   }
 </style>
-
 <div class="container">
   <section class="hgroup">
     <div class="col-md-6">
@@ -18,7 +17,10 @@
       <div id="leftcol" class="col-sm-10 col-md-10">
         <% if @parts.size > 0 %>
           <div class="panel">
-            <%= @message.html_safe unless params[:category_id].present? %>
+            <% unless params[:category_id].present? %>
+              <%= @message.html_safe %> |
+              <%= link_to t(:download_pdf), parts_list_path(format: "pdf", query: params[:query]), target: :blank %>
+            <% end %>
             <b><%= t(Part::CATEGORY[params[:category_id].to_i]) if params[:category_id].present? %></b>
           </div>
           <div class="small alert alert-warning">

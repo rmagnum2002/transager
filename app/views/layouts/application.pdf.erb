@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <style type="text/css" media="screen">
+      #content{padding: 20px 0;}
+      #header{}
+      #footer{}
+      .logo{text-align: center;text-transform: uppercase;}
+      thead{background: gray;}
+      .price{text-align: right;}
+    </style>
+  </head>
+  <body onload='number_pages'>
+    <div id="header" style="padding-bottom:60px;">
+      <div class="logo"><h2>Trans Ager</h2></div>
+      <div style='float:left;'><%= Date.today %></div>
+      <div style='float:right;'>
+        <% Contact.where(department_id: 2).order('contact_type asc').each do |c| %>
+          <div><%#= t(Contact::CONTACT_TYPE.invert[c.contact_type]) %> <%= c.details %></div>
+        <% end %>
+      </div>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer"></div>
+  </body>
+</html>

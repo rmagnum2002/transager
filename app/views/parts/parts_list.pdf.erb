@@ -1,0 +1,26 @@
+<table border="1" style="background-color:#FFFFFF;border-collapse:collapse;border:1px solid #000000;color:#000000;width:100%" cellpadding="3" cellspacing="3">
+  <caption>
+    <h3><%= t('price_list') %> - <%= params[:query] %></h3><br>
+  </caption>
+  <thead>
+    <tr>
+      <th style="width:10%;">ID</th>
+      <th><%= t(:name) %></th>
+      <th><%= t(:brand) %></th>
+      <th><%= t(:category) %></th>
+      <th><%= t(:price) %> (lei)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parts.each do |p| %>
+    <tr>
+      <td><%= p.manufacturer_id %></td>
+      <td><%= p.name %></td>
+      <td><%= t(p.brand) %></td>
+      <td><%= t(p.category_name) %></td>
+      <td class="price"><%= p.price %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
