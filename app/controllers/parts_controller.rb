@@ -2,7 +2,7 @@ class PartsController < ApplicationController
   def index
     if params[:category_id]
       @query = params[:category_id]
-      parts = Part.where(category_id: params[:category_id]).order(:name)
+      parts = Part.order(:name).where(category_id: params[:category_id])
     else
       @query = params[:query]
       @exact_part = Part.where(name: @query).first || Part.where(manufacturer_id: @query).first

@@ -49,7 +49,7 @@ module PartsHelper
     return (image_tag 'electric_parts.jpg', height: '100') if p.category_id == 19
     return (image_tag 'cardan_joint.jpg', height: '100') if p.category_id == 20
     return (image_tag 'radiator.jpg', height: '100') if p.category_id == 21
-    if p.category_id == 22
+    if p.category_id == 22 && p.truck_id > 0
       name = Part::TRUCK[p.truck_id].downcase
       return image_tag "#{name}_cab.jpg", height: '100'
     end

@@ -29,50 +29,23 @@ namespace :import do
     p "Parts 1 imported - #{parts.count}"
   end
 
-  # desc "Import parts 2 from csv file"
-  # task :parts_2 => :environment do
-  #   require 'csv'
-  #   csv_text = File.read("#{Rails.root}/db/seed/parts2.csv")
-
-  #   csv = CSV.parse(csv_text, :headers => true)
-  #   parts = []
-  #   progressbar = ProgressBar.create(:starting_at => 0, :total => csv.count, format: '%a %B %p%% %t')
-  #   # "970.85".gsub(/[^0-9]/,'').to_i / 100.00
-  #   csv.each do |row|
-  #     if row[2].present?
-  #       parts << Part.create(manufacturer_id: row[0], name: row[2],
-  #         seller_id: row[1], price: row[3].gsub(/[^0-9]/,'').to_i / 100.00,
-  #         winter: row[4].present? ? (row[4] == 0 ? false : true) : nil,
-  #         truck: row[5].present? ? (row[5] == 0 ? false : true) : nil,
-  #         brand: (row[6] if row[6].present?), category_id: row[7])
-  #       progressbar.increment
-  #     end
-  #   end
-  #   p "Parts 2 imported - #{parts.count}"
-  # end
-
-  # desc "Import parts 3 from csv file"
-  # task :parts_3 => :environment do
-  #   require 'csv'
-  #   csv_text = File.read("#{Rails.root}/db/seed/parts3.csv")
-
-  #   csv = CSV.parse(csv_text, :headers => true)
-  #   parts = []
-  #   progressbar = ProgressBar.create(:starting_at => 0, :total => csv.count, format: '%a %B %p%% %t')
-  #   # "970.85".gsub(/[^0-9]/,'').to_i / 100.00
-  #   csv.each do |row|
-  #     if row[2].present?
-  #       parts << Part.create(manufacturer_id: row[0], name: row[2],
-  #         seller_id: row[1], price: row[3].gsub(/[^0-9]/,'').to_i / 100.00,
-  #         winter: row[4].present? ? (row[4] == 0 ? false : true) : nil,
-  #         truck: row[5].present? ? (row[5] == 0 ? false : true) : nil,
-  #         brand: (row[6] if row[6].present?), category_id: row[7])
-  #       progressbar.increment
-  #     end
-  #   end
-  #   p "Parts 3 imported - #{parts.count}"
-  # end
-
+  desc "Update parts data"
+  task :update_parts => :environment do
+    Part.where("name ILIKE ?", "%Сайленблок%").update_all(category_id: 14)
+    Part.where("name ILIKE ?", "%Колодка тормозная%").update_all(category_id: 13)
+    Part.where("name ILIKE ?", "%Насос подьема кабины%").update_all(category_id: 23)
+    Part.where("name ILIKE ?", "%Насос подьема кабины%").where("name ILIKE ?", "%Volvo%").update_all(truck_id: 3)
+    Part.where("name ILIKE ?", "%Фара%").update_all(category_id: 16)
+    Part.where("name ILIKE ?", "%Scania%").where(category_id: 22).update_all(truck_id: 4)
+    Part.where("name ILIKE ?", "%Renault%").where(category_id: 22).update_all(truck_id: 10)
+    Part.where("name ILIKE ?", "%Iveco%").where(category_id: 22).update_all(truck_id: 6)
+    Part.where("name ILIKE ?", "%DAF%").where(category_id: 22).update_all(truck_id: 5)
+    Part.where("name ILIKE ?", "%Atego%").where(category_id: 22).update_all(truck_id: 1)
+    Part.where("name ILIKE ?", "%Axor%").where(category_id: 22).update_all(truck_id: 1)
+    Part.where("name ILIKE ?", "%Actros%").where(category_id: 22).update_all(truck_id: 1)
+    Part.where("name ILIKE ?", "%Volvo%").where(category_id: 22).update_all(truck_id: 3)
+    p "Parts updated"
+  end
 
   task :all => [:parts]
 end

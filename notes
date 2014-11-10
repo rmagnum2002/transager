@@ -1,7 +1,9 @@
 Part.where("name ILIKE ?", "%Сайленблок%").update_all(category_id: 14)
 Part.where("name ILIKE ?", "%Колодка тормозная%").update_all(category_id: 13)
-
-
 Part.where("name ILIKE ?", "%Насос подьема кабины%").update_all(category_id: 23)
 Part.where("name ILIKE ?", "%Насос подьема кабины%").where("name ILIKE ?", "%Volvo%").update_all(truck_id: 3)
 Part.where("name ILIKE ?", "%Фара%").update_all(category_id: 16)
+Part.where("name ILIKE ?", "%Scania%").where(category_id: 22).update_all(truck_id: 4)
+Part.where("name ILIKE ?", "%Renault%").where(category_id: 22).update_all(truck_id: 10)
+Part.where("name ILIKE ?", "%Iveco%").where(category_id: 22).update_all(truck_id: 6)
+Part.where("name ILIKE ?", "%DAF%").where(category_id: 22).update_all(truck_id: 5)
