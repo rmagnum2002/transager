@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'posts/carrier'
+
   resources :parts, only: :index
 
   resources :feedbacks
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   get 'set_locale' => 'welcome#set_locale'
   get '/search_parts' => 'parts#autocomplete'
   get '/parts/pdf' => 'parts#parts_list', as: :parts_list
+  get 'career/:id' => 'posts#career', as: :carrier
+  get '/careers' => 'posts#careers'
 
   root 'welcome#index'
 

@@ -18,7 +18,9 @@ ro:
   price_list: 'Price list'
   looking_for_parts: 'Căutați piese?'
   we_have_them_here: 'Le avem aici'
-
+  all_offers: 'Vezi toate ofertele'
+  career: 'Carieră'
+  read_more: "Detalii"
   seo:
     moto: 'companie de transport'
   notice:

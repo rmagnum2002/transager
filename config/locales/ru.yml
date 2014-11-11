@@ -18,7 +18,9 @@ ru:
   price_list: 'Прайс-лист'
   looking_for_parts: 'Нужны запчасти?'
   we_have_them_here: 'Они здесь'
-
+  all_offers: 'Все предложения'
+  career: 'Карьера'
+  read_more: "Подробнее"
   seo:
     moto: 'транспортная компания'
   notice:

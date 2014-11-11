@@ -1,0 +1,50 @@
+<div class="container">
+  <section class="hgroup">
+    <h1>
+      <%= @post.title %>
+    </h1>
+    <h2>
+      <i class="glyphicon glyphicon-time"></i> <%= l @post.created_at, format: :long %>
+      <!-- <a href="#post_comments"><i class="fa-comments-alt"></i> 6 comments</a> -->
+    </h2>
+    <ul class="breadcrumb pull-right">
+      <% if Post.count > 2 %>
+        <li><%= link_to t('all_offers'), careers_path %></li>
+      <% end %>
+    </ul>
+  </section>
+  <section>
+    <div class="row">
+      <div id="leftcol" class="col-sm-8 col-md-8">
+        <% if current_admin_user %>
+        <div class="alert alert-warning fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <%= link_to "Vezin în admin", admin_post_path(@post), target: :blank %> |
+          <%= link_to "Editează pagina".html_safe, edit_admin_post_path(@post), target: :blank %>
+        </div>
+        <% end %>
+        <article class="post">
+          <div class="post_content">
+            <!-- <figure><img alt="0" src="images/portfolio/p4.jpg"></figure> -->
+            <%= raw @post.content %>
+          </div>
+        </article>
+
+      </div>
+      <div id="sidebar" class="col-sm-4 col-md-4">
+        <aside class="widget">
+          <center class="need_parts">
+            <h2><%= t('looking_for_parts') %></h2>
+            <%= link_to t('we_have_them_here'), parts_path %>
+          </center>
+          <hr>
+          <center>
+            <%= image_tag 'evacuator-left.gif', width: '60%', class: 'img' %><br><br>
+            <%= image_tag 'geometry.jpg', class: 'img', width: '60%', style: "border: 1px solid;" %>
+            <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '60%'), 'http://www.anvelopeauto.md/', target: :blank %>
+          </center>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>

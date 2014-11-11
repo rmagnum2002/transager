@@ -1,0 +1,58 @@
+<div class="container">
+  <section class="hgroup">
+    <h1><%= t(:career) %></h1>
+    <h2>
+      Fii parte a unei echipi de profesioniști...
+    </h2>
+  </section>
+
+
+
+  <section>
+    <div class="row">
+      <div id="leftcol" class="col-sm-8 col-md-8">
+        <% @posts.each do |p| %>
+        <article class="post">
+          <div class="post_header">
+            <h3 class="post_title"><%= link_to p.title, carrier_path(p) %></h3>
+            <div class="post_sub">
+              <p><i class="glyphicon glyphicon-time"></i> <%= l p.created_at, format: :long %></p>
+              <!-- <a href="single_post.html#post_comments"><i class="fa-comments-alt"></i> 6 comments</a> -->
+            </div>
+           </div>
+           <div class="post_content">
+             <!-- <figure><a href="single_post.html"><img alt="0" src="images/portfolio/p4.jpg"></a></figure> -->
+             <%= ActionView::Base.full_sanitizer.sanitize(p.content).truncate(300, omission: '...') %><br>
+             <%= link_to t(:read_more), carrier_path(p), class: 'btn btn-primary' %>
+           </div>
+         </article>
+        <% end %>
+<!--         <div class="pagination_wrapper">
+          <ul class="pagination pagination-centered">
+            <li class="disabled"><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div> -->
+      </div>
+      <div id="sidebar" class="col-sm-4 col-md-4">
+        <aside class="widget">
+          <center class="need_parts">
+            <h2><%= t('looking_for_parts') %></h2>
+            <%= link_to t('we_have_them_here'), parts_path %>
+          </center>
+          <hr>
+          <center>
+            <%= image_tag 'evacuator-left.gif', width: '60%', class: 'img' %><br><br>
+            <%= image_tag 'geometry.jpg', class: 'img', width: '60%', style: "border: 1px solid;" %>
+            <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '60%'), 'http://www.anvelopeauto.md/', target: :blank %>
+          </center>
+        </aside>
+      </div>
+    </div>
+  </section>
+</div>
