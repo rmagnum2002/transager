@@ -34,16 +34,22 @@
       </div>
       <div id="sidebar" class="col-sm-4 col-md-4">
         <aside class="widget">
-          <h4><center><%= t('menu.contacts') %></center></h4>
-          <div class="col-md-12 col-sm-12">
-            <%= render 'shared/contacts_service' %>
-            <%= render 'shared/contacts_accountant' %>
-          </div>
+          <center class="need_parts">
+            <h2><%= t('looking_for_parts') %></h2>
+            <%= link_to t('we_have_them_here'), parts_path %>
+          </center>
+          <hr>
           <center>
             <%= image_tag 'evacuator-left.gif', width: '60%', class: 'img' %><br><br>
             <%= image_tag 'geometry.jpg', class: 'img', width: '60%', style: "border: 1px solid;" %>
             <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '60%'), 'http://www.anvelopeauto.md/', target: :blank %>
           </center>
+          <hr>
+          <h4><center><%= t('menu.contacts') %></center></h4>
+          <div class="col-md-12 col-sm-12">
+            <%= render 'shared/contacts_service' %>
+            <%= render 'shared/contacts_accountant' %>
+          </div>
         </aside>
       </div>
     </div>

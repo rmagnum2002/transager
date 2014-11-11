@@ -8,7 +8,7 @@ en:
   int_transport: 'International transportation'
   t_and_t_service: 'Truck and Trailer Service'
   search: 'Search'
-  search_placeholder: 'Search by code or name'
+  search_placeholder: 'Search by code...'
   found_parts: "Found %{size} parts with term <b>%{query}</b>"
   category: 'Category'
   brand: 'Brand'
@@ -16,6 +16,8 @@ en:
   name: 'Name'
   download_pdf: 'Download PDF'
   price_list: 'Price list'
+  looking_for_parts: 'Need spare parts?'
+  we_have_them_here: 'We have them here'
   seo:
     moto: 'transport company'
   notice:

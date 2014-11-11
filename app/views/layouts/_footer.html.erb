@@ -23,8 +23,8 @@
           <p><i class="fa fa-print"></i> (+30) 9854-7855</p>
           <p><i class="fa fa-envelope"></i> transager@company.md</p>
         </div>
-<!--         <div class="footer_teaser col-sm-4 col-md-4">
-          <h3>Anunțuri</h3>
+        <div class="footer_teaser col-sm-4 col-md-4">
+          <h3>Carieră</h3>
           <ul class="media-list">
             <li class="media">
               <a href="#" class="media-date">19<span>FEB</span></a>
@@ -37,7 +37,8 @@
               <p>Fugiat dapibus, tellus ac cursus commodo, condime ntum nibh, ut fermentum...</p>
             </li>
           </ul>
-        </div> -->
+          <p><%= link_to t('all_posts'), '#' %></p>
+        </div>
         <div class="footer_teaser col-sm-4 col-md-4">
           <h3><%= t('menu.contacts') %></h3>
           <ul class="footer_ul">
@@ -57,28 +58,7 @@
               <br>
             <% end %>
           </ul>
-          <!-- <p>All photos © by <a href="http://www.dimitragiannouka.com" target="_blank">Dimitra Giannouka</a>.</p> -->
-        </div>
-        <div class="footer_teaser col-sm-4 col-md-4">
-          <h3><%#= t('menu.contacts') %></h3>
-          <ul class="footer_ul">
-            <% Contact.order('contact_type asc').where(department_id: [2, 3]).group_by(&:department_id).each do |id, contacts| %>
-              <li>
-                <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
-                <ul class="footer_ul">
-                  <% contacts.each do |c| %>
-                    <li>
-                      <%= footer_li(c) %>
-                      &nbsp;&nbsp;
-                      <%= c.details %>
-                    </li>
-                  <% end %>
-                </ul>
-              </li>
-              <br>
-            <% end %>
-          </ul>
-          <!-- <p>All photos © by <a href="http://www.dimitragiannouka.com" target="_blank">Dimitra Giannouka</a>.</p> -->
+          <p>Created by <a href="http://stackoverflow.com/users/985241/rmagnum2002" target="_blank">rmagnum2002</a></p>
         </div>
       </div>
     </div>

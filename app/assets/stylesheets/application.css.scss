@@ -53,3 +53,19 @@ ul.ui-autocomplete {
 td.price{
   text-align: center;
 }
+table.listing{
+  thead{
+    background-color: #345DA6;
+    color: #fff;
+    th{text-align: center;}
+  }
+  font-size: 12px;
+}
+center.need_parts {
+  width: 200px;
+  margin: auto;
+  background: rgb(0, 40, 113);
+  color: #fff;
+  padding: 20px 0;
+  a{color: #fff;text-decoration: underline;}
+}

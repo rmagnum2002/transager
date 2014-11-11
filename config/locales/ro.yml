@@ -8,7 +8,7 @@ ro:
   int_transport: 'Transport Internațional'
   t_and_t_service: 'Reparții Camioane și Remorci'
   search: 'Caută'
-  search_placeholder: 'Căutare după cod sau nume'
+  search_placeholder: 'Căutare după cod...'
   found_parts: "Am găsit %{size} piese cu termenul <b>%{query}</b>"
   category: 'Categorie'
   brand: 'Brand'
@@ -16,6 +16,9 @@ ro:
   name: 'Denumire'
   download_pdf: 'Descarcă PDF'
   price_list: 'Price list'
+  looking_for_parts: 'Căutați piese?'
+  we_have_them_here: 'Le avem aici'
+
   seo:
     moto: 'companie de transport'
   notice:

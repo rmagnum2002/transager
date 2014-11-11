@@ -27,7 +27,7 @@
             <%= t('parts_available') %>  <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3, 5]).pluck(:details).join(', ') %></b>
           </div>
           <div class="table-responsive">
-            <table class='table table-bordered table-striped table-hover table-condensed'>
+            <table class='table table-bordered table-striped table-hover table-condensed listing'>
               <thead>
                 <tr>
                   <th>ID</th>
@@ -60,6 +60,10 @@
                             <tr>
                               <td>#{t(:price)}</td>
                               <td>#{p.price} lei</td>
+                            </tr>
+                            <tr>
+                              <td>ID</td>
+                              <td>#{p.manufacturer_id}<br> #{p.seller_id}</td>
                             </tr>
                           </table>
                       </div>

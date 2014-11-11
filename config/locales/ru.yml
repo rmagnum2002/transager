@@ -16,6 +16,9 @@ ru:
   name: 'Имя'
   download_pdf: 'Скачать в PDF'
   price_list: 'Прайс-лист'
+  looking_for_parts: 'Нужны запчасти?'
+  we_have_them_here: 'Они здесь'
+
   seo:
     moto: 'транспортная компания'
   notice:
