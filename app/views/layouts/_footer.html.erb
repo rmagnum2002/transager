@@ -41,7 +41,7 @@
         <div class="footer_teaser col-sm-4 col-md-4">
           <h3><%= t('menu.contacts') %></h3>
           <ul class="footer_ul">
-            <% Contact.order('contact_type asc').where(department_id: [1, 4]).group_by(&:department_id).each do |id, contacts| %>
+            <% Contact.order('position asc').order('contact_type asc').where(department_id: [1, 4]).group_by(&:department_id).each do |id, contacts| %>
               <li>
                 <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
                 <ul class="footer_ul">

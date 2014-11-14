@@ -66,8 +66,8 @@ ro:
     cab_pump: 'Pompă Cabină'
   search_parts: 'Caută în Catalog'
   parts_available: 'Pentru disponibilitatea pieselor în stoc vă rugăm să ne contactați la telefoanele:'
-  few_parts: 'O parte din piesele care le puteți găsi în magazinul nostru'
-  will_find_for_you: "... sau contactați-ne pe noi și o să găsim piesa necesară pentru Dvs."
+  few_parts: 'Mai mult de %{parts} de piese auto le puteți găsi în magazinul nostru'
+  will_find_for_you: "Contactați-ne pe noi pentru a livra piesa necesară la destinație."
   our_suppliers: 'furnizorii nostri'
   menu:
     home: 'Acasă'

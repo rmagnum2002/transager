@@ -6,10 +6,27 @@
     <tbody>
       <% Contact.where(department_id: 3).order('contact_type asc').each do |c| %>
       <tr>
-        <td><%= footer_li(c) %></td>
+        <td>
+          <% if c.contact_type == 5 %>
+          <div id="SkypeButton_Call_<%= c.details %>_1" class="skype_button">
+            <script type="text/javascript">
+            Skype.ui({
+              "name": "chat",
+              "element": "SkypeButton_Call_<%= c.details %>_1",
+              "participants": ["<%= c.details %>"],
+              "imageSize": 14
+            });
+            </script>
+          </div>
+          <% else %>
+          <%= footer_li(c) %>
+          <% end %>
+        </td>
         <td><%= c.details %></td>
         <% if current_admin_user %>
-        <td><%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, admin_contact_path(c), target: :blank %></td>
+        <td>
+          <%= link_to '<i class="fa fa-pencil-square-o"></i>'.html_safe, admin_contact_path(c), target: :blank %>
+        </td>
         <% end %>
       </tr>
       <% end %>

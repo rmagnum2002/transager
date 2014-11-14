@@ -4,7 +4,7 @@ ActiveAdmin.register Contact do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  permit_params :contact_type, :department_id, :details, :on, :contact
+  permit_params :contact_type, :department_id, :details, :position, :on, :contact
   #
   # or
   #
@@ -15,11 +15,15 @@ ActiveAdmin.register Contact do
   # end
 
   index do
+    selectable_column
     column :id
     column :contact_type do |c|
       t(Contact::CONTACT_TYPE.invert[c.contact_type])
     end
     column :details
+    column :department_id do |c|
+      t(Contact::DEPARTMENT_ID.invert[c.department_id])
+    end
     column :created_at
     column :updated_at
 
@@ -45,6 +49,7 @@ ActiveAdmin.register Contact do
       f.input :contact_type, as: :select, collection: Contact::CONTACT_TYPE.map{|value, key| [t(value), key] }
       f.input :department_id, as: :select, collection: Contact::DEPARTMENT_ID.map{|value, key| [t(value), key] }
       f.input :details
+      f.input :position
     end
     f.actions
   end

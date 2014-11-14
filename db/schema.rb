@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111191133) do
+ActiveRecord::Schema.define(version: 20141114103858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,12 +53,13 @@ ActiveRecord::Schema.define(version: 20141111191133) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "app_settings", force: true do |t|
-    t.boolean  "slider_option",     default: false
-    t.boolean  "map_option",        default: false
+    t.boolean  "slider_option",         default: false
+    t.boolean  "map_option",            default: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "enable_chat",       default: true
-    t.boolean  "include_suppliers", default: true
+    t.boolean  "enable_chat",           default: true
+    t.boolean  "include_suppliers",     default: true
+    t.integer  "root_page_parts_count", default: 4
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 20141111191133) do
     t.string   "details"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   create_table "feedbacks", force: true do |t|
