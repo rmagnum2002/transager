@@ -1,0 +1,22 @@
+<h3>Mesaj nou de pe pagina www.transager.md</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Nume:</td>
+      <td><%= @feedback.name %></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><%= @feedback.email %></td>
+    </tr>
+    <tr>
+      <td>Telefon:</td>
+      <td><%= @feedback.phone.present? ? @feedback.phone : 'lipsește' %></td>
+    </tr>
+    <tr>
+      <td>Mesaj:</td>
+      <td><%= @feedback.message %></td>
+    </tr>
+  </tbody>
+</table>

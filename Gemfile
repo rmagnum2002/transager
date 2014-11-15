@@ -46,6 +46,7 @@ gem 'pg_search'
 gem 'will_paginate'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem "figaro"
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

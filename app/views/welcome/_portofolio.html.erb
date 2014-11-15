@@ -1,6 +1,7 @@
 <h2 class="section_header fancy centered">
   <%= t('few_parts', parts: 7000) %>
   <small><%= t('will_find_for_you') %></small>
+  <small><%= link_to 'Edit thumbs number', edit_admin_app_setting_path(@settings), class: 'pull-right', target: :blank %></small>
 </h2>
 <div class="portfolio_strict row">
   <% Part::CATEGORY.to_a.last(19).shuffle.first("#{@settings.root_page_parts_count}".to_i).each do |p| %>

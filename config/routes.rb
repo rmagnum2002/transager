@@ -31,6 +31,15 @@ Rails.application.routes.draw do
   get 'career/:id' => 'posts#career', as: :carrier
   get '/careers' => 'posts#careers'
 
+  # http://ts.nccm.md/set_locale?back=%2F&lang=en
+  get '/intern.html' => redirect('/transport/transport-intern')
+  get '/maritim.html' => redirect('/transport/transport-maritim')
+  get '/transport-internaional.html' => redirect('/transport/transport-international')
+  get '/service-autocamioane.html' => redirect('/service/service-camioane')
+  get '/service-remorci-i-semiremorci.html' => redirect('/transport/transport-maritim')
+  get '/tractarea-autocamioanelor.html' => redirect('/service/tractare-camioane')
+  get '/contact.html' => redirect('/contacts')
+
   root 'welcome#index'
 
   # Example of regular route:

@@ -397,5 +397,6 @@ ro:
               invalid: 'Nu este în formatul corect. Exemplu: name@mail.md'
             message:
               blank: 'Mesaj obligatoriu'
+              too_short: 'Mesajul este prea scurt. Minimum 50, maximum 800'
             department_id:
               blank: 'Vă rugăm să selectați destinatarul.'

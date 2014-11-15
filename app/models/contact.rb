@@ -15,4 +15,15 @@ class Contact < ActiveRecord::Base
     :"department_id.service" => 3,
     :"department_id.accountant" => 4
   }
+
+
+  def self.departments
+    contacts = Contact.where(contact_type: 4)
+    departments = []
+
+    DEPARTMENT_ID.each do |d|
+      departments << d if contacts.where(department_id: d[1]).any?
+    end
+    departments
+  end
 end
