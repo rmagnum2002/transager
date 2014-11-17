@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def load_settings
     @settings = AppSetting.first
+    @gallery = Gallery.where(footer: true).first
   end
 
   def set_locale_filter

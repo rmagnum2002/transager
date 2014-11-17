@@ -5,6 +5,11 @@
   </div>
   <br><br>
   <div class="form-group">
+    <%= f.label :footer, :class => 'control-label' %>
+    <%= f.check_box :footer, :class => 'form-control' %>
+  </div>
+  <br><br>
+  <div class="form-group">
     <%= f.label :gallery_items, :class => 'control-label' %>
     <div class="controls">
       <%= file_field_tag "images[]", type: :file, multiple: true %>

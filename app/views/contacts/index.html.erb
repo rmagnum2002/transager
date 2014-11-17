@@ -31,11 +31,12 @@
             <strong></strong><br>
             Uzinelor 171 A<br>
             Chișinău, MD2000<br>
-            <abbr title="Phone">P:</abbr> +(373) 22 475242
+            <%= @settings.phone %>
           </address>
           <address>
-            <a href="mailto:#">transager@company.md</a>
+            <a href="mailto:#"><%= @settings.email %></a>
           </address>
+          <%= link_to 'Edit phone and email', edit_admin_app_setting_path(@settings), target: :blank if current_admin_user.present? %>
           <br><br><br><br><br>
         </div>
       </div>
@@ -75,17 +76,17 @@
     </section>
   <hr>
   <div class="row">
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-6 col-sm-6">
       <%= render 'shared/contacts_transport' %>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-6 col-sm-6">
       <%= render 'shared/contacts_service' %>
     </div>
-
-    <div class="col-md-3 col-sm-6">
+    <div class="clearfix"></div>
+    <div class="col-md-6 col-sm-6">
       <%= render 'shared/contacts_shop' %>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-6 col-sm-6">
       <%= render 'shared/contacts_accountant' %>
     </div>
   </div>

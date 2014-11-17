@@ -4,7 +4,7 @@ ActiveAdmin.register Gallery do
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
-  # permit_params :name, :images
+  # permit_params :name, :footer, :images
   #
   # or
   #
@@ -23,6 +23,7 @@ ActiveAdmin.register Gallery do
     attributes_table do
       row :id
       row :name
+      row :footer
       row :created_at
       row :updated_at
     end
@@ -61,6 +62,17 @@ ActiveAdmin.register Gallery do
         end
       end
     end
+
+
+  def update
+    respond_to do |format|
+      if @gallery.update(gallery_params)
+        format.html { redirect_to [:admin, @gallery], notice: 'Gallery was successfully updated.' }
+      else
+        format.html { redirect_to :back, notice: 'There was a problem saving record.' }
+      end
+    end
+  end
 
   private
     def set_gallery

@@ -18,10 +18,11 @@
         <div class="footer_teaser col-sm-4 col-md-4">
           <h3><%= t('about_us') %></h3>
           <p><%= t('about') %></p>
-          <p><i class="fa fa-map-marker"></i> Uzinelor 171A, Chișinău, Moldova</p>
-          <p><i class="fa fa-phone"></i> (+30) 265-9987</p>
-          <p><i class="fa fa-print"></i> (+30) 9854-7855</p>
-          <p><i class="fa fa-envelope"></i> transager@company.md</p>
+          <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Uzinelor 171A, Chișinău, Moldova</p>
+          <p><i class="fa fa-phone"></i>&nbsp;&nbsp;<%= @settings.phone %></p>
+          <!-- <p><i class="fa fa-print"></i> (+30) 9854-7855</p> -->
+          <p><i class="fa fa-envelope"></i>&nbsp;&nbsp;<%= @settings.email %></p>
+          <%= link_to 'Edit phone and email', edit_admin_app_setting_path(@settings), target: :blank if current_admin_user.present? %>
         </div>
         <div class="footer_teaser col-sm-4 col-md-4">
           <h3><%= t(:career) %></h3>
@@ -38,35 +39,24 @@
           </ul>
           <p><%= link_to t('all_offers'), careers_path if Post.count > 2 %></p>
         </div>
-        <div class="footer_teaser col-sm-4 col-md-4">
-          <h3><%= t('menu.contacts') %></h3>
-          <ul class="footer_ul">
-            <% Contact.order('position asc').order('contact_type asc').where(department_id: [1, 4]).group_by(&:department_id).each do |id, contacts| %>
-              <li>
-                <strong><%= (t(Contact::DEPARTMENT_ID.invert[id])).titleize %></strong>
-                <ul class="footer_ul">
-                  <% contacts.each do |c| %>
-                    <li>
-                      <%= footer_li(c) %>
-                      &nbsp;&nbsp;
-                      <%= c.details %>
-                    </li>
-                  <% end %>
-                </ul>
+        <% if @gallery %>
+        <div class="footer_teaser col-sm-4 col-md-4" id="latest-flickr-images">
+          <h3><%= t('gallery') %></h3>
+          <ul>
+            <% @gallery.gallery_items.each_with_index do |item, index| %>
+              <li class="flickr-image no-<%= index +1 %>">
+                <%= link_to image_tag(item.image.url(:thumb)), item.image.url, class: 'fancybox', rel: "gallery_footer", title: "Gallery - Trans Ager" %>
               </li>
-              <br>
             <% end %>
           </ul>
           <p>Created by <a href="http://stackoverflow.com/users/985241/rmagnum2002" target="_blank">rmagnum2002</a></p>
         </div>
+        <% end %>
       </div>
     </div>
   </section>
 </footer>
 
-<%# Contact.where(department_id: 1).order('contact_type asc').each do |c| %>
-  <!-- <li><%#= c.details %></li> -->
-<%# end %>
 <script type="text/javascript">
   if ($('footer').length > 0) {
     docHeight = $(window).height();
