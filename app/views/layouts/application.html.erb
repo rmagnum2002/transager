@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic" rel="stylesheet" type="text/css">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="Transager,transport maritim,transport autocare,service camioane,reparatii camioane,baterii auto,baterii camioane,transport international,camioane ieftine,Piese Autocamioane,MAN in Moldova,tractare camioane moldova,chisinau" />
-  <meta name="description" content="Transager.md - Partenerul tău de încredere, oriunde şi oricînd în Europa" />
-
   <title>Transager, <%= t('seo.moto') %>  - <%= @page_name %></title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic" rel="stylesheet" type="text/css">
+
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="<%= keywords %>" />
+  <meta name="description" content="<%= @settings.description %>" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="google-site-verification" content="dLYssx-prIlmakh-pSV8vIO6pyXnbmDSkYBYY5S89Hk" />
+
+  <meta property="og:title" content="Transager, <%= t('seo.moto') %>  - <%= @page_name %>"/>
+  <meta property="og:image" content="<%= asset_url 'transager_logo.png' %>"/>
+  <meta property="og:url" content="http://transager.md"/>
+  <meta property="og:description" content="<%= @settings.description %>"/>
+  <meta property="og:title" content="Transager, <%= t('seo.moto') %>  - <%= @page_name %>" />
+  <meta property="og:image" content="<%= asset_url 'transager_logo.png' %>" />
+  <meta property="og:description" content="<%= @settings.description %>" />
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>

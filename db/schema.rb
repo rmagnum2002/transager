@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117103916) do
+ActiveRecord::Schema.define(version: 20141117113106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20141117103916) do
     t.integer  "root_page_parts_count", default: 4
     t.string   "phone"
     t.string   "email"
+    t.text     "keywords"
+    t.text     "description"
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 20141117103916) do
     t.datetime "updated_at"
     t.string   "link_name"
     t.integer  "gallery_id"
+    t.text     "keywords",   default: ""
   end
 
   create_table "parts", force: true do |t|

@@ -6,4 +6,8 @@ module ApplicationHelper
     when :alert then "danger"
     end
   end
+
+  def keywords
+    @page.present? ? (@page.keywords.empty? ? @settings.keywords : @page.keywords) : @settings.keywords
+  end
 end
