@@ -68,7 +68,7 @@ gem 'unicorn'
 # Use Capistrano for deployment
 group :development do
   gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-rbenv', '~> 2.0', require: false
+  # gem 'capistrano-rbenv', '~> 2.0', require: false
   gem 'brakeman', require: false
   gem 'capistrano-rvm' #, '~> 0.0.3'
   gem 'capistrano-bundler'
@@ -80,5 +80,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# gem 'thin', group: :development
+gem 'thin', group: :development
 gem 'quiet_assets', :group => :development
