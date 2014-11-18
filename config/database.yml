@@ -83,3 +83,4 @@ test:
 production:
   <<: *default
   database: transager_production
+  host: localhost

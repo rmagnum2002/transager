@@ -66,12 +66,14 @@ end
 gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', '~> 3.0.0', group: :development
-gem 'capistrano', group: :development
-gem 'brakeman', require: false, group: :development
-gem 'capistrano-rvm' #, '~> 0.0.3'
-gem 'capistrano-bundler'
-gem 'capistrano-rails'
+group :development do
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+  gem 'brakeman', require: false
+  gem 'capistrano-rvm' #, '~> 0.0.3'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
