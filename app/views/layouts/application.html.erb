@@ -23,6 +23,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/admin_menu' if current_admin_user %>
   <header>
     <div class="container">
       <%= render 'layouts/navbar' %>

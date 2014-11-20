@@ -28,16 +28,16 @@ ru:
   logo: 'перевозки и экспедиция'
   details: 'подробнее'
   sliders:
-    title_one: "Partenerul tău de încredere, oriunde şi oricînd în Europa"
-    title_two: "Magazin piese și accesorii..."
-    title_three: "Servicii reparații al autovehiculelor de mare tonaj"
+    title_one: "Ваш партнер, которому можно доверять, в любом месте и в любое время в Европе"
+    title_two: "Магазин запасных частей и аксессуары..."
+    title_three: "Услуги по ремонту грузовых автомобилей и прицепов"
   features:
-    feature_title_one: 'Партнерство, основанное на доверии.'
+    feature_title_one: 'Партнерство, основанное на доверие.'
     feature_title_two: 'Безопасность, качество, профессионализм.'
     feature_title_three: 'Рядом с вашим бизнесом.'
-    feature_one: '<strong>Trans Ager</strong> e compania în care puteți avea încredere în domeniul <strong>transporului internațional</strong> sau <strong>servicii de reparații</strong> ale vehiculelor de mare tonaj.'
-    feature_two: '<strong>Trans Ager</strong> dispune de toate echipamentele şi forţa de muncă pentru a presta lucrări la cele mai înalte standarde calitative.'
-    feature_three: '<strong>Trans Ager</strong> dispune de o rețea de magazine pe teritoriul Republicii Moldova de unde clienții noștri pot mai ușor cumpăra piesele necesare cât și <strong>distribuire gratuită</strong> pe teritoriul țării.'
+    feature_one: '<strong>Trans Ager</strong> компания которой вы можете доверять, когда дело доходит до <strong>международных перевозок</strong> или <strong>ремонтных услуг</strong>  грузовой техники.'
+    feature_two: '<strong>Trans Ager</strong> имеет все <strong>инструменты</strong> и <strong>квалифицированных специалистов</strong>, чтобы получить максимально качественные услуги, которые клиент может ожидать.'
+    feature_three: '<strong>Trans Ager</strong> имеет сеть магазинов в Республике Молдова, где наши клиенты могут легче купить запчасти, необходимые им, а также у нас есть <strong>бесплатная доставка</strong> внутри Молдовы.'
   parts:
     title: 'Каталог запчастей'
     other: 'Другие'

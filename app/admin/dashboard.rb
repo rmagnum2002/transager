@@ -22,6 +22,9 @@ ActiveAdmin.register_page "Dashboard" do
             li "Map option: #{s.map_option}"
             li "Enable chat: #{s.enable_chat}"
             li "Include suppliers: #{s.include_suppliers}"
+            li "Contact form enabled: #{s.contact_form}"
+            li "Contact page email: #{s.email}"
+            li "Contact page phone: #{s.phone}"
             li link_to 'Edit settings', edit_admin_app_setting_path(s)
           end
         end

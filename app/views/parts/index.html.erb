@@ -91,7 +91,6 @@
             <% end %>
           </div>
         <% end %>
-        <%= render 'suppliers' if @settings.include_suppliers %>
       </div>
       <div id="sidebar" class="col-sm-2 col-md-2">
         <aside class="widget">
@@ -102,6 +101,7 @@
       </div>
     </div>
   </section>
+  <%= render 'suppliers' if @settings.include_suppliers %>
 </div>
 
 <script type="text/javascript">

@@ -16,7 +16,6 @@
 //= require jquery_ujs
 //= require fancybox
 //= require jquery.flexslider.js
-//= require jquery.prettyPhoto.js
 //= require easing.js
 //= require wow.min.js
 //= require jquery.ui.totop.js

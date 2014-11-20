@@ -112,7 +112,6 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.root_to = 'dashboard#index'
 
-
   # == Admin Comments
   #
   # This allows your users to comment on any resource registered with Active Admin.
@@ -186,12 +185,12 @@ ActiveAdmin.setup do |config|
   #
   # To change the default utility navigation to show a link to your website & a logout btn
   #
-  #   config.namespace :admin do |admin|
-  #     admin.build_menu :utility_navigation do |menu|
-  #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
-  #       admin.add_logout_button_to_menu menu
-  #     end
-  #   end
+    config.namespace :admin do |admin|
+      admin.build_menu :utility_navigation do |menu|
+        menu.add label: "transager.md", url: "/", html_options: { target: :blank }
+        admin.add_logout_button_to_menu menu
+      end
+    end
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
@@ -240,4 +239,10 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+end
+
+ActiveAdmin::Devise::SessionsController.class_eval do
+  def after_sign_out_path_for(resource_or_scope)
+    "/"
+  end
 end

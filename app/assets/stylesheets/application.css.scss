@@ -16,7 +16,7 @@
  *= require styles
  *= require font-awesome
  *= require flexslider
- *= require prettyPhoto
+ *= require animate
  */
 
  @import "bootstrap";
@@ -73,4 +73,8 @@ center.need_parts {
   color: #fff;
   padding: 20px 0;
   a{color: #fff;}
+}
+.top_bar{
+  a{color: #DFDFDF;}
+  a:hover{color: #fff;}
 }

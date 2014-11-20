@@ -1,0 +1,18 @@
+<section class="top_bar animated slideInDown">
+  <div class="container">
+    <div class="row">
+      <div class="tob_bar_left_col col-xs-12 col-sm-6 col-md-6">
+        <ul class="top_menu">
+          <!-- <li><%#= link_to 'Dashboard', admin_root_path, target: :blank %></li> -->
+          <li><%= link_to 'Settings', edit_admin_app_setting_path(@settings), target: :blank %></li>
+          <li><%= link_to 'Pages', admin_pages_path, target: :blank %></li>
+          <li><%= link_to 'Parts', admin_parts_path, target: :blank %></li>
+          <li><%= link_to 'Posts', admin_posts_path, target: :blank %></li>
+        </ul>
+      </div>
+      <div class="tob_bar_right_col col-xs-6 col-sm-6 col-md-6">
+        <p><%= link_to 'Log Out', destroy_admin_user_session_path %></p>
+      </div>
+    </div>
+  </div>
+</section>
