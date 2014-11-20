@@ -10,7 +10,7 @@
 <div class="portfolio_strict row">
   <% Part::CATEGORY.to_a.last(19).shuffle.first("#{@settings.root_page_parts_count}".to_i).each do |p| %>
   <div class="<%= root_page_parts_count_class %>">
-    <div class="portfolio_item wow animated flipInX">
+    <div class="portfolio_item wow animated flipInX animated">
       <a href="/parts?category_id=<%= p[0] %>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
         <figure style="background-image:url('<%= asset_url "portfolio/#{p[1].to_s.split('.').last}.jpg" %>')">
           <svg viewBox="0 0 180 320" preserveAspectRatio="none">

@@ -72,6 +72,7 @@ group :development do
   gem 'capistrano-rvm' #, '~> 0.0.3'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
+  gem 'quiet_assets' # display logs without assets
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -80,4 +81,3 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # gem 'thin', group: :development
-gem 'quiet_assets', :group => :development
