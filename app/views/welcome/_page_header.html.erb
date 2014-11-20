@@ -1,0 +1,16 @@
+<% if controller_name == 'contacts' && @settings.collapsing_header %>
+  <div class="full_page_photo"><div id="map"></div></div>
+<% elsif controller_name == 'welcome' && action_name == 'index' && @settings.collapsing_header %>
+  <%= render 'slider' %>
+<% elsif @pages %>
+<div class="full_page_photo small" style="background-image: url(<%= asset_path("#{action_name}_bg.jpg") %>);">
+  <div class="container">
+    <section class="call_to_action">
+      <h3 class="animated bounceInDown"><strong><%= @page.title if @pages.any?  %></strong></h3>
+      <h4 class="animated bounceInUp skincolored">
+        <%= @page.description.empty? ? t('header_slogan') : @page.description %>
+      </h4>
+    </section>
+  </div>
+</div>
+<% end %>

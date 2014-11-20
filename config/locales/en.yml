@@ -2,6 +2,8 @@ en:
   ro: "romanian"
   en: "english"
   ru: "russian"
+  sending: 'Sending...'
+  header_slogan: 'Trans Ager - transportation, trucks and trailers repair services, spare parts shop'
   about_us: 'about us'
   about: 'Company specialized in international goods transportation, truck and trailer services and truck parts selling'
   gallery: 'gallery'
@@ -14,7 +16,8 @@ en:
   brand: 'Brand'
   price: 'Price'
   name: 'Name'
-  download_pdf: 'Download PDF'
+  download_pdf: 'PDF'
+  # download_pdf: 'Download PDF'
   price_list: 'Price list'
   looking_for_parts: 'Need spare parts?'
   we_have_them_here: 'We have them here'

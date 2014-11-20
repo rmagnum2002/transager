@@ -2,6 +2,8 @@ ro:
   ro: "română"
   en: "engleză"
   ru: "rusa"
+  sending: 'Se trimite...'
+  header_slogan: 'Trans Ager - servicii transport, reparații camioane și remorci'
   about_us: 'despre noi'
   about: 'Companie specializată în transport de mărfuri, reparația vehiculelor de mare tonaj și vânzarea pieselor'
   gallery: 'galerie foto'
@@ -14,7 +16,8 @@ ro:
   brand: 'Brand'
   price: 'Preț'
   name: 'Denumire'
-  download_pdf: 'Descarcă PDF'
+  download_pdf: 'PDF'
+  # download_pdf: 'Descarcă PDF'
   price_list: 'Price list'
   looking_for_parts: 'Căutați piese?'
   we_have_them_here: 'Le avem aici'

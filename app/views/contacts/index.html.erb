@@ -1,9 +1,6 @@
-<% if @settings.map_option == false %>
-<div class="full_page_photo"><div id="map"></div></div>
-<% end %>
 <div class="container">
-  <% if @settings.map_option == true %>
-  <div class="full_page_photo"><div id="map"></div></div>
+  <%  if !@settings.collapsing_header %>
+    <div class="full_page_photo"><div id="map"></div></div>
   <% end %>
 
   <% if @settings.contact_form %>
@@ -67,7 +64,8 @@
               <%= f.input :message, as: 'text', input_html: {id: 'message', rows: '8'}, label: t('contact_form.message') %>
             </div>
             <div class="col-sm-12 col-md-12"><br/>
-              <%= f.submit t('contact_form.send_message'), class: 'btn btn-primary', id: 'submit_btn' %>
+              <%= f.submit t('contact_form.send_message'), data:{disable_with: t('sending')}, class: 'btn btn-primary',
+                    id: 'submit_btn'  %>
               <span id="notice" class="alert alert-warning alert-dismissable hidden" style="margin-left:20px;"></span>
             </div>
           </div>
@@ -106,7 +104,7 @@
     // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
     var mapOptions = {
     // How zoomed in you want the map to start at (always required)
-    zoom: 16,
+    zoom: 14,
     // Disable scrollwheel zooming on the map
     scrollwheel: true,
     center: myLatlng,

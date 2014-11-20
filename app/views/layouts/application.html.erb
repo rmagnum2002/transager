@@ -22,22 +22,24 @@
   <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <%= render 'layouts/admin_menu' if current_admin_user %>
+<body class="<%= collapse_slider %>" data-spy="scroll" data-target=".bs-docs-sidebar">
   <header>
+    <%= render 'layouts/admin_menu' if current_admin_user %>
     <div class="container">
       <%= render 'layouts/navbar' %>
     </div>
   </header><!-- /header -->
-  <% [:notice, :error, :alert].each do |level| %>
-    <% unless flash[level].blank? %>
-      <div class="alert alert-<%= flash_class(level) %> alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-        <center><%= sanitize(flash[level]) %></center>
-      </div>
-    <% end %>
-  <% end %>
+  <%= render 'welcome/page_header' %>
+
   <div class="main">
+    <% [:notice, :error, :alert].each do |level| %>
+      <% unless flash[level].blank? %>
+        <div class="alert alert-<%= flash_class(level) %> alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+          <center><%= sanitize(flash[level]) %></center>
+        </div>
+      <% end %>
+    <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>

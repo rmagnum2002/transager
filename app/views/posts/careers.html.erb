@@ -42,8 +42,10 @@
       <div id="sidebar" class="col-sm-4 col-md-4">
         <aside class="widget">
           <center class="need_parts">
+            <%= link_to parts_path do %>
             <h2><%= t('looking_for_parts') %></h2>
-            <%= link_to t('we_have_them_here'), parts_path %>
+            <%= t('we_have_them_here') %>
+            <% end %>
           </center>
           <hr>
           <center>

@@ -17,8 +17,8 @@ ActiveAdmin.register AppSetting do
 
   form do |f|
     f.inputs 'App Settings' do
-      f.input :slider_option
-      f.input :map_option
+      f.input :slider_option, label: 'Collapsing header'
+      # f.input :map_option
       f.input :enable_chat
       f.input :include_suppliers
       f.input :contact_form
