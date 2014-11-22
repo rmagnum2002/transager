@@ -14,7 +14,7 @@
   </section>
   <section>
     <div class="row">
-      <div id="leftcol" class="col-sm-10 col-md-10">
+      <div id="leftcol" class="col-sm-9 col-md-9">
         <% if @parts.size > 0 %>
           <div class="panel">
             <% unless params[:category_id].present? %>
@@ -24,7 +24,8 @@
             <b><%= t(Part::CATEGORY[params[:category_id].to_i]) if params[:category_id].present? %></b>
           </div>
           <div class="small alert alert-warning">
-            <%= t('parts_available') %>  <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3, 5]).pluck(:details).join(', ') %></b>
+            <%= t('parts_available') %><br>
+            <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3]).pluck(:details).join(', ') %></b>
           </div>
           <div class="table-responsive">
             <table class='table table-bordered table-striped table-hover table-condensed listing'>
@@ -92,11 +93,11 @@
           </div>
         <% end %>
       </div>
-      <div id="sidebar" class="col-sm-2 col-md-2">
+      <div id="sidebar" class="col-sm-3 col-md-3">
         <aside class="widget">
-          <%= image_tag 'evacuator-left.gif', class: 'img' %><br><br>
-          <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '100%'), 'http://www.anvelopeauto.md/', target: :blank %>
-          <%= image_tag 'livrare-300x300.png', class: 'img', width: '100%' %>
+          <%= image_tag 'evacuator-left.gif', class: 'img', width: '80%' %><br><br>
+          <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '80%'), 'http://www.anvelopeauto.md/', target: :blank %>
+          <%= image_tag 'livrare-300x300.png', class: 'img', width: '80%' %>
         </aside>
       </div>
     </div>

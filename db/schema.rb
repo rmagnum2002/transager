@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120123908) do
+ActiveRecord::Schema.define(version: 20141121205245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,8 +133,12 @@ ActiveRecord::Schema.define(version: 20141120123908) do
     t.datetime "updated_at"
     t.string   "link_name"
     t.integer  "gallery_id"
-    t.text     "keywords",    default: ""
-    t.string   "description", default: ""
+    t.text     "keywords",                  default: ""
+    t.string   "description",               default: ""
+    t.string   "header_image_file_name"
+    t.string   "header_image_content_type"
+    t.integer  "header_image_file_size"
+    t.datetime "header_image_updated_at"
   end
 
   create_table "parts", force: true do |t|

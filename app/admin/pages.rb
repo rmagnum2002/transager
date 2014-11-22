@@ -5,7 +5,7 @@ ActiveAdmin.register Page do
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   permit_params :link_name, :title, :text_1, :text_2, :text_3, :page_type,
-                :locale, :gallery_id, :keywords, :description, on: :page
+                :locale, :gallery_id, :keywords, :description, :header_image, on: :page
   #
   # or
   #
@@ -26,6 +26,9 @@ ActiveAdmin.register Page do
   show do |page|
     attributes_table do
       row :title
+      row :header_image do
+        image_tag(page.header_image.url, height: '200px')
+      end
       row :description
       row :link_name
       row :locale
@@ -52,10 +55,8 @@ ActiveAdmin.register Page do
   end
 
   form do |f|
-    f.inputs 'Seo' do
-      f.input :keywords
-    end
     f.inputs 'Contact' do
+      f.input :header_image
       f.input :title
       f.input :description
       f.input :link_name
@@ -69,6 +70,9 @@ ActiveAdmin.register Page do
     end
     f.inputs 'Gallery' do
       f.input :gallery_id, as: :select, collection: Gallery.all.map{|g| [g.name, g.id]}
+    end
+    f.inputs 'Seo' do
+      f.input :keywords
     end
     f.actions
   end
