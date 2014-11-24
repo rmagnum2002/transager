@@ -18,29 +18,32 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get '/transport' => 'welcome#transport', as: :transports
-  get '/transport/:id' => 'welcome#transport', as: :transport
-  get '/service' => 'welcome#service', as: :services
-  get '/service/:id' => 'welcome#service', as: :service
-  get '/shop' => 'welcome#shop', as: :shops
-  get '/shop/:id' => 'welcome#shop', as: :shop
-  get '/contacts' => 'welcome#contacts'
-  get 'set_locale' => 'welcome#set_locale'
-  get '/search_parts' => 'parts#autocomplete'
+  scope "/:locale" do
+    get '/transport' => 'welcome#transport', as: :transports
+    get '/transport/:id' => 'welcome#transport', as: :transport
+    get '/service' => 'welcome#service', as: :services
+    get '/service/:id' => 'welcome#service', as: :service
+    get '/shop' => 'welcome#shop', as: :shops
+    get '/shop/:id' => 'welcome#shop', as: :shop
+    get '/contacts' => 'welcome#contacts'
+
+    # http://ts.nccm.md/set_locale?back=%2F&lang=en
+    get '/intern.html' => redirect('/transport/transport-intern')
+    get '/maritim.html' => redirect('/transport/transport-maritim')
+    get '/transport-internaional.html' => redirect('/transport/transport-international')
+    get '/service-autocamioane.html' => redirect('/service/service-camioane')
+    get '/service-remorci-i-semiremorci.html' => redirect('/transport/transport-maritim')
+    get '/tractarea-autocamioanelor.html' => redirect('/service/tractare-camioane')
+    get '/contact.html' => redirect('/contacts')
+  end
+
   get '/parts/pdf' => 'parts#parts_list', as: :parts_list
+  get '/search_parts' => 'parts#autocomplete'
   get 'career/:id' => 'posts#career', as: :carrier
   get '/careers' => 'posts#careers'
-
-  # http://ts.nccm.md/set_locale?back=%2F&lang=en
-  get '/intern.html' => redirect('/transport/transport-intern')
-  get '/maritim.html' => redirect('/transport/transport-maritim')
-  get '/transport-internaional.html' => redirect('/transport/transport-international')
-  get '/service-autocamioane.html' => redirect('/service/service-camioane')
-  get '/service-remorci-i-semiremorci.html' => redirect('/transport/transport-maritim')
-  get '/tractarea-autocamioanelor.html' => redirect('/service/tractare-camioane')
-  get '/contact.html' => redirect('/contacts')
-
+  get 'set_locale' => 'welcome#set_locale'
   root 'welcome#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
