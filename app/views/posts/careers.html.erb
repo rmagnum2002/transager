@@ -14,7 +14,7 @@
            </div>
            <div class="post_content">
              <!-- <figure><a href="single_post.html"><img alt="0" src="images/portfolio/p4.jpg"></a></figure> -->
-             <%= ActionView::Base.full_sanitizer.sanitize(p.content).truncate(300, omission: '...') %><br>
+             <%= (ActionView::Base.full_sanitizer.sanitize(p.content).truncate(300, omission: '...')).html_safe %><br>
              <%= link_to t(:read_more), carrier_path(p), class: 'btn btn-primary' %>
            </div>
          </article>
