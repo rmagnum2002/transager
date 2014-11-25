@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   def career
-    @post = Post.carrier.find(params[:id])
+    @post = Post.job_offer.find(params[:id])
   end
 
   def careers
-    @posts = Post.carrier.all
+    @posts = Post.job_offer.all
   end
 end

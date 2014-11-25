@@ -51,7 +51,10 @@ gem "figaro"
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem "rspec-rails", :group => [:development, :test]
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 group :test do
   gem "ZenTest"
   gem "autotest-rails"

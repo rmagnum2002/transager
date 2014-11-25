@@ -376,7 +376,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.4)
   roo
-  rspec-rails
+  rspec-rails (~> 3.0)
   ruby-progressbar
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

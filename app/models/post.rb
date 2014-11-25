@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  scope :carrier, -> {where post_type: 1}
+  scope :job_offer, -> {where post_type: 1}
 
   POST_TYPE = {
     :"post_type.job_offer" => 1
