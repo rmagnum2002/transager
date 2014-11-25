@@ -2,6 +2,19 @@ ActiveAdmin.register Post do
   permit_params :title, :content, :post_type, :name, on: :part
 
 
+  index do
+    selectable_column
+    column :id
+    column :post_type do |p|
+      t(Post::POST_TYPE.invert[p.post_type])
+    end
+    column :created_at
+    column :updated_at
+
+    actions
+  end
+
+
   form do |f|
     f.inputs 'Part' do
       f.input :title
@@ -15,7 +28,7 @@ ActiveAdmin.register Post do
     attributes_table do
       row :title
       row :post_type do
-        t(Page::PAGE_TYPE.invert[page.post_type])
+        t(Post::POST_TYPE.invert[page.post_type])
       end
       row :content do
         raw(page.content)

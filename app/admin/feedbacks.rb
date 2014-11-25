@@ -15,6 +15,7 @@ ActiveAdmin.register Feedback do
   # end
 
   index do
+    selectable_column
     column :id
     column :department_id do |c|
       t(Contact::DEPARTMENT_ID.invert[c.department_id])

@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   scope :carrier, -> {where post_type: 1}
 
   POST_TYPE = {
-    :"post_type.carrier" => 1
+    :"post_type.job_offer" => 1
   }
 
   def created_date

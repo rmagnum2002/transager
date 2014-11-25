@@ -16,6 +16,7 @@ ActiveAdmin.register Page do
   # end
 
   index do
+    selectable_column
     column :id
     column :title
     column :link_name
