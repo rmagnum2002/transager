@@ -33,6 +33,7 @@
       </div>
       <div id="sidebar" class="col-sm-4 col-md-4">
         <aside class="widget">
+          <% if @page.show_contacts %>
           <h4><center><%= t('menu.contacts') %></center></h4>
           <div class="col-md-12 col-sm-12">
             <%= render 'shared/contacts_transport' %>
@@ -43,6 +44,7 @@
             <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '70%'), 'http://www.anvelopeauto.md/', target: :blank %>
             <%= image_tag 'livrare-300x300.png', class: 'img', width: '70%' %>
           </center>
+          <% end %>
         </aside>
       </div>
     </div>

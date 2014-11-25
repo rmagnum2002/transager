@@ -37,12 +37,14 @@
             <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '60%'), 'http://www.anvelopeauto.md/', target: :blank %>
             <%= image_tag 'livrare-300x300.png', class: 'img', width: '60%' %>
           </center>
+          <% if @page.show_contacts %>
           <hr>
           <h4><center><%= t('menu.contacts') %></center></h4>
           <div class="col-md-12 col-sm-12">
             <%= render 'shared/contacts_shop' %>
             <%= render 'shared/contacts_accountant' %>
           </div>
+          <% end %>
         </aside>
       </div>
     </div>

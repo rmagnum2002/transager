@@ -5,7 +5,8 @@ ActiveAdmin.register Page do
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   permit_params :link_name, :title, :text_1, :text_2, :text_3, :page_type,
-                :locale, :gallery_id, :keywords, :description, :header_image, on: :page
+                :locale, :gallery_id, :keywords, :description, :header_image,
+                :remove_header_image, :show_contacts, on: :page
   #
   # or
   #
@@ -48,6 +49,7 @@ ActiveAdmin.register Page do
         end
       end
       row :keywords
+      row :show_contacts
     end
     panel 'Gallery' do
       render 'admin/galleries/images', gallery: page.gallery if page.gallery.present?
@@ -58,11 +60,13 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs 'Contact' do
       f.input :header_image
+      f.input :remove_header_image, :as => :boolean
       f.input :title
       f.input :description
       f.input :link_name
       f.input :page_type, as: :select, collection: Page::PAGE_TYPE.map{|value, key| [t(value), key] }
       f.input :locale, as: :select, collection: LOCALES.to_a
+      f.input :show_contacts
       f.input :text_1, :as => :ckeditor
       if page.page_type == 1
         f.input :text_2
