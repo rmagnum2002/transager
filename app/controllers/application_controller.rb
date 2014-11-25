@@ -13,8 +13,12 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale_filter
-    if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])
-      @locale = cookies[:lang]
+    if params[:lang]
+      @locale = params[:lang]
+    else
+      if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])
+        @locale = cookies[:lang]
+      end
     end
 
     @locale ||= "ro"
@@ -37,7 +41,7 @@ class ApplicationController < ActionController::Base
 
   def current_language
     language = cookies[:lang]
-    language = params[:locale] if params[:locale]
+    language = params[:lang] if params[:lang]
     language
   end
 end

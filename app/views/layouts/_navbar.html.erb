@@ -33,13 +33,13 @@
           </a>
           <ul class="dropdown-menu">
             <% @transport_pages_links.each do |page| %>
-              <li><%= link_to page.title, transport_path(page.link_name, locale: (params[:locale].present? ? params[:locale] : current_language)), title: page.title %></li>
+              <li><%= link_to page.title, transport_path(page.link_name, lang: current_language), title: page.title %></li>
             <% end %>
           </ul>
         </li>
       <% else %>
         <% page = @transport_pages_links.first %>
-        <li><%= link_to t('menu.transportation'), transport_path(page.link_name, locale: (params[:locale].present? ? params[:locale] : current_language)), title: t('menu.transportation') %></li>
+        <li><%= link_to t('menu.transportation'), transport_path(page.link_name, lang: current_language), title: t('menu.transportation') %></li>
       <% end %>
       <% end %>
 
@@ -51,13 +51,13 @@
             </a>
             <ul class="dropdown-menu">
               <% @service_pages_links.each do |page| %>
-                <li><%= link_to page.title, service_path(page.link_name, locale: (params[:locale].present? ? params[:locale] : current_language)), title: page.title %></li>
+                <li><%= link_to page.title, service_path(page.link_name, lang: current_language), title: page.title %></li>
               <% end %>
             </ul>
           </li>
         <% else %>
           <% page = @service_pages_links.first %>
-          <li><%= link_to t('menu.service'), service_path(page.link_name, locale: (params[:locale].present? ? params[:locale] : current_language)), title: t('menu.service') %></li>
+          <li><%= link_to t('menu.service'), service_path(page.link_name, lang: current_language), title: t('menu.service') %></li>
         <% end %>
       <% end %>
 
@@ -68,7 +68,7 @@
         </a>
         <ul class="dropdown-menu">
           <% @shop_pages_links.each do |page| %>
-            <li><%= link_to page.title, shop_path(page.link_name, locale: (params[:locale].present? ? params[:locale] : current_language)), title: page.title %></li>
+            <li><%= link_to page.title, shop_path(page.link_name, lang: current_language), title: page.title %></li>
           <% end %>
           <li><%= link_to t('parts.title'), parts_path %></li>
         </ul>
@@ -105,7 +105,7 @@
     <% if k == @locale %>
     <%= k.upcase %> |
     <% else %>
-    <%= link_to k.upcase, set_locale_path(:lang => k,:back => request.fullpath), role: 'menuitem' %> |
+    <%= link_to k.upcase, set_locale_path(:lang => k,:back => request.fullpath.gsub("/#{current_language}/", "/#{k}/")), role: 'menuitem' %> |
     <% end %>
   <% end %>
 </div>

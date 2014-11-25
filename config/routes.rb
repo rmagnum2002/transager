@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  scope "/:locale" do
+  scope "(:lang)", locale: /ro|en|ru/ do
     get '/transport' => 'welcome#transport', as: :transports
     get '/transport/:id' => 'welcome#transport', as: :transport
     get '/service' => 'welcome#service', as: :services
@@ -27,13 +27,12 @@ Rails.application.routes.draw do
     get '/shop/:id' => 'welcome#shop', as: :shop
     get '/contacts' => 'welcome#contacts'
 
-    # http://ts.nccm.md/set_locale?back=%2F&lang=en
-    get '/intern.html' => redirect('/transport/transport-intern')
-    get '/maritim.html' => redirect('/transport/transport-maritim')
-    get '/transport-internaional.html' => redirect('/transport/transport-international')
-    get '/service-autocamioane.html' => redirect('/service/service-camioane')
-    get '/service-remorci-i-semiremorci.html' => redirect('/transport/transport-maritim')
-    get '/tractarea-autocamioanelor.html' => redirect('/service/tractare-camioane')
+    get '/intern.html' => redirect('/ro/transport/national')
+    get '/maritim.html' => redirect('/ro/transport/maritime')
+    get '/transport-internaional.html' => redirect('/ro/transport/international')
+    get '/service-autocamioane.html' => redirect('/ro/service/truck-service')
+    get '/service-remorci-i-semiremorci.html' => redirect('/ro/service/truck-service')
+    get '/tractarea-autocamioanelor.html' => redirect('/ro/service/tow-truck')
     get '/contact.html' => redirect('/contacts')
   end
 
@@ -42,6 +41,8 @@ Rails.application.routes.draw do
   get 'career/:id' => 'posts#career', as: :carrier
   get '/careers' => 'posts#careers'
   get 'set_locale' => 'welcome#set_locale'
+
+  get '/:locale' => 'welcome#index'
   root 'welcome#index'
 
 
