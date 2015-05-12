@@ -84,3 +84,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # gem 'thin', group: :development
+gem 'newrelic_rpm'
