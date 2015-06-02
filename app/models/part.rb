@@ -1,7 +1,7 @@
 class Part < ActiveRecord::Base
   include PgSearch
   pg_search_scope :quick_search,
-                  :against => [:name, :manufacturer_id, :seller_id],
+                  :against => [:name, :manufacturer_id, :seller_id, :brand],
                   ignoring: :accents, :using => {
                     :tsearch => {:prefix => true},
                     :trigram => {:threshold => 0.5}
