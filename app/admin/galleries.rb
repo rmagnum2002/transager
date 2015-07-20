@@ -41,6 +41,10 @@ ActiveAdmin.register Gallery do
   controller do
     before_action :set_gallery, only: [:show, :edit, :update, :destroy]
 
+    def new
+      @gallery = Gallery.new
+    end
+
     def create
       @gallery = Gallery.new(gallery_params)
 
@@ -62,7 +66,6 @@ ActiveAdmin.register Gallery do
         end
       end
     end
-
 
   def update
     respond_to do |format|
