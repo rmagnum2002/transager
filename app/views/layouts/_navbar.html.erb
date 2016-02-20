@@ -61,22 +61,21 @@
         <% end %>
       <% end %>
 
-      <% if @shop_pages_links.any? %>
+
       <li class="dropdown">
         <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.shop') %>
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <% @shop_pages_links.each do |page| %>
-            <li><%= link_to page.title, shop_path(page.link_name, lang: current_language), title: page.title %></li>
+          <% if @shop_pages_links.any? %>
+            <% @shop_pages_links.each do |page| %>
+              <li><%= link_to page.title, shop_path(page.link_name, lang: current_language), title: page.title %></li>
+            <% end %>
           <% end %>
           <li><%= link_to t('parts.title'), parts_path %></li>
+          <li><%= link_to t('parts.tires'), tires_parts_path %></li>
         </ul>
       </li>
-      <% else %>
-        <li class="<%= 'active' if action_name == 'index' && controller_name == 'parts' %>"><%= link_to t('parts.title'), parts_path %></li>
-      <% end %>
-
 
       <li class="dropdown">
         <a data-toggle="dropdown" class="dropdown-toggle" href="#"><%= t('menu.contacts') %>

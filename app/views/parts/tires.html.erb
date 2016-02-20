@@ -1,0 +1,111 @@
+<style type="text/css" media="screen">
+  .popover-title{
+    background-color: #428bca;
+    color: #fff;
+  }
+</style>
+
+<div class="container parts" data-lang='<%= data_table_lang %>'>
+  <section class="hgroup">
+    <div class="col-md-6">
+      <h1><%= t(Part::CATEGORY[1]) %></h1>
+    </div>
+    <%#= render 'welcome/search_form' if @parts.size > 0 %>
+    <div class="clearfix"></div>
+  </section>
+  <section>
+    <div class="row">
+      <div id="leftcol" class="col-sm-9 col-md-9">
+        <% if @parts.size > 0 %>
+          <div class="small alert alert-warning">
+            <%= t('parts_available') %><br>
+            <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3]).pluck(:details).join(', ') %></b>
+          </div>
+          <div class="table">
+            <table class='datatable table table-bordered table-striped table-hover table-condensed listing'>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th><%= t(:name) %></th>
+                  <!-- <th>Brand</th> -->
+                  <!-- <th>Category</th> -->
+                  <th><%= t(:price) %> (lei)</th>
+                  <% if current_admin_user %>
+                  <th></th>
+                  <% end %>
+                </tr>
+              </thead>
+              <tbody>
+                <% @parts.each_with_index do |p, index| %>
+                <tr <%#= "class='success'".html_safe if (p.name == @query || p.manufacturer_id.downcase == @query.downcase) %>>
+                  <td><%= p.manufacturer_id %><%= " / #{p.seller_id}" if p.seller_id.present? %></td>
+                  <td>
+                    <%= link_to p.name, '#', class: 'part_name', data: {html: true, content: "
+                      <div class='col-md-12'>
+                          <center>#{category_image(p)}</center>
+                          <table class='table'>
+                            <tr>
+                              <td>#{t(:category)}</td>
+                              <td>#{t(p.category_name)}</td>
+                            </tr>
+                            <tr>
+                              <td>#{t(:price)}</td>
+                              <td>#{p.price} lei</td>
+                            </tr>
+                            <tr>
+                              <td>ID</td>
+                              <td>#{p.manufacturer_id}<br> #{p.seller_id}</td>
+                            </tr>
+                          </table>
+                      </div>
+                      "}, title: "<b>#{p.name}</b>".html_safe %>
+                  </td>
+                  <!-- <td><%#= p.brand %></td> -->
+                  <!-- <td><%#= t(p.category_name) %></td> -->
+                  <td class="price"><%= p.price %></td>
+                  <% if current_admin_user %>
+                  <td><%= link_to 'edit', edit_admin_part_path(p), target: :blank %></td>
+                  <% end %>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% else %>
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_tag parts_path, class: 'form search_form', role: 'form', method: :get do %>
+              <div class="row">
+                <div class="col-md-8">
+                  <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t(:search_placeholder), data: {autocomplete_source: search_parts_path}, autofocus: true %>
+                </div>
+                <div class="col-md-4">
+                  <%= submit_tag t(:search), name: nil, class: 'btn btn-primary' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div id="sidebar" class="col-sm-3 col-md-3">
+        <aside class="widget">
+          <%= image_tag 'evacuator-left.gif', class: 'img', width: '80%' %><br><br>
+          <%= link_to image_tag('anvelopeiarna.png', class: 'img', width: '80%'), 'http://www.anvelopeauto.md/', target: :blank %>
+          <%= image_tag 'livrare-300x300.png', class: 'img', width: '80%' %>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <%= render 'suppliers' if @settings.include_suppliers %>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.part_name').hover(function() {
+    /* Stuff to do when the mouse enters the element */
+    $(this).popover('show', {placement: 'top'});
+  }, function() {
+    /* Stuff to do when the mouse leaves the element */
+    $(this).popover('hide');
+  });
+});
+</script>

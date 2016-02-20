@@ -55,4 +55,15 @@ module PartsHelper
     end
     return (image_tag 'cab_pump.jpg', height: '100') if p.category_id == 23
   end
+
+  def data_table_lang
+    case current_language
+    when 'ro'
+      '//cdn.datatables.net/plug-ins/1.10.11/i18n/Romanian.json'
+    when 'ru'
+      '//cdn.datatables.net/plug-ins/1.10.11/i18n/Russian.json'
+    else
+      '//cdn.datatables.net/plug-ins/1.10.11/i18n/English.json'
+    end
+  end
 end

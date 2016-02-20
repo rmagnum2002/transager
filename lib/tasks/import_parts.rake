@@ -47,7 +47,7 @@ namespace :import do
     p "Parts updated"
   end
 
-  task :all => [:parts]
+  task :all => [:parts, :update_parts]
 end
 
 # desc "Import tires"

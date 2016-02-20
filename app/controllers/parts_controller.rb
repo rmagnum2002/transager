@@ -20,6 +20,18 @@ class PartsController < ApplicationController
     end
   end
 
+  def tires
+    @parts = Part.where(category_id: 1)
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "price list",
+               :layout => 'application.pdf.erb'
+      end
+    end
+  end
+
   def autocomplete
     parts = Part.quick_search(params[:term]).limit(10).map{|p| "#{p.manufacturer_id} / #{p.seller_id} - #{p.name}"}
     # tires = parts.tires.map{|p| Hash[label: p.name, category: t("parts.tires")]}

@@ -14,6 +14,8 @@
 //= require jquery-ui
 //= require bootstrap
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require fancybox
 //= require jquery.flexslider.js
 //= require easing.js
@@ -47,6 +49,18 @@ $(document).ready(function() {
       });
     }
   });
+
+  if ($('.datatable').length > 0) {
+    lang_url = $('.parts.container').data('lang')
+    $('.datatable').DataTable({
+      iDisplayLength: 25,
+      language: {
+          url: lang_url
+      }
+    });
+    $('.datatable').removeClass('hidden')
+  }
+
 });
 
 jQuery(function() {
