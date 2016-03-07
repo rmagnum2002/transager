@@ -86,11 +86,11 @@ Rails.application.configure do
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address   => "smtp.mandrillapp.com",
+    :address   => "in-v3.mailjet.com",
     :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => ENV["MANDRILL_USERNAME_TRANSAGER"],
-    :password  => ENV["MANDRILL_PASSWORD_TRANSAGER"], # SMTP password is any valid API key
+    :user_name => ENV["SMTP_USERNAME"],
+    :password  => ENV["SMTP_PASSWORD"], # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'transager.md', # your domain to identify your server when connecting
   }
