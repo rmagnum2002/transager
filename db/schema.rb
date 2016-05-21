@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
   enable_extension "pg_trgm"
   enable_extension "fuzzystrmatch"
 
-  create_table "active_admin_comments", force: true do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
     t.string   "resource_id",   null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "app_settings", force: true do |t|
+  create_table "app_settings", force: :cascade do |t|
     t.boolean  "slider_option",         default: false
     t.boolean  "map_option",            default: false
     t.datetime "created_at"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
     t.boolean  "contact_form",          default: false
   end
 
-  create_table "ckeditor_assets", force: true do |t|
+  create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
     t.integer  "data_file_size"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
-  create_table "contacts", force: true do |t|
+  create_table "contacts", force: :cascade do |t|
     t.integer  "contact_type"
     t.integer  "department_id"
     t.string   "details"
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
     t.integer  "position"
   end
 
-  create_table "feedbacks", force: true do |t|
+  create_table "feedbacks", force: :cascade do |t|
     t.integer  "department_id"
     t.string   "name"
     t.string   "email"
@@ -102,14 +102,14 @@ ActiveRecord::Schema.define(version: 20141125230052) do
     t.datetime "updated_at"
   end
 
-  create_table "galleries", force: true do |t|
+  create_table "galleries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "footer"
   end
 
-  create_table "gallery_items", force: true do |t|
+  create_table "gallery_items", force: :cascade do |t|
     t.integer  "gallery_id"
     t.string   "title"
     t.datetime "created_at"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
 
   add_index "gallery_items", ["gallery_id"], name: "index_gallery_items_on_gallery_id", using: :btree
 
-  create_table "pages", force: true do |t|
+  create_table "pages", force: :cascade do |t|
     t.string   "title"
     t.text     "text_1"
     t.text     "text_2"
@@ -142,7 +142,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
     t.boolean  "show_contacts",             default: true
   end
 
-  create_table "parts", force: true do |t|
+  create_table "parts", force: :cascade do |t|
     t.string   "name"
     t.string   "manufacturer_id"
     t.string   "seller_id"
@@ -157,7 +157,7 @@ ActiveRecord::Schema.define(version: 20141125230052) do
     t.boolean  "order",                                   default: false
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "post_type"
