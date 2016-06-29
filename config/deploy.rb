@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+lock '3.4.1'
 
 set :application, 'transager'
 set :repo_url, 'git@github.com:rmagnum2002/transager.git'
