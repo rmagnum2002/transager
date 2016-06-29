@@ -1,0 +1,6 @@
+// alert('open part <%= @part[:id] %>')
+$('#partPrice').text('<%= @part.db_price %> MDL')
+$('#partStock').text('<%#= @part_details[:stock] %>')
+$('#partWarehouse').text('<%= @part_details[:warehouse] %>')
+$('#partTitle').text('<%= @part.name %>')
+$('#partsModal').modal('show')
