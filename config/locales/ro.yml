@@ -2,6 +2,7 @@ ro:
   ro: "română"
   en: "engleză"
   ru: "rusa"
+  under_construction: 'Pagina este în reconstrucție. Reveniți mai târziu'
   sending: 'Se trimite...'
   header_slogan: 'Trans Ager - servicii transport, reparații camioane și remorci'
   about_us: 'despre noi'
@@ -24,6 +25,8 @@ ro:
   all_offers: 'Vezi toate ofertele'
   career: 'Carieră'
   read_more: "Detalii"
+  original_number: Original
+  license_number: Licență
   seo:
     moto: 'companie de transport'
   notice:

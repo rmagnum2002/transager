@@ -1,0 +1,37 @@
+<div id='partsModal' class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 id='partTitle' class="modal-title">New message</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <%= image_tag 'no-image.png' %>
+        </div>
+        <div class="col-md-8">
+          <table class='table'>
+            <tr>
+              <td>Stock</td>
+              <td id='partStock'></td>
+            </tr>
+            <tr>
+              <td>Warehouse</td>
+              <td id='partWarehouse'></td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td id='partPrice'></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" disabled>Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>

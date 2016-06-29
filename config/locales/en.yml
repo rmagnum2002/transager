@@ -2,6 +2,7 @@ en:
   ro: "romanian"
   en: "english"
   ru: "russian"
+  under_construction: 'Page is under construction. Try later.'
   sending: 'Sending...'
   header_slogan: 'Trans Ager - transportation, trucks and trailers repair services, spare parts shop'
   about_us: 'about us'
@@ -24,6 +25,8 @@ en:
   all_offers: 'See all job offers'
   career: 'Career'
   read_more: "Read More"
+  original_number: Original
+  license_number: License
   seo:
     moto: 'transport company'
   notice:

@@ -2,6 +2,7 @@ ru:
   ro: "румынском"
   en: "английском"
   ru: "русском"
+  under_construction: Страница находится в стадии разработки. Попробуйте позже.
   sending: 'Отправка...'
   header_slogan: 'Trans Ager - транспортные услуги, ремонт грузовой техники, продажа запчастей.'
   about_us: 'о нас'
@@ -24,6 +25,8 @@ ru:
   all_offers: 'Все предложения'
   career: 'Карьера'
   read_more: "Подробнее"
+  original_number: Оригинал
+  license_number: Лицензия
   seo:
     moto: 'транспортная компания'
   notice:
