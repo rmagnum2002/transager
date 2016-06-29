@@ -71,7 +71,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 group :development do
-  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano', '~> 3.4.0'
   gem 'brakeman', require: false
   gem 'capistrano-rvm' #, '~> 0.0.3'
   gem 'capistrano-bundler'
