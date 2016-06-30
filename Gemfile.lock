@@ -75,6 +75,7 @@ GEM
       thor (~> 0.19)
     brakeman (3.3.0)
     builder (3.2.2)
+    byebug (9.0.5)
     capistrano (3.4.1)
       i18n
       rake (>= 10.0.0)
@@ -231,6 +232,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.6)
       actionpack (= 4.2.6)
       activesupport (= 4.2.6)
@@ -334,6 +340,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass-rails
   brakeman
+  byebug
   capistrano (~> 3.4.0)
   capistrano-bundler
   capistrano-rails
@@ -360,6 +367,7 @@ DEPENDENCIES
   pg_search
   quiet_assets
   rails (= 4.2.6)
+  rails_12factor
   roo
   rspec-rails (~> 3.0)
   ruby-progressbar

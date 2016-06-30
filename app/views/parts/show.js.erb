@@ -1,6 +1,10 @@
-// alert('open part <%= @part[:id] %>')
-$('#partPrice').text('<%= @part.db_price %> MDL')
-$('#partStock').text('<%#= @part_details[:stock] %>')
-$('#partWarehouse').text('<%= @part_details[:warehouse] %>')
+$('.Magazin_Chisinau, .Magazin_Comrat, .Magazin_Balti').text(0)
+$('#partPrice').text('<%= @part_details["price"] %> MDL')
+<% @part_details["stock"].each_with_index do |p| %>
+  $(".<%= p[0] %>").text("<%= p[1].to_i > 0 ? p[1].to_i : t('not_available') %>")
+<% end %>
 $('#partTitle').text('<%= @part.name %>')
+$('.license_number').text('<%= @part.seller_id %>')
+$('.original_number').text('<%= @part.manufacturer_id %>')
 $('#partsModal').modal('show')
+$('.loading').addClass('hidden')

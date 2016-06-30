@@ -3,6 +3,7 @@ ru:
   en: "английском"
   ru: "русском"
   under_construction: Страница находится в стадии разработки. Попробуйте позже.
+  not_available: 'Нет на складе'
   sending: 'Отправка...'
   header_slogan: 'Trans Ager - транспортные услуги, ремонт грузовой техники, продажа запчастей.'
   about_us: 'о нас'
@@ -108,6 +109,10 @@ ru:
     address: 'Aдрес'
   notices:
     feedback_sent: 'Ваше сообщение было успешно отправлено.'
+  warehouse:
+    chisinau: Кишинев
+    balti: Бельцы
+    comrat: Комрат
 
   will_paginate:
     page_gap: '...'

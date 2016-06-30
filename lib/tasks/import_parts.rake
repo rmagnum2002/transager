@@ -1,4 +1,31 @@
 namespace :import do
+  desc 'Sync parts'
+  task sync_parts: :environment do
+    uri = URI.parse('http://task.1cpro.md/trans/hs/getgoods/')
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.basic_auth("service", "1111")
+    response = http.request(request)
+    parts = JSON.parse(response.body)
+    progressbar = ProgressBar.create(starting_at: 0, total: parts.count, format: '%a %B %p%% %t')
+    return unless parts.any?
+    parts.each do |part|
+      in_part = Part.where(internal_id: part['internal_id']).first
+      if in_part
+
+      else
+        Part.new(
+          internal_id: part['internal_id'],
+          seller_id: part['seller_id'],
+          manufacturer_id: part['manufacturer_id'],
+          name: part['title']
+        ).save
+      end
+      progressbar.increment
+    end
+    p "Sync Finsihed. Synced #{parts.count} parts"
+  end
+
   desc "Import parts from csv file"
   task :parts => :environment do
     require 'csv'

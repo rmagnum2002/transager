@@ -3,6 +3,7 @@ ro:
   en: "engleză"
   ru: "rusa"
   under_construction: 'Pagina este în reconstrucție. Reveniți mai târziu'
+  not_available: 'Nu este in stoc'
   sending: 'Se trimite...'
   header_slogan: 'Trans Ager - servicii transport, reparații camioane și remorci'
   about_us: 'despre noi'
@@ -108,6 +109,10 @@ ro:
     address: 'Adresă'
   notices:
     feedback_sent: 'Mesajul Dvs a fost trimis cu succes.'
+  warehouse:
+    chisinau: Chişinău
+    balti: Bălţi
+    comrat: Comrat
 
   will_paginate:
     page_gap: '...'

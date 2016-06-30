@@ -73,6 +73,8 @@ class Part < ActiveRecord::Base
     10 => 'Renault'
   }
 
+  attr_accessor :db_id, :db_price
+
   def truck_name
     Part::TRUCK[self.truck_id]
   end

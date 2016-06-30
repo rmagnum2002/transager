@@ -20,6 +20,35 @@ class PartsController < ApplicationController
     end
   end
 
+  def show
+    @part = Part.find(params[:id])
+    uri = URI.parse("http://task.1cpro.md/trans/hs/getstock/")
+    payload = {'cod' => ["#{@part.internal_id}"]}.to_json
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.basic_auth("service", "1111")
+    request.content_type = 'application/json'
+    request.body = payload
+    response = http.request(request)
+    json = JSON.parse(response.body).first
+    if json
+      @part_details = json
+    else
+      @part_details = {
+        "price"=>0,
+        "stock"=>{"Magazin_Chisinau"=>0, "Magazin_Comrat"=>0,"Magazin_Balti"=>0}
+      }
+    end
+    # @part.db_id = @part_details[:db_id]
+    # @part.db_price = @part_details[:db_price]
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def tires
     @parts = Part.where(category_id: 1)
 

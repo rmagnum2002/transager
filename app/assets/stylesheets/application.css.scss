@@ -17,6 +17,7 @@
  *= require font-awesome
  *= require flexslider
  *= require animate
+ *= require loading
  */
 
  @import "bootstrap";
@@ -77,4 +78,16 @@ center.need_parts {
 .top_bar{
   a{color: #DFDFDF;}
   a:hover{color: #fff;}
+}
+#partsModal{
+  table.table{
+    margin-bottom: 0;
+  }
+  .modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #428bca;
+    min-height: 16.42857143px;
+    background: #428bca;
+    color: #fff;
+  }
 }

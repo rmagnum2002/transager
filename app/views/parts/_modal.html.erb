@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        <h3 id='partTitle' class="modal-title">New message</h3>
+        <h3 id='partTitle' class="modal-title"></h3>
       </div>
       <div class="row">
         <div class="col-md-4">
@@ -14,16 +14,28 @@
         <div class="col-md-8">
           <table class='table'>
             <tr>
-              <td>Stock</td>
-              <td id='partStock'></td>
+              <td><%= t('original_number') %></td>
+              <td class='original_number text-left'></td>
             </tr>
             <tr>
-              <td>Warehouse</td>
-              <td id='partWarehouse'></td>
+              <td><%= t('license_number' )%></td>
+              <td class='license_number text-left'></td>
             </tr>
             <tr>
-              <td>Price</td>
-              <td id='partPrice'></td>
+              <td><%= t('warehouse.chisinau') %></td>
+              <td class='Magazin_Chisinau text-left'></td>
+            </tr>
+            <tr>
+              <td><%= t('warehouse.balti') %></td>
+              <td class='Magazin_Balti text-left'></td>
+            </tr>
+            <tr>
+              <td><%= t('warehouse.comrat') %></td>
+              <td class='Magazin_Comrat text-left'></td>
+            </tr>
+            <tr>
+              <td><%= t('price') %></td>
+              <td id='partPrice' class=' text-left'></td>
             </tr>
           </table>
         </div>

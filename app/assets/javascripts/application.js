@@ -61,6 +61,10 @@ $(document).ready(function() {
     $('.datatable').removeClass('hidden')
   }
 
+  $('.part_name').click(function(event) {
+    $('.loading').removeClass('hidden')
+  });
+
 });
 
 jQuery(function() {

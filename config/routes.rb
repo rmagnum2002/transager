@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'posts/carrier'
 
-  resources :parts, only: [:index] do
+  resources :parts, only: %w(index show) do
     collection do
       get :tires
     end

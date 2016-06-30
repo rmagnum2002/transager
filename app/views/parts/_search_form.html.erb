@@ -1,11 +1,11 @@
 <% if @parts.size > 0 %>
-  <div class="panel">
-    <% unless params[:category_id].present? %>
-      <%= @message.html_safe %><br>
-      <%= link_to "<span class='glyphicon glyphicon-save'></span> #{t(:download_pdf)}".html_safe, parts_list_path(format: "pdf", query: params[:query]), target: :blank %>
-    <% end %>
-    <b><%= t(Part::CATEGORY[params[:category_id].to_i]) if params[:category_id].present? %></b>
-  </div>
+<!--   <div class="panel">
+    <%# unless params[:category_id].present? %>
+      <%#= @message.html_safe %><br>
+      <%#= link_to "<span class='glyphicon glyphicon-save'></span> #{t(:download_pdf)}".html_safe, parts_list_path(format: "pdf", query: params[:query]), target: :blank %>
+    <%# end %>
+    <b><%#= t(Part::CATEGORY[params[:category_id].to_i]) if params[:category_id].present? %></b>
+  </div> -->
   <div class="small alert alert-warning">
     <%= t('parts_available') %><br>
     <b><%= Contact.where(department_id: 2, contact_type: [1, 2, 3]).pluck(:details).join(', ') %></b>
