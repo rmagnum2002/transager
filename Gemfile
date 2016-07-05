@@ -48,7 +48,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem "figaro"
 gem 'jquery-datatables-rails', '~> 3.3.0'
-gem 'vuejs-rails'
 gem 'gon'
 
 # Use ActiveModel has_secure_password

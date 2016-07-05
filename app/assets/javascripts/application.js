@@ -22,10 +22,6 @@
 //= require wow.min.js
 //= require jquery.ui.totop.js
 //= require app.js
-//= require vue
-//= require vue-router
-//= require vue-resource
-
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();
