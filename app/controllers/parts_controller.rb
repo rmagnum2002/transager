@@ -9,28 +9,27 @@ class PartsController < ApplicationController
       parts = Part.order(:name).quick_search(@query)
     end
     @parts = parts.page(params[:page]).per_page(30)
-    @message = I18n.t('found_parts', size: parts.size, query: @query)
+    # @message = I18n.t('found_parts', size: parts.size, query: @query)
+    ids = @parts.pluck(:internal_id)
+    p "IDS #{ids}"
+    payload = {'cod' => ids}.to_json
+    response = db_request(payload)
+    data = (response.body.empty?) ? {parts: []} : {parts: response.body.gsub("\n", '')}
+    gon.json = JSON.parse(data.to_json)
 
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => "price list",
-               :layout => 'application.pdf.erb'
+        render pdf: "price list",
+               layout: 'application.pdf.erb'
       end
     end
   end
 
   def show
     @part = Part.find(params[:id])
-    uri = URI.parse("http://task.1cpro.md/trans/hs/getstock/")
     payload = {'cod' => ["#{@part.internal_id}"]}.to_json
-
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request.basic_auth("service", "1111")
-    request.content_type = 'application/json'
-    request.body = payload
-    response = http.request(request)
+    response =db_request(payload)
     json = JSON.parse(response.body).first
     if json
       @part_details = json
@@ -40,8 +39,6 @@ class PartsController < ApplicationController
         "stock"=>{"Magazin_Chisinau"=>0, "Magazin_Comrat"=>0,"Magazin_Balti"=>0}
       }
     end
-    # @part.db_id = @part_details[:db_id]
-    # @part.db_price = @part_details[:db_price]
 
     respond_to do |format|
       format.html
@@ -96,5 +93,15 @@ class PartsController < ApplicationController
               header: { right: '[page] of [topage]'}
       end
     end
+  end
+
+  def db_request(payload)
+    uri = URI.parse("http://task.1cpro.md/trans/hs/getstock/")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.basic_auth("service", "1111")
+    request.content_type = 'application/json'
+    request.body = payload
+    response = http.request(request)
   end
 end

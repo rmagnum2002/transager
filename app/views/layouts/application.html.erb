@@ -14,6 +14,7 @@
   <meta property="og:image" content="<%= asset_url 'transager_logo.png' %>"/>
   <meta property="og:url" content="http://transager.md"/>
   <meta property="og:description" content="<%= @settings.description %>"/>
+  <%= Gon::Base.render_data %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>

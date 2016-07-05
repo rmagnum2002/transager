@@ -58,6 +58,13 @@ ul.ui-autocomplete {
 }
 td.price{
   text-align: center;
+  font-weight: bold;
+  vertical-align: middle !important;
+}
+td.part_details{
+  .list-group-item{
+    padding: 1px;
+  }
 }
 table.listing{
   thead{

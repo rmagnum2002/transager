@@ -17,7 +17,7 @@
     <div class="row">
       <div id="leftcol" class="col-sm-9 col-md-9">
         <%= render 'search_form' %>
-        <!-- <h2 class="text-center"><%= t('under_construction') %></h2> -->
+        <!-- <h2 class="text-center"><%#= t('under_construction') %></h2> -->
         <%#= image_tag 'under_construction.jpg' %>
       </div>
       <div id="sidebar" class="col-sm-3 col-md-3">
@@ -36,6 +36,16 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+  console.log($.parseJSON(gon.json.parts))
+
+  $.each($.parseJSON(gon.json.parts), function( index, value ) {
+    internal_id = value.internal_id
+    $('#price_'+internal_id).text(value.price)
+    $.each(value.stock, function( index, value ) {
+      $('#'+index+'_'+internal_id+' span.total').text(value)
+    })
+  });
+
   $('.part_name').hover(function() {
     /* Stuff to do when the mouse enters the element */
     $(this).popover('show', {placement: 'top'});

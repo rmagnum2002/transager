@@ -9,16 +9,20 @@ namespace :import do
     parts = JSON.parse(response.body)
     progressbar = ProgressBar.create(starting_at: 0, total: parts.count, format: '%a %B %p%% %t')
     return unless parts.any?
-    parts.each do |part|
-      in_part = Part.where(internal_id: part['internal_id']).first
-      if in_part
 
+    parts.each do |p|
+      part = Part.where(internal_id: p['internal_id']).first
+      if part
+        part.seller_id = p['seller_id']
+        part.manufacturer_id = p['manufacturer_id']
+        part.name = p['title']
+        part.save
       else
         Part.new(
-          internal_id: part['internal_id'],
-          seller_id: part['seller_id'],
-          manufacturer_id: part['manufacturer_id'],
-          name: part['title']
+          internal_id: p['internal_id'],
+          seller_id: p['seller_id'],
+          manufacturer_id: p['manufacturer_id'],
+          name: p['title']
         ).save
       end
       progressbar.increment

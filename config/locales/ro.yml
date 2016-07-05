@@ -2,6 +2,7 @@ ro:
   ro: "română"
   en: "engleză"
   ru: "rusa"
+  close: Închideți
   under_construction: 'Pagina este în reconstrucție. Reveniți mai târziu'
   not_available: 'Nu este in stoc'
   sending: 'Se trimite...'
