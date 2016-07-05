@@ -10,12 +10,14 @@ class PartsController < ApplicationController
     end
     @parts = parts.page(params[:page]).per_page(30)
     # @message = I18n.t('found_parts', size: parts.size, query: @query)
-    ids = @parts.pluck(:internal_id)
-    p "IDS #{ids}"
-    payload = {'cod' => ids}.to_json
-    response = db_request(payload)
-    data = (response.body.empty?) ? {parts: []} : {parts: response.body.gsub("\n", '')}
-    gon.json = JSON.parse(data.to_json)
+    if @parts.any?
+      ids = @parts.pluck(:internal_id)
+      p "IDS #{ids}"
+      payload = {'cod' => ids}.to_json
+      response = db_request(payload)
+      data = (response.body.empty?) ? {parts: []} : {parts: response.body.gsub("\n", '')}
+      gon.json = JSON.parse(data.to_json)
+    end
 
     respond_to do |format|
       format.html
@@ -96,10 +98,10 @@ class PartsController < ApplicationController
   end
 
   def db_request(payload)
-    uri = URI.parse("http://task.1cpro.md/trans/hs/getstock/")
+    uri = URI.parse("#{ENV['DATA_HOST']}/trans/hs/getstock/")
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri)
-    request.basic_auth("service", "1111")
+    request.basic_auth(ENV['DATA_HOST_USERNAME'], ENV['DATA_HOST_PASSWORD'])
     request.content_type = 'application/json'
     request.body = payload
     response = http.request(request)
