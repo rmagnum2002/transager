@@ -16,7 +16,7 @@
   <section>
     <div class="row">
       <div id="leftcol" class="col-sm-9 col-md-9">
-        <% if ENV['PARTS_PAGE'] %>
+        <% if eval(ENV['PARTS_PAGE']) %>
           <%= render 'search_form' %>
         <% else %>
           <h2 class="text-center"><%= t('under_construction') %></h2>
