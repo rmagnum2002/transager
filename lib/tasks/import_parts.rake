@@ -1,10 +1,10 @@
 namespace :import do
   desc 'Sync parts'
   task sync_parts: :environment do
-    uri = URI.parse('http://task.1cpro.md/trans/hs/getgoods/')
+    uri = URI.parse("#{ENV['DATA_HOST']}/trans/hs/getgoods/")
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri)
-    request.basic_auth("service", "1111")
+    request.basic_auth(ENV['DATA_HOST_USERNAME'], ENV['DATA_HOST_PASSWORD'])
     response = http.request(request)
     parts = JSON.parse(response.body)
     progressbar = ProgressBar.create(starting_at: 0, total: parts.count, format: '%a %B %p%% %t')
