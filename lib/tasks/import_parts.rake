@@ -1,33 +1,7 @@
 namespace :import do
   desc 'Sync parts'
   task sync_parts: :environment do
-    uri = URI.parse("#{ENV['DATA_HOST']}/trans/hs/getgoods/")
-    http = Net::HTTP.new(uri.host, uri.port)
-    request = Net::HTTP::Post.new(uri.request_uri)
-    request.basic_auth(ENV['DATA_HOST_USERNAME'], ENV['DATA_HOST_PASSWORD'])
-    response = http.request(request)
-    parts = JSON.parse(response.body)
-    progressbar = ProgressBar.create(starting_at: 0, total: parts.count, format: '%a %B %p%% %t')
-    return unless parts.any?
-
-    parts.each do |p|
-      part = Part.where(internal_id: p['internal_id']).first
-      if part
-        part.seller_id = p['seller_id']
-        part.manufacturer_id = p['manufacturer_id']
-        part.name = p['title']
-        part.save
-      else
-        Part.new(
-          internal_id: p['internal_id'],
-          seller_id: p['seller_id'],
-          manufacturer_id: p['manufacturer_id'],
-          name: p['title']
-        ).save
-      end
-      progressbar.increment
-    end
-    p "Sync Finsihed. Synced #{parts.count} parts"
+    sync_parts
   end
 
   desc "Import parts from csv file"
@@ -79,6 +53,36 @@ namespace :import do
   end
 
   task :all => [:parts, :update_parts]
+
+  def sync_parts
+    uri = URI.parse("#{ENV['DATA_HOST']}/trans/hs/getgoods/")
+    http = Net::HTTP.new(uri.host, uri.port)
+    request = Net::HTTP::Post.new(uri.request_uri)
+    request.basic_auth(ENV['DATA_HOST_USERNAME'], ENV['DATA_HOST_PASSWORD'])
+    response = http.request(request)
+    parts = JSON.parse(response.body)
+    progressbar = ProgressBar.create(starting_at: 0, total: parts.count, format: '%a %B %p%% %t')
+    return unless parts.any?
+
+    parts.each do |p|
+      part = Part.where(internal_id: p['internal_id']).first
+      if part
+        part.seller_id = p['seller_id']
+        part.manufacturer_id = p['manufacturer_id']
+        part.name = p['title']
+        part.save
+      else
+        Part.new(
+          internal_id: p['internal_id'],
+          seller_id: p['seller_id'],
+          manufacturer_id: p['manufacturer_id'],
+          name: p['title']
+        ).save
+      end
+      progressbar.increment
+    end
+    p "Sync Finsihed. Synced #{parts.count} parts"
+  end
 end
 
 # desc "Import tires"
