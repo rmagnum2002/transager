@@ -55,6 +55,7 @@ namespace :import do
   task :all => [:parts, :update_parts]
 
   def sync_parts
+    p "ENDPOINT #{ENV['DATA_HOST']}/trans/hs/getgoods/"
     uri = URI.parse("#{ENV['DATA_HOST']}/trans/hs/getgoods/")
     http = Net::HTTP.new(uri.host, uri.port)
     request = Net::HTTP::Post.new(uri.request_uri)
