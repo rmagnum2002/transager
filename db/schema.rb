@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160629144653) do
+ActiveRecord::Schema.define(version: 20160706121810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 20160629144653) do
     t.text     "keywords"
     t.text     "description"
     t.boolean  "contact_form",          default: false
+    t.integer  "search_limit",          default: 15
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

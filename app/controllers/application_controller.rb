@@ -37,7 +37,11 @@ class ApplicationController < ActionController::Base
     @shop_pages_links = Page.where(page_type: 4).where(locale: current_language).order('id asc')
   end
 
-  helper_method :current_language
+  helper_method :current_language, :current_settings
+
+  def current_settings
+    AppSetting.first
+  end
 
   def current_language
     language = cookies[:lang]

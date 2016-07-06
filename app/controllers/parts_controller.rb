@@ -8,8 +8,8 @@ class PartsController < ApplicationController
       @exact_part = Part.where(name: @query).first || Part.where(manufacturer_id: @query).first
       parts = Part.order(:name).quick_search(@query)
     end
-    @parts = parts.page(params[:page]).per_page(30)
-    # @message = I18n.t('found_parts', size: parts.size, query: @query)
+    @parts = parts.page(params[:page]).per_page(current_settings.search_limit)
+    @message = I18n.t('found_parts', size: parts.size, query: @query)
     if @parts.any?
       ids = @parts.pluck(:internal_id)
       p "IDS #{ids}"

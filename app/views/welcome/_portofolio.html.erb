@@ -11,7 +11,7 @@
   <% Part::CATEGORY.to_a.last(19).shuffle.first("#{@settings.root_page_parts_count}".to_i).each do |p| %>
   <div class="<%= root_page_parts_count_class %>">
     <div class="portfolio_item wow animated flipInX animated">
-      <a href="/parts?category_id=<%= p[0] %>" data-path-hover="M 180,190 0,158 0,0 180,0 z">
+      <a href="/parts" data-path-hover="M 180,190 0,158 0,0 180,0 z">
         <figure style="background-image:url('<%= asset_url "portfolio/#{p[1].to_s.split('.').last}.jpg" %>')">
           <svg viewBox="0 0 180 320" preserveAspectRatio="none">
             <path d="M 180,0 0,0 0,0 180,0 z"/>
@@ -23,7 +23,12 @@
         </figure>
       </a>
       <div class="portfolio_description">
-        <h3><a href="/parts?category_id=<%= p[0] %>"><%= t(p[1]) %></a></h3>
+        <h3>
+          <!-- <a href="/parts?category_id=<%#= p[0] %>"> -->
+          <a href="/parts">
+            <%= t(p[1]) %>
+          </a>
+        </h3>
         <!-- <p>Design</p> -->
       </div>
     </div>

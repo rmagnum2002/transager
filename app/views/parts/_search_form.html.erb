@@ -10,6 +10,9 @@
     <%#= t('parts_available') %><br>
     <b><%#= Contact.where(department_id: 2, contact_type: [1, 2, 3]).pluck(:details).join(', ') %></b>
   </div> -->
+  <div class="alert alert-info">
+    <%= @message.html_safe %>
+  </div>
   <div class="table-responsive">
     <table class='table table-bordered table-striped table-hover table-condensed listing'>
       <thead>
@@ -70,9 +73,11 @@
   </div>
   <center><%= will_paginate @posts %></center>
 <% else %>
-  <div class="alert alert-info">
-    <%= t('parts_not_found', term: @query).html_safe %>
-  </div>
+  <% if @query.present? %>
+    <div class="alert alert-info">
+      <%= t('parts_not_found', term: @query).html_safe %>
+    </div>
+  <% end %>
   <div class="col-md-6 col-md-offset-3">
     <%= form_tag parts_path, class: 'form search_form', role: 'form', method: :get do %>
       <div class="row">
