@@ -43,7 +43,7 @@ class PartsController < ApplicationController
           "Magazin_Comrat"=>0,
           "Magazin_Balti"=>0,
           "Magazin_Filial_Hincesti_142"=>0,
-          "Magazin_Comrat"=>0
+          "Magazin_Taraclia"=>0
         }
       }
     end
