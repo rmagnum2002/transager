@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // console.log($.parseJSON(gon.json.parts))
 
-  if (gon.length !== undefined ) {
+  if (typeof gon =='object' && typeof gon.json =='object') {
     $.each($.parseJSON(gon.json.parts), function( index, value ) {
       internal_id = value.internal_id
       $('#price_'+internal_id).text(value.price)
