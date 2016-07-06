@@ -37,8 +37,10 @@
             <%= link_to p.name, p, class: 'part_name', remote: true %>
             <ul class='stock'>
               <li id='Magazin_Chisinau_<%= p.internal_id %>'><%= t('warehouse.chisinau') %>: <span class="total"><%= t('not_available') %></span></li>
+              <li id='Magazin_Filial_Hincesti_142_<%= p.internal_id %>'><%= t('warehouse.hincesti') %>: <span class="total"><%= t('not_available') %></span></li>
               <li id='Magazin_Balti_<%= p.internal_id %>'><%= t('warehouse.balti') %>: <span class="total"><%= t('not_available') %></span></li>
               <li id='Magazin_Comrat_<%= p.internal_id %>'><%= t('warehouse.comrat') %>: <span class="total"><%= t('not_available') %></span></li>
+              <li id='Magazin_Taraclia_<%= p.internal_id %>'><%= t('warehouse.taraclia') %>: <span class="total"><%= t('not_available') %></span></li>
             </ul>
             <%#= link_to p.name, '#', class: 'part_name', data: {html: true, content: "
               <div class='col-md-12'>

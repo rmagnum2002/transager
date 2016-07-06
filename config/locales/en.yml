@@ -112,9 +112,11 @@ en:
   notices:
     feedback_sent: 'Your message was successfully sent.'
   warehouse:
-    chisinau: Chişinău
+    chisinau: Chişinău, Uzinelor 171A str.
+    hincesti: Chişinău, Hîncești hgw., 142
     balti: Bălţi
     comrat: Comrat
+    taraclie: Taraclia
 
   will_paginate:
     page_gap: '...'

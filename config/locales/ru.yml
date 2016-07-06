@@ -113,8 +113,11 @@ ru:
     feedback_sent: 'Ваше сообщение было успешно отправлено.'
   warehouse:
     chisinau: Кишинев
+    chisinau: Кишинев, ул. Узинелор, 171A
+    hincesti: Кишинев, Хынчешсткое шосе, 142
     balti: Бельцы
     comrat: Комрат
+    taraclie: Тараклия
 
   will_paginate:
     page_gap: '...'
