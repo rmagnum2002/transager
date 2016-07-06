@@ -29,6 +29,7 @@ en:
   read_more: "Read More"
   original_number: Original
   license_number: License
+  parts_not_found: Parts with term <b>%{term}</b> could not be found. Verify the correctness of your term and try again.
   seo:
     moto: 'transport company'
   notice:

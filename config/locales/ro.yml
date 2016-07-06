@@ -29,6 +29,7 @@ ro:
   read_more: "Detalii"
   original_number: Original
   license_number: Licență
+  parts_not_found: Piese cu termenul <b>%{term}</b> nu au fost găsite. Verificați corectitudinea termenului introdus și încercaţi din nou.
   seo:
     moto: 'companie de transport'
   notice:

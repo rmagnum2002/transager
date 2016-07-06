@@ -29,6 +29,7 @@ ru:
   read_more: "Подробнее"
   original_number: Оригинал
   license_number: Лицензия
+  parts_not_found: Запчасти с термином <b>%{term}</b> не найдено.
   seo:
     moto: 'транспортная компания'
   notice:
