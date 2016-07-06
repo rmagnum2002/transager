@@ -22,6 +22,7 @@
 //= require wow.min.js
 //= require jquery.ui.totop.js
 //= require app.js
+//= require parts.js
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();

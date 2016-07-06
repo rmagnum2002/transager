@@ -57,9 +57,10 @@ ul.ui-autocomplete {
   line-height: 1.5;
 }
 td.price{
-  text-align: center;
-  font-weight: bold;
   vertical-align: middle !important;
+}
+th.price{
+  width: 65px;
 }
 td.part_details{
   .list-group-item{
