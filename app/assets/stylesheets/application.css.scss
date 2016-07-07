@@ -99,3 +99,14 @@ center.need_parts {
     color: #fff;
   }
 }
+ul.stock{
+  list-style: none;
+  margin: 0;
+  // padding: 0;
+  li{
+    padding: 3px 0;
+  }
+}
+span.price{
+  font-weight: bold;
+}

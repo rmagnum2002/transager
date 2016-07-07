@@ -20,6 +20,7 @@ en:
   price: 'Price'
   name: 'Name'
   download_pdf: 'PDF'
+  available_at: Subsidiaries and stock
   # download_pdf: 'Download PDF'
   price_list: 'Price list'
   looking_for_parts: 'Need spare parts?'

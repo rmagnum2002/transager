@@ -20,6 +20,7 @@ ro:
   price: 'Preț'
   name: 'Denumire'
   download_pdf: 'PDF'
+  available_at: Reprezentanțe și stoc
   # download_pdf: 'Descarcă PDF'
   price_list: 'Price list'
   looking_for_parts: 'Căutați piese?'

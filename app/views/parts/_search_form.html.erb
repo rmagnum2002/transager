@@ -10,19 +10,18 @@
     <%#= t('parts_available') %><br>
     <b><%#= Contact.where(department_id: 2, contact_type: [1, 2, 3]).pluck(:details).join(', ') %></b>
   </div> -->
-  <div class="alert alert-info">
-    <%= @message.html_safe %>
-  </div>
+<!--   <div class="alert alert-info">
+    <%#= @message.html_safe %>
+  </div> -->
   <div class="table-responsive">
     <table class='table table-bordered table-striped table-hover table-condensed listing'>
       <thead>
         <tr>
-          <th><%= t(:original_number) %></th>
-          <th><%= t(:license_number) %></th>
-          <th><%= t(:name) %></th>
+          <th></th>
+          <th></th>
+          <th><%= t(:available_at) %></th>
           <!-- <th>Brand</th> -->
           <!-- <th>Category</th> -->
-          <th class='price'><%= t(:price) %> (MDL)</th>
           <% if current_admin_user %>
           <th></th>
           <% end %>
@@ -31,17 +30,44 @@
       <tbody>
         <% @parts.each_with_index do |p, index| %>
         <tr <%= "class='success'".html_safe if (p.name == @query || p.manufacturer_id.downcase == @query.downcase) %>>
-          <td><%= p.manufacturer_id %></td>
-          <td><%= p.seller_id if p.seller_id.present? %></td>
+          <td>
+            <%= image_tag 'no-image.png', size: '100x100' %>
+          </td>
           <td class='part_details'>
-            <%= link_to p.name, p, class: 'part_name', remote: true %>
-            <ul class='stock'>
-              <li id='Magazin_Chisinau_<%= p.internal_id %>'><%= t('warehouse.chisinau') %>: <span class="total"><%= t('not_available') %></span></li>
-              <li id='Magazin_Filial_Hincesti_142_<%= p.internal_id %>'><%= t('warehouse.hincesti') %>: <span class="total"><%= t('not_available') %></span></li>
-              <li id='Magazin_Balti_<%= p.internal_id %>'><%= t('warehouse.balti') %>: <span class="total"><%= t('not_available') %></span></li>
-              <li id='Magazin_Comrat_<%= p.internal_id %>'><%= t('warehouse.comrat') %>: <span class="total"><%= t('not_available') %></span></li>
-              <li id='Magazin_Taraclia_<%= p.internal_id %>'><%= t('warehouse.taraclia') %>: <span class="total"><%= t('not_available') %></span></li>
+            <h5><b><%= p.name %></b><%#= link_to p.name, p, class: 'part_name', remote: true %></h5>
+            <ul style='padding: 0;list-style: none;'>
+              <li><%= t(:original_number) %>: <%= p.manufacturer_id %></li>
+              <li><%= t(:license_number) %>: <%= p.seller_id if p.seller_id.present? %></li>
             </ul>
+            <p>
+              <span class="price"><%= t(:price) %>:</span>
+              <span id='price_<%= p.internal_id %>'><%= t('not_available') %></span>
+            </p>
+          </td>
+          <td class='part_details'>
+            <ul class='stock'>
+              <li id='Magazin_Chisinau_<%= p.internal_id %>'>
+                <b><%= t('warehouse.chisinau') %>:</b>
+                <span class="total"><%= t('not_available') %></span>
+              </li>
+              <li id='Magazin_Filial_Hincesti_142_<%= p.internal_id %>'>
+                <%= t('warehouse.hincesti') %>:
+                <span class="total"><%= t('not_available') %></span>
+              </li>
+              <li id='Magazin_Balti_<%= p.internal_id %>'>
+                <%= t('warehouse.balti') %>:
+                <span class="total"><%= t('not_available') %></span>
+              </li>
+              <li id='Magazin_Comrat_<%= p.internal_id %>'>
+                <%= t('warehouse.comrat') %>:
+                <span class="total"><%= t('not_available') %></span>
+              </li>
+              <li id='Magazin_Taraclia_<%= p.internal_id %>'>
+                <%= t('warehouse.taraclia') %>:
+                <span class="total"><%= t('not_available') %></span>
+              </li>
+            </ul>
+          </td>
             <%#= link_to p.name, '#', class: 'part_name', data: {html: true, content: "
               <div class='col-md-12'>
                   <center>#{category_image(p)}</center>
@@ -64,7 +90,6 @@
           </td>
           <!-- <td><%#= p.brand %></td> -->
           <!-- <td><%#= t(p.category_name) %></td> -->
-          <td class="price text-right" id='price_<%= p.internal_id %>'><%= t('not_available') %></td>
           <% if current_admin_user %>
           <td><%= link_to 'edit', edit_admin_part_path(p), target: :blank %></td>
           <% end %>
