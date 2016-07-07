@@ -6,7 +6,9 @@ $(document).ready(function() {
       internal_id = value.internal_id
       $('#price_'+internal_id).text(value.price + ' MDL')
       $.each(value.stock, function( index, value ) {
-        $('#'+index+'_'+internal_id+' span.total').text(value)
+        pieces = $('#locales').data('locales-pieces')
+        console.log(pieces + ' - ' + value)
+        $('#'+index+'_'+internal_id+' span.total').text(value + ' ' +pieces)
       })
     });
   }

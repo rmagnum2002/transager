@@ -113,11 +113,12 @@ ro:
   notices:
     feedback_sent: 'Mesajul Dvs a fost trimis cu succes.'
   warehouse:
-    chisinau: Chişinău, str. Uzinelor 171A
+    chisinau: Chişinău, str. Uzinelor, 171A
     hincesti: Chişinău, șos. Hîncești, 142
-    balti: Bălţi
-    comrat: Comrat
-    taraclie: Taraclia
+    balti: Bălţi, str. Decebal, 142
+    comrat: Comrat, str. Lenin, 146
+    taraclie: Taraclia, str. Vokzalnaya, 61
+  pieces: buc.
 
   will_paginate:
     page_gap: '...'

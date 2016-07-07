@@ -113,11 +113,12 @@ en:
   notices:
     feedback_sent: 'Your message was successfully sent.'
   warehouse:
-    chisinau: Chişinău, Uzinelor 171A str.
-    hincesti: Chişinău, Hîncești hgw., 142
-    balti: Bălţi
-    comrat: Comrat
-    taraclie: Taraclia
+    chisinau: Chişinău, str. Uzinelor, 171A
+    hincesti: Chişinău, șos. Hîncești, 142
+    balti: Bălţi, str. Decebal, 142
+    comrat: Comrat, str. Lenin, 146
+    taraclie: Taraclia, str. Vokzalnaya, 61
+  pieces: pcs.
 
   will_paginate:
     page_gap: '...'

@@ -15,7 +15,7 @@
   </section>
   <section>
     <div class="row">
-      <div id="leftcol" class="col-sm-9 col-md-9">
+      <div id="leftcol" class="col-sm-12 col-md-9">
         <% if eval(ENV['PARTS_PAGE']) %>
           <%= render 'search_form' %>
         <% else %>
@@ -23,7 +23,7 @@
           <%= image_tag 'under_construction.jpg' %>
         <% end %>
       </div>
-      <div id="sidebar" class="col-sm-3 col-md-3">
+      <div id="sidebar" class="col-sm-12 col-md-3">
         <aside class="widget">
           <%= image_tag 'evacuator-left.gif', class: 'img', width: '80%' %><br><br>
           <%#= link_to image_tag('anvelopeiarna.png', class: 'img', width: '80%'), 'http://www.anvelopeauto.md/', target: :blank %>

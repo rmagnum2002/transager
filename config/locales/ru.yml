@@ -116,9 +116,10 @@ ru:
     chisinau: Кишинев
     chisinau: Кишинев, ул. Узинелор, 171A
     hincesti: Кишинев, Хынчешсткое шосе, 142
-    balti: Бельцы
-    comrat: Комрат
-    taraclia: Тараклия
+    balti: Бельцы, ул. Дечебал, 142
+    comrat: Комрат, ул. Ленин, 146
+    taraclia: Тараклия, ул. Вокзальная, 61
+  pieces: шт.
 
   will_paginate:
     page_gap: '...'
