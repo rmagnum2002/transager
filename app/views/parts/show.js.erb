@@ -1,7 +1,7 @@
-$('.Magazin_Chisinau, .Magazin_Comrat, .Magazin_Balti, .Magazin_Filial_Hincesti_142, .Magazin_Taraclia').text(0)
+$('.Magazin_Chisinau, .Magazin_Comrat, .Magazin_Balti, .Magazin_Filial_Hincesti_142, .Magazin_Taraclia').text($('#partsModal').data('empty-stock'))
 $('#partPrice').text('<%= @part_details["price"] %> MDL')
 <% @part_details["stock"].each_with_index do |p| %>
-  $(".<%= p[0] %>").text("<%= p[1].to_i > 0 ? p[1].to_i : t('not_available') %>")
+  $(".<%= p[0] %>").text("<%= p[1] %>")
 <% end %>
 $('#partTitle').text('<%= @part.name %>')
 $('.license_number').text('<%= @part.seller_id %>')
