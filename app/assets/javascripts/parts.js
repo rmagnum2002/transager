@@ -4,7 +4,7 @@ $(document).ready(function() {
   if (typeof gon =='object' && typeof gon.json =='object') {
     $.each($.parseJSON(gon.json.parts), function( index, value ) {
       internal_id = value.internal_id
-      $('#price_'+internal_id).text(value.price)
+      $('#price_'+internal_id).text(value.price + ' MDL')
       $.each(value.stock, function( index, value ) {
         $('#'+index+'_'+internal_id+' span.total').text(value)
       })
