@@ -49,7 +49,7 @@
               <% Subsidiary.all.each.each do |office| %>
                 <li id='<%= office.external_id %>_<%= p.internal_id %>'>
                   <div class="warehouse">
-                    <%= [office.public_send("name_#{current_language}"), office.public_send("address_#{current_language}")].join(',') %>:
+                    <%= office.public_send("address_#{current_language}") %>:
                   </div>
                   <span class="total"><%= t('not_available') %></span>
                 </li>
