@@ -96,6 +96,7 @@ en:
     shop: "shop"
     service: "service departament"
     accountant: "accountant"
+    subsidiaries: subsidiaries
   contact_form:
     send_us_message: "Send us a message"
     to_department: "To Departament"
@@ -106,6 +107,7 @@ en:
     send_message: "Send mesage"
   shop:
     partners: 'Partners'
+    subsidiaries: 'Subsidiaries'
   index:
     clients: 'We deliver for:'
   contact:

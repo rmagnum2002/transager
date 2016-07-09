@@ -23,6 +23,16 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   scope "(:lang)", locale: /ro|en|ru/ do
+    get '/shop/subsidiaries' => 'subsidiaries#index', as: :subsidiaries
+    get '/intern.html' => redirect('/ro/transport/national')
+    get '/shop/network' => redirect('/shop/subsidiaries')
+    get '/maritim.html' => redirect('/ro/transport/maritime')
+    get '/transport-internaional.html' => redirect('/ro/transport/international')
+    get '/service-autocamioane.html' => redirect('/ro/service/truck-service')
+    get '/service-remorci-i-semiremorci.html' => redirect('/ro/service/truck-service')
+    get '/tractarea-autocamioanelor.html' => redirect('/ro/service/tow-truck')
+    get '/contact.html' => redirect('/contacts')
+
     get '/transport' => 'welcome#transport', as: :transports
     get '/transport/:id' => 'welcome#transport', as: :transport
     get '/service' => 'welcome#service', as: :services
@@ -30,14 +40,6 @@ Rails.application.routes.draw do
     get '/shop' => 'welcome#shop', as: :shops
     get '/shop/:id' => 'welcome#shop', as: :shop
     get '/contacts' => 'welcome#contacts'
-
-    get '/intern.html' => redirect('/ro/transport/national')
-    get '/maritim.html' => redirect('/ro/transport/maritime')
-    get '/transport-internaional.html' => redirect('/ro/transport/international')
-    get '/service-autocamioane.html' => redirect('/ro/service/truck-service')
-    get '/service-remorci-i-semiremorci.html' => redirect('/ro/service/truck-service')
-    get '/tractarea-autocamioanelor.html' => redirect('/ro/service/tow-truck')
-    get '/contact.html' => redirect('/contacts')
   end
 
   get '/parts/pdf' => 'parts#parts_list', as: :parts_list

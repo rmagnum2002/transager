@@ -13,7 +13,8 @@ class Contact < ActiveRecord::Base
     :"department_id.transport" => 1,
     :"department_id.shop" => 2,
     :"department_id.service" => 3,
-    :"department_id.accountant" => 4
+    :"department_id.accountant" => 4,
+    :"department_id.subsidiary" => 5,
   }
 
 

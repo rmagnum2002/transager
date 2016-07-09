@@ -96,6 +96,7 @@ ru:
     shop: "Магазин"
     service: "Ремонтный отдел"
     accountant: "Бухгалтерия"
+    subsidiaries: Филиалы
   contact_form:
     send_us_message: "Напишите нам сообщение"
     to_department: "Выберите отдел"
@@ -106,6 +107,7 @@ ru:
     send_message: "Отправить сообщение"
   shop:
     partners: 'Партнеры'
+    subsidiaries: 'Филиалы'
   index:
     clients: 'Наши клиенты:'
   contact:
@@ -113,7 +115,6 @@ ru:
   notices:
     feedback_sent: 'Ваше сообщение было успешно отправлено.'
   warehouse:
-    chisinau: Кишинев
     chisinau: Кишинев, ул. Узинелор, 171A
     hincesti: Кишинев, Хынчешсткое шосе, 142
     balti: Бельцы, ул. Дечебал, 142

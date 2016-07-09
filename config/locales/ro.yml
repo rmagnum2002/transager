@@ -96,6 +96,7 @@ ro:
     shop: "magazin"
     service: "departamentul reparații"
     accountant: "contabilitate"
+    subsidiaries: filiale
   contact_form:
     send_us_message: "Scrieți-ne un mesaj"
     to_department: "către departamentul"
@@ -106,6 +107,7 @@ ro:
     send_message: "Trimite mesaj"
   shop:
     partners: 'Parteneri'
+    subsidiaries: 'Filiale'
   index:
     clients: 'Transportăm pentru:'
   contact:

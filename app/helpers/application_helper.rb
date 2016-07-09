@@ -7,6 +7,10 @@ module ApplicationHelper
     end
   end
 
+  def number_to_phone(number)
+    "+373 #{number.scan(/.{1,3}/).join(' ')}"
+  end
+
   def keywords
     @page.present? ? (@page.keywords.empty? ? @settings.keywords : @page.keywords) : @settings.keywords
   end
