@@ -9,8 +9,9 @@
         - @subsidiaries.each do |office|
           .col-sm-12.col-md-4
             .thumbnail
-              a target='blank' href="https://www.google.com/maps/place/#{office.lat},+#{office.lng}/"
-                img src="http://maps.googleapis.com/maps/api/staticmap?center=#{office.lat},+#{office.lng}&zoom=16&scale=false&size=600x300&maptype=roadmap&key=#{ENV['GMAP_API_KEY']}&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C#{office.lat},+#{office.lng}" alt="#{office.public_send("address_#{current_language}")}" style="width: 100%; display: block;"
+              = link_to image_tag(office.avatar.url), "https://www.google.com/maps/place/#{office.lat},+#{office.lng}/", target: :blank
+              / a target='blank' href="https://www.google.com/maps/place/#{office.lat},+#{office.lng}/"
+              /   img src="http://maps.googleapis.com/maps/api/staticmap?center=#{office.lat},+#{office.lng}&zoom=16&scale=false&size=600x300&maptype=roadmap&key=#{ENV['GMAP_API_KEY']}&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:%7C#{office.lat},+#{office.lng}" alt="#{office.public_send("address_#{current_language}")}" style="width: 100%; display: block;"
               caption
                 h3.text-center = office.public_send("name_#{current_language}")
                 p.text-center = office.public_send("address_#{current_language}")
