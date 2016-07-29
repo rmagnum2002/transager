@@ -6,6 +6,10 @@ class SubsidiariesController < ApplicationController
     @subsidiaries = Subsidiary.all.order('position asc')
   end
 
+  def show
+    @subsidiary = Subsidiary.find(params[:id])
+  end
+
   # GET /feedbacks/1
   # GET /feedbacks/1.json
   # def show

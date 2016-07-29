@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get :tires
     end
   end
+  resources :subsidiaries, only: :show
 
   resources :feedbacks
 

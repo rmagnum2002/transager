@@ -91,7 +91,7 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=<%= @locale %>"></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=<%= @locale %>"></script> -->
 
 <script type="text/javascript">
 jQuery(function($) {
@@ -114,31 +114,20 @@ function initialize() {
 
     // Multiple Markers
     var markers = [
-        ['Magazin Central', 46.994187, 28.908864],
-        ['Filiala Chișinău', 46.992763, 28.786159],
-        ['Filiala Bălți', 47.782458, 27.889177],
-        ['Filiala Comrat', 46.306992, 28.657343],
-        ['Filiala Taraclia', 45.900018, 28.662761]
+        <% @offices.each do |s| %>
+        ['<%= s.public_send("name_#{current_language}") %>', <%= s.lat %>, <%= s.lng %>],
+        <% end %>
     ];
 
     // Info Window Content
     var infoWindowContent = [
+        <% @offices.each do |s| %>
         ['<div class="info_content">' +
-        '<h3>Sediul Central<br>Magazin Piese</h3>' +
-        '<p>str.Uzinelor 171 A, Chisinau<br>tel.022 47 25 25<br>mobil 078472525</p>' +        '</div>'],
-        ['<div class="info_content">' +
-        '<h3>Filiala Chișinău</h3>' +
-        '<p>str. Șoseaua Hancesti 142, Chisinau<br>tel. 022725433<br>mobil 078809044</p>' +
+        '<h3><%= s.public_send("name_#{current_language}") %></h3>' +
+        '<p><%= s.public_send("address_#{current_language}") %><br>'+
+        '<%= s.contacts.order('contact_type asc').map{|c| "#{t(Contact::CONTACT_TYPE.invert[c.contact_type])}: #{c.details}"}.join(', ') %></p>' +
         '</div>'],
-        ['<h3>Filiala Bălți</h3>' +
-        '<p>str. Decebal 142, Balti<br>tel. 023193050<br>mobil 079406896</p>' +
-        '</div>'],
-        ['<h3>Filiala Comrat</h3>' +
-        '<p>str. Lenin 146, Comrat<br>tel. 029833001<br>mobil 079704070</p>' +
-        '</div>'],
-        ['<h3>Filiala Taraclia</h3>' +
-        '<p>str. Vokzalnaya, 63, Taraclia<br>tel. 029424707<br>mobil 079408898</p>' +
-        '</div>']
+        <% end %>
     ];
 
     // Display multiple markers on a map

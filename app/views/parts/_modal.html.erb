@@ -1,57 +1,13 @@
-<div id='partsModal' class="modal" tabindex="-1" role="dialog" data-empty-stock='<%= t('not_available') %>'>
-  <div class="modal-dialog">
+<div id='officeModal' class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header" style='background-color: #345DA6;min-height: 45px;'>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style='color: white;opacity: inherit;'>
           <span aria-hidden="true">&times;</span>
         </button>
-        <h3 id='partTitle' class="modal-title"></h3>
+        <!-- <h3 id='partTitle' class="modal-title">Office</h3> -->
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <%= image_tag 'no-image.png' %>
-        </div>
-        <div class="col-md-8">
-          <table class='table'>
-            <tr>
-              <td><%= t('original_number') %></td>
-              <td class='original_number text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('license_number' )%></td>
-              <td class='license_number text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('warehouse.chisinau') %></td>
-              <td class='Magazin_Chisinau text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('warehouse.hincesti') %></td>
-              <td class='Magazin_Filial_Hincesti_142 text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('warehouse.balti') %></td>
-              <td class='Magazin_Balti text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('warehouse.comrat') %></td>
-              <td class='Magazin_Comrat text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('warehouse.taraclia') %></td>
-              <td class='Magazin_Taraclia text-left'></td>
-            </tr>
-            <tr>
-              <td><%= t('price') %></td>
-              <td id='partPrice' class=' text-left'></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t('close') %></button>
-        <!-- <button type="button" class="btn btn-primary" disabled>Add to cart</button> -->
-      </div>
+      <div id="officeDetails"></div>
     </div>
   </div>
 </div>
