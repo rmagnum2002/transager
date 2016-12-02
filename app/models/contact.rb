@@ -5,18 +5,17 @@ class Contact < ActiveRecord::Base
     :"contact_type.phone" => 1,
     :"contact_type.phone_fax" => 2,
     :"contact_type.mobile" => 3,
-    "email" => 4,
-    "skype" => 5
-  }
+    'email' => 4,
+    'skype' => 5
+  }.freeze
 
   DEPARTMENT_ID = {
     :"department_id.transport" => 1,
     :"department_id.shop" => 2,
     :"department_id.service" => 3,
     :"department_id.accountant" => 4,
-    :"department_id.subsidiary" => 5,
-  }
-
+    :"department_id.subsidiary" => 5
+  }.freeze
 
   def self.departments
     contacts = Contact.where(contact_type: 4)
