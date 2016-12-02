@@ -19,6 +19,7 @@ ru:
   brand: 'Марка'
   price: 'Цена'
   name: 'Имя'
+  searching: Поиск ...
   download_pdf: 'PDF'
   available_at: Магазины и наличие
   # download_pdf: 'Скачать в PDF'

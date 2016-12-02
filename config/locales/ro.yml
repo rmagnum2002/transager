@@ -19,6 +19,7 @@ ro:
   brand: 'Brand'
   price: 'Preț'
   name: 'Denumire'
+  searching: Se caută ...
   download_pdf: 'PDF'
   available_at: Reprezentanțe și stoc
   # download_pdf: 'Descarcă PDF'

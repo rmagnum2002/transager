@@ -19,6 +19,7 @@ en:
   brand: 'Brand'
   price: 'Price'
   name: 'Name'
+  searching: Searching ...
   download_pdf: 'PDF'
   available_at: Subsidiaries and stock
   # download_pdf: 'Download PDF'

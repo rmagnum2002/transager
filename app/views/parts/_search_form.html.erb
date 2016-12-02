@@ -100,7 +100,7 @@
           <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: t(:search_placeholder), data: {autocomplete_source: search_parts_path}, autofocus: true %>
         </div>
         <div class="col-md-4">
-          <%= submit_tag t(:search), name: nil, class: 'btn btn-primary', disabled: @query.present? ? (@query.length >= 3 ? false : true) : true %>
+          <%= submit_tag t(:search), name: nil, class: 'btn btn-primary', disabled: @query.present? ? (@query.length >= 3 ? false : true) : true, data: { disable_with: t('searching') } %>
         </div>
       </div>
     <% end %>
