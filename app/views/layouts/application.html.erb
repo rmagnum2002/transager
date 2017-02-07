@@ -30,7 +30,6 @@
   </header><!-- /header -->
   <div id="locales" data-locales-pieces='<%= t('pieces') %>'></div>
   <%= render 'welcome/page_header' %>
-
   <div class="main">
     <% [:notice, :error, :alert].each do |level| %>
       <% unless flash[level].blank? %>

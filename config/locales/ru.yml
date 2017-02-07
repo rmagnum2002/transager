@@ -13,7 +13,7 @@ ru:
   int_transport: 'Международные перевозки'
   t_and_t_service: 'Ремонт Грузовиков и Прицепов '
   search: 'Поиск'
-  search_placeholder: 'Поиск по коду или названию'
+  search_placeholder: 'Поиск запчастей по коду или названию'
   found_parts: "Найдено %{size} запчасти/запчастей с термином <b>%{query}</b>"
   category: 'Категория'
   brand: 'Марка'

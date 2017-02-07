@@ -13,7 +13,7 @@ en:
   int_transport: 'International transportation'
   t_and_t_service: 'Truck and Trailer Service'
   search: 'Search'
-  search_placeholder: 'Search by code...'
+  search_placeholder: 'Search parts by code...'
   found_parts: "Found %{size} parts with term <b>%{query}</b>"
   category: 'Category'
   brand: 'Brand'

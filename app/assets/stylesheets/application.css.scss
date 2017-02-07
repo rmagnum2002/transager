@@ -76,7 +76,7 @@ table.listing{
   font-size: 12px;
 }
 center.need_parts {
-  width: 200px;
+  width: 100%;
   margin: auto;
   background: rgb(0, 40, 113);
   color: #fff;
@@ -112,4 +112,25 @@ span.price{
 }
 .warehouse{
   font-weight: bold;
+}
+
+ul.phone_list {
+  list-style: none;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  li {
+    i.fa.fa-mobile {
+      margin-right: 10px;
+    }
+    a {
+      color: #000;
+    }
+  }
+}
+#main_search {
+  background: #fff;
+  padding: 10px;
 }

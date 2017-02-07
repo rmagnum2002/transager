@@ -23,6 +23,7 @@
 //= require jquery.ui.totop.js
 //= require app.js
 //= require parts.js
+//= require jquery.sticky.js
 
 $(document).ready(function() {
   $("a.fancybox").fancybox();
@@ -64,6 +65,14 @@ $(document).ready(function() {
   $('.part_name').click(function(event) {
     $('.loading').removeClass('hidden')
   });
+
+  $("#main_search").sticky(
+    {
+      topSpacing:0,
+      zIndex: 100000000,
+      widthFromWrapper: false
+    }
+  );
 
 });
 

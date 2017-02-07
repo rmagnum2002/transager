@@ -24,9 +24,9 @@ $(document).ready(function() {
   if ($('#query').length > 0) {
     $('#query').keyup(function(event) {
       if ($('#query').val().length >= 3) {
-        $('.search_form .btn.btn-primary').removeAttr('disabled')
+        $('.search_button.btn.btn-primary').removeAttr('disabled')
       } else {
-        $('.search_form .btn.btn-primary').prop("disabled", true)
+        $('.search_button.btn.btn-primary').prop("disabled", true)
       }
     });
   }
