@@ -90,4 +90,4 @@ end
 
 # gem 'thin', group: :development
 gem 'newrelic_rpm'
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
