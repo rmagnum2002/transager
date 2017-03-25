@@ -50,6 +50,7 @@ gem "figaro"
 gem 'jquery-datatables-rails', '~> 3.3.0'
 gem 'gon'
 gem 'slim'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

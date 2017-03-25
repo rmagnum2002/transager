@@ -24,10 +24,11 @@ class FeedbacksController < ApplicationController
   # POST /feedbacks
   # POST /feedbacks.json
   def create
+    @offices = Subsidiary.order('id asc')
     @feedback = Feedback.new(feedback_params)
 
     respond_to do |format|
-      if @feedback.save
+      if verify_recaptcha(model: @feedback) && @feedback.save
         format.html { redirect_to contacts_path, notice: t('notices.feedback_sent') }
         format.json { render :show, status: :created, location: @feedback }
       else
